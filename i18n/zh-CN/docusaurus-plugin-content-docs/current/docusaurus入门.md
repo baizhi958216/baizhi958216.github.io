@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## 1、初始化项目
 ```bash
-yarn create 项目名称
+yarn create docusaurus
 ```  
 ### 1.1、配置项目信息
 ```bash

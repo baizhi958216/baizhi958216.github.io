@@ -29,7 +29,7 @@ const config = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
-                    editUrl: 'https://github.com/baizhi958216/baizhi958216',
+                    editUrl: 'https://github.com/baizhi958216/baizhi958216/blob/docusaurus/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
