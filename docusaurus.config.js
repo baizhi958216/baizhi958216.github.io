@@ -8,13 +8,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
     title: 'Cyan',
     tagline: '刻晴我老婆',
-    url: 'https://your-docusaurus-test-site.com',
-    baseUrl: '/',
+    url: 'https://baizhi958216.github.io',
+    baseUrl: '/baizhi958216/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-    organizationName: 'facebook', // Usually your GitHub org/user name.
-    projectName: 'docusaurus', // Usually your repo name.
+    organizationName: 'baizhi958216', // Usually your GitHub org/user name.
+    projectName: 'baizhi958216', // Usually your repo name.
 
     i18n: {
         defaultLocale: 'zh-CN',
