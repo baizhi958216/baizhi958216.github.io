@@ -12,7 +12,7 @@ const config = {
     baseUrl: '/baizhi958216/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
-    favicon: 'img/favicon.ico',
+    favicon: 'img/Cyan.png',
     organizationName: 'baizhi958216', // Usually your GitHub org/user name.
     projectName: 'baizhi958216', // Usually your repo name.
 
@@ -45,7 +45,7 @@ const config = {
                 title: 'Cyan',
                 logo: {
                     alt: 'Logo',
-                    src: 'img/logo.svg',
+                    src: 'img/Cyan.png',
                 },
                 items: [{
                     type: 'doc',
