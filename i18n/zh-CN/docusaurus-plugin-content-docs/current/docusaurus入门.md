@@ -50,7 +50,7 @@ yarn build
 ``` 
 
 ## 3、发布到github page
-### 3.1、在```docusaurus.config.js``进行配置
+### 3.1、在```docusaurus.config.js```进行配置
 ```javascript
 url: 'https://baizhi958216.github.io',//顶级域名
 //如果网站使用顶级域名访问这里不需要配置，这里是的意思是https://baizhi958216.github.io/baizhi958216
