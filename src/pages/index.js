@@ -17,7 +17,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/docusaurus入门">
-            Docusaurus入门
+            阅读文档
           </Link>
         </div>
       </div>
@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}学习记录`}
-      description="关于我学习过的，包括了前端，Linux，安卓等等杂七杂八的都有">
+      description="包括了前端，Linux，安卓等等杂七杂八的都有">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
