@@ -14,4 +14,7 @@ sudo systemctl enable bluetooth.service
 sudo systemctl start bluetooth.service
 ```
 
-## 重启
+## 重新登录
+
+### 连接蓝牙设备
+连不上的话关掉蓝牙再开再连，多试几次
