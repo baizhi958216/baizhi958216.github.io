@@ -9,12 +9,12 @@ const config = {
     title: 'Cyan',
     tagline: '刻晴我老婆',
     url: 'https://baizhi958216.github.io',
-    baseUrl: '/baizhi958216/',
+    baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/Cyan.png',
     organizationName: 'baizhi958216', // Usually your GitHub org/user name.
-    projectName: 'baizhi958216', // Usually your repo name.
+    projectName: 'baizhi958216.github.io', // Usually your repo name.
 
     i18n: {
         defaultLocale: 'zh-CN',
@@ -29,7 +29,7 @@ const config = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
-                    editUrl: 'https://github.com/baizhi958216/baizhi958216/blob/docusaurus/',
+                    editUrl: 'https://github.com/baizhi958216/baizhi958216.github.io/blob/docusaurus/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
