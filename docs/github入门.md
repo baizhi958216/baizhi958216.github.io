@@ -37,12 +37,12 @@ git config --global user.name "你的名字"
 git add .
 ```
 ```add```即添加文件 ```.```即目录下所有文件  
-```!注意```不能添加空文件夹
+!```注意```不能添加空文件夹
 ### 2.添加提交历史记录
 ```bash
 git commit -m "hi: Add a new hi file"
 ```
-提交规范请详阅：https://www.conventionalcommits.org/zh-hans/v1.0.0/#%e7%ba%a6%e5%ae%9a%e5%bc%8f%e6%8f%90%e4%ba%a4%e8%a7%84%e8%8c%83
+提交规范请详阅：https://www.conventionalcommits.org/zh-hans/v1.0.0/#约定式提交规范
 ### 3.为仓库添加一个分支
 ```bash
 git branch -M 分支名
@@ -55,5 +55,12 @@ git remote add origin git@github.com:用户名/仓库名.git
 推送并关联本地分支
 ```bash
 git push --set-upstream origin 分支名
+
+# 如果遇到下面的输出 输入yes回车同意
+The authenticity of host 'github.com (28.0.0.81)' can't be established.
+ED25519 key fingerprint is SHA256:+***************************.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
-###
+### 6.推送成功输出
+![ldCN2.png](https://s1.328888.xyz/2022/05/25/ldCN2.png)

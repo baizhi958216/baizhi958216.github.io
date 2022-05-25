@@ -1,4 +1,5 @@
 # git-ssh入门
+https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/
 ### 开始生成ssh密钥
 ```bash
 ssh-keygen -t ed25519 -C "你的邮箱"
