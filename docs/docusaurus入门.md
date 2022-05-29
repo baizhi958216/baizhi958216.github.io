@@ -1,44 +1,68 @@
+---
+sidebar_position: 1
+---
 
 # Docusaurus入门
 
-Let's discover **Docusaurus in less than 5 minutes**.
-
-## Getting Started
-
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
+## 1、初始化项目
 ```bash
-npm init docusaurus@latest my-website classic
+yarn create docusaurus
+```  
+### 1.1、配置项目信息
+```bash
+# 这是你的网站名称
+√ What should we name this site? ... 
+# 网站使用的模板，默认推荐classic
+√ Select a template below... 
+# 是否使用TypeScript
+√ This template is available in TypeScript. Do you want to use the TS variant? ... 
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
+### 1.2、配置成功
 ```bash
-cd my-website
-npm run start
+  `yarn start`
+    Starts the development server.
+
+  `yarn build`
+    Bundles your website into static files for production.
+
+  `yarn serve`
+    Serves the built website locally.
+
+  `yarn deploy`
+    Publishes the website to GitHub pages.
+
+We recommend that you begin by typing:
+
+  `cd 网站名称`
+  `yarn start`
+
+```  
+
+## 2、运行项目
+```bash
+# 首先进入项目目录
+cd 项目名称
+# 然后运行项目
+yarn start
+# 编译版本
+yarn build
+``` 
+
+## 3、发布到github page
+### 3.1、在```docusaurus.config.js```进行配置
+```javascript
+url: 'https://baizhi958216.github.io',//顶级域名
+//如果网站使用顶级域名访问这里不需要配置，这里是的意思是https://baizhi958216.github.io/baizhi958216
+baseUrl: '/baizhi958216/',
+organizationName: 'baizhi958216', // github用户名
+projectName: 'baizhi958216', // 仓库名称
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+### 3.2、发布
+```bash
+yarn deploy
+```
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+### 3.3、配置页面
+GitHub Pages下面Source选择分支为gh-pages，然后保存即可
