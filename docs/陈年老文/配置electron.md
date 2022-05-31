@@ -1,3 +1,4 @@
+#
 # 准备工作（ArchLinux）
 ## 安装node.js
 ``` sudo pacman -S nodejs```

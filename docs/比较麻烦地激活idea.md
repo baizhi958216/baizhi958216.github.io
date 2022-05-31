@@ -8,7 +8,7 @@
 ```bash
 sudo pacman -S jdk8-openjdk
 ```
-装jdk8是因为要用到里面```tools.jar```  
+装jdk8是因为要用到里面```tools.jar```(在[JEP220](http://openjdk.java.net/jeps/220)移除)  
 ### 同步项目
 ```bash
 # ja-netfilter

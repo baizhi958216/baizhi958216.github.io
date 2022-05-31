@@ -4,6 +4,9 @@
 ## 配置环境
 ```bash
 yay lineageos_devel
+# 某些设备编译内核的时候可能需要用到data加密，libcrypt在libxcrypt-compat里
+# 我绝对不是指haydn，绝对不是haydn哦
+sudo pacman -S libxcrypt-compat
 ```
 ## 同步源码
 ### 初始化repo
@@ -162,6 +165,60 @@ repo sync has finished successfully.
 -g | --gapps: Build with Google Play Services added
 -f | --foss: build with FOSS (arm64-v8a) app store solutions added **requires vendor/foss**
 ```
-## 输出
+## 完成
+```bash
+[0529/172427.179235:INFO:delta_diff_generator.cc(254)] All done. Successfully created delta file with metadata size = 207347
+Done generating full update.
+2022-05-29 17:24:27 - ota_from_target_files.py - INFO    : delta_generator outputs the maximum signature size: 256
+[0529/172427.933920:INFO:generate_delta_main.cc(82)] Calculating hash for signing.
+[0529/172427.933967:INFO:payload_signer.cc(78)] Signature blob size: 267
+[0529/172430.147487:INFO:payload_signer.cc(120)] Metadata signature size: 267
+[0529/172430.148505:INFO:payload_signer.cc(242)] Making room for signature in file
+[0529/172430.148875:INFO:payload_signer.cc(149)] Updated protobuf size: 207332
+[0529/172430.474502:INFO:payload_signer.cc(161)] Updated payload size: 1989411446
+[0529/172430.474522:INFO:payload_signer.cc(162)] Updated metadata size: 207356
+[0529/172430.474525:INFO:payload_signer.cc(166)] Signature Blob Offset: 1989411446
+[0529/172434.093097:INFO:generate_delta_main.cc(98)] Done calculating hash for signing.
+Done generating hash.
+[0529/172434.197093:INFO:generate_delta_main.cc(118)] Signing payload.
+[0529/172434.197156:INFO:payload_signer.cc(78)] Signature blob size: 267
+[0529/172434.197162:INFO:payload_signer.cc(78)] Signature blob size: 267
+[0529/172435.961072:INFO:payload_signer.cc(120)] Metadata signature size: 267
+[0529/172435.962048:INFO:payload_signer.cc(242)] Making room for signature in file
+[0529/172435.962397:INFO:payload_signer.cc(149)] Updated protobuf size: 207332
+[0529/172436.304980:INFO:payload_signer.cc(161)] Updated payload size: 1989411446
+[0529/172436.305003:INFO:payload_signer.cc(162)] Updated metadata size: 207356
+[0529/172436.305006:INFO:payload_signer.cc(166)] Signature Blob Offset: 1989411446
+[0529/172436.305175:INFO:payload_signer.cc(473)] Signed payload size: 1989411713
+[0529/172438.179402:INFO:generate_delta_main.cc(133)] Done signing payload. Final metadata size = 207356
+Done signing payload.
+[0529/172441.869745:INFO:generate_delta_main.cc(268)] Generated properties file at /home/baizhi958216/blissroms/out/soong/.temp/payload-properties-pMpt0q.txt
+2022-05-29 17:24:55 - ota_from_target_files.py - INFO    : done.
+[100% 52660/52660] -e 
+      ___           ___                   ___           ___      
+     /\  \         /\__\      ___        /\  \         /\  \     
+    /::\  \       /:/  /     /\  \      /::\  \       /::\  \    
+   /:/\:\  \     /:/  /      \:\  \    /:/\ \  \     /:/\ \  \   
+  /::\~\:\__\   /:/  /       /::\__\  _\:\~\ \  \   _\:\~\ \  \  
+ /:/\:\ \:\__\ /:/__/     __/:/\/__/ /\ \:\ \ \__\ /\ \:\ \ \__\ 
+ \:\~\:\/:/  / \:\  \    /\/:/  /    \:\ \:\ \/__/ \:\ \:\ \/__/ 
+  \:\ \::/  /   \:\  \   \::/__/      \:\ \:\__\    \:\ \:\__\   
+   \:\/:/  /     \:\  \   \:\__\       \:\/:/  /     \:\/:/  /   
+    \::/__/       \:\__\   \/__/        \::/  /       \::/  /    
+     ~~            \/__/                 \/__/         \/__/     
+
+===========-Bliss Package Complete-===========
+Zip:  /home/baizhi958216/blissroms/out/target/product/haydn/Bliss-v15.5-haydn-OFFICIAL-gapps-20220529.zip
+SHA256:  6d761dfbe179bed0fd86422364b2f109de37405f9a7b5e272859bea54b9deab5
+Size: 1.8G
+===============================================
+Have A Truly Blissful Experience
+===============================================
+
+
+#### build completed successfully (01:27:34 (hh:mm:ss)) ####
+
+[baizhi958216@TianXuan blissroms]$
+```
 在```$OUT```里面
 ## 常见问题
