@@ -1,5 +1,10 @@
 # git-ssh入门
-https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/
+Gtihub不再支持通过http/https提交的密码检验[Github Blog](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/)  
+原文
+```
+Beginning August 13, 2021, we will no longer accept account passwords when authenticating Git operations and will require the use of token-based authentication
+```
+所以，开始使用ssh吧 :) 
 ### 开始生成ssh密钥
 ```bash
 ssh-keygen -t ed25519 -C "你的邮箱"
