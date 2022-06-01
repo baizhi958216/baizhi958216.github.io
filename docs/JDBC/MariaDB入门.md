@@ -1,6 +1,6 @@
 #
-# 安装```MariaDB```
-## 安装mariadb mariadb-libs
+## 安装```MariaDB```
+### 安装mariadb mariadb-libs
 ```bash
 sudo pacman -S mariadb mariadb-libs
 ```
@@ -39,8 +39,8 @@ https://mariadb.org/get-involved/
 
 [baizhi958216@TianXuan ~]$ 
 ```
-# 启动```mariadb.service```和```mysqld```
-## 配置安全选项
+## 启动```mariadb.service```和```mysqld```
+### 配置安全选项
 ```bash
 sudo mysql_secure_installation
 ```
@@ -106,33 +106,33 @@ installation should now be secure.
 Thanks for using MariaDB!
 [baizhi958216@TianXuan ~]$
 ```
-## 启动服务
+### 启动服务
 ```bash
 sudo systemctl enable mariadb.service mysqld
 sudo systemctl start mariadb.service mysqld
 ```
 直接运行mysql即可访问
-# 重置 root 密码
-## 停止```mysqld```
+## 重置 root 密码
+### 停止```mysqld```
 ```bash
 sudo systemctl stop mysqld
 ```
-## 用```mysqld_safe```启动```mysqld```服务
+### 用```mysqld_safe```启动```mysqld```服务
 ```bash
 mysqld_safe --skip-grant-tables --skip-networking &
 ```
-## 以root身份登录mysql
+### 以root身份登录mysql
 ```bash
 sudo mysql -u root
 ```
-## 修改root密码
+### 修改root密码
 ```bash
 MariaDB [(none)]> use mysql
 MariaDB [mysql]> flush privileges;
 MariaDB [mysql]> ALTER USER 'root'@'localhost' IDENTIFIED BY '你的新密码';
 MariaDB [mysql]> exit
 ```
-## 停止由```mysqld_safe```启动的```mysqld```
+### 停止由```mysqld_safe```启动的```mysqld```
 ```bash
 sudo kill $(cat /var/lib/mysql/计算机名.pid)
 ```
@@ -142,8 +142,8 @@ sudo systemctl start mysqld
 ```
 ### 更多内容
 请移步[ArchWiki](https://wiki.archlinux.org/title/MariaDB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
-# 简单入门Mariadb
-## 登录
+## 简单入门Mariadb
+### 登录
 使用密码登录root
 ```bash
 mysql -u root -p
@@ -161,7 +161,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 MariaDB [(none)]> 
 ```
-## 列出所有数据库
+### 列出所有数据库
 ```sql
 show databases;
 ```
@@ -180,7 +180,7 @@ MariaDB [(none)]> show databases;
 
 MariaDB [(none)]> 
 ```
-## 选择数据库
+### 选择数据库
 选择```test```数据库
 ```sql
 use test;
@@ -193,7 +193,7 @@ You can turn off this feature to get a quicker startup with -A
 Database changed
 MariaDB [test]> 
 ```
-## 创建表
+### 创建表
 ```sql
 CREATE TABLE IF NOT EXISTS books (
   BookID INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
@@ -212,7 +212,7 @@ VALUES('The Fellowship of the Ring',1,1),
       ('The Sum of All Men',2,2), ('Brotherhood of the Wolf',2,2), 
       ('Wizardborn',2,2), ('The Hobbbit',0,1);
 ```
-## 查看表
+### 查看表
 ```sql
 SHOW TABLES;
 ```
@@ -229,7 +229,7 @@ MariaDB [test]> SHOW TABLES;
 
 MariaDB [test]> 
 ```
-## 描述表数据
+### 描述表数据
 描述刚创建的```books```  
 ```sql
 DESCRIBE books;
@@ -248,7 +248,7 @@ MariaDB [test]> DESCRIBE books;
 
 MariaDB [test]> 
 ```
-## 查找表数据
+### 查找表数据
 查找```books```的所有数据
 ```sql
 SELECT * FROM books;
@@ -268,7 +268,7 @@ MariaDB [test]> SELECT * FROM books;
 
 MariaDB [test]> 
 ```
-## 增加数据
+### 增加数据
 新增一本标题为```Lair of Bones```，系列编号为```2```，作者编号为```2```的书：
 ```sql
 insert into books(Title,SeriesID,AuthorID) values ("Lair of Bones",2,2);
@@ -279,10 +279,10 @@ Query OK, 1 row affected (0.004 sec)
 
 MariaDB [test]> 
 ```
-## 修改数据
+### 修改数据
 将书籍编号为```2```的书名改为```The Hobbit```
 ```sql
 update books set title = "The Hobbit" where BookID = 2;
 ```
-## 更多基础内容
+### 更多基础内容
 移步[Mariadb](https://mariadb.com/kb/en/mariadb-basics/)
