@@ -1,4 +1,5 @@
-# git-ssh入门
+#
+# 摘要
 Gtihub不再支持通过http/https提交的密码检验[Github Blog](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/)  
 原文
 ```
