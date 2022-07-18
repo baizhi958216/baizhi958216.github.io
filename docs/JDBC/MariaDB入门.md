@@ -40,6 +40,10 @@ https://mariadb.org/get-involved/
 [baizhi958216@TianXuan ~]$ 
 ```
 ## 启动```mariadb.service```和```mysqld```
+```bash
+sudo systemctl enable mariadb.service mysqld
+sudo systemctl start mariadb.service mysqld
+```
 ### 配置安全选项
 ```bash
 sudo mysql_secure_installation
@@ -107,10 +111,6 @@ Thanks for using MariaDB!
 [baizhi958216@TianXuan ~]$
 ```
 ### 启动服务
-```bash
-sudo systemctl enable mariadb.service mysqld
-sudo systemctl start mariadb.service mysqld
-```
 直接运行mysql即可访问
 ## 重置 root 密码
 ### 停止```mysqld```
