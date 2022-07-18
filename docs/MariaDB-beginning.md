@@ -1,4 +1,4 @@
-#
+# MariaDB入门
 ## 安装```MariaDB```
 ### 安装mariadb mariadb-libs
 ```bash

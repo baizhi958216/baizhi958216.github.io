@@ -1,5 +1,5 @@
-#
-# 比较麻烦地使用 ```ja-netfilter```激活idea
+# 比较麻烦地激活idea
+# 使用 ```ja-netfilter```激活idea
 当前idea版本：2022.1.1  
 首先还是感谢[zhile](https://zhile.io)，不论是之前的```IDE Eval Resetter```还是现在的```ja-netfilter```。  
 ```ja-netfilter```是大佬的新项目[Github](https://github.com/ja-netfilter/ja-netfilter)。

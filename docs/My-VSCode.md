@@ -1,4 +1,4 @@
-#
+# VSCode配置
 ## Setting.json
 ```json
 {

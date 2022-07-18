@@ -1,3 +1,4 @@
+# fcitx5-rime自定义配置
 # 配置fcitx5-rime
 # 1.安装fcitx5以及fcitx5配置工具
 ```bash

@@ -3,15 +3,6 @@
  * and scoped locally.
  */
 
-.heroBanner {
-  text-align: center;
-  width: 50vw;
-  height: 50vh;
-  margin: 0 auto;
-  background-color: rgba(195, 195, 195, 0);
-  color:black
-}
-
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;

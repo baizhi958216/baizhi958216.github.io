@@ -1,4 +1,4 @@
-#
+# 在github上使用gpg
 ## 生成GPG Key
 ```bash
 gpg --full-generate-key
