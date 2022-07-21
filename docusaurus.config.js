@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/github')
+const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -63,12 +63,23 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'Archlinux-platform-tools',
+            type: 'docSidebar',
             position: 'left',
-            label: '折腾记录',
+            sidebarId: 'linux',
+            label: 'Linux',
           },
-          // {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'android',
+            label: 'Android',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'blog',
+            label: '折腾',
+          },
           {
             href: 'https://github.com/baizhi958216',
             label: 'GitHub',
@@ -85,6 +96,6 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-};
+}
 
-module.exports = config;
+module.exports = config

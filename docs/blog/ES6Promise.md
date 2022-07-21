@@ -1,4 +1,3 @@
-
 #
 
 ```JavaScript
@@ -12,7 +11,9 @@ setTimeout(() => {
     console.log('广东省广州市白云区');
 }, 1000);
 ```
+
 为了实现以上功能
+
 ```JavaScript
 setTimeout(() => {
     console.log('广东省');
@@ -24,8 +25,10 @@ setTimeout(() => {
     }, 1000);
 }, 1000);
 ```
+
 于是回调地狱就产生了  
-为了解决这个问题，可以将异步请求包装成```Promise```  
+为了解决这个问题，可以将异步请求包装成`Promise`
+
 ```JavaScript
 new Promise((resolve,reject)=>{
     setTimeout(() => {
@@ -47,6 +50,6 @@ new Promise((resolve,reject)=>{
             console.log(res+'白云区');
             resolve(res+'白云区')
         }, 1000);
-    })    
+    })
 }).catch(err=>{console.log(err)})
 ```

@@ -1,61 +1,78 @@
-# 比较麻烦地激活idea
-# 使用 ```ja-netfilter```激活idea
-当前idea版本：2022.1.1  
-首先还是感谢[zhile](https://zhile.io)，不论是之前的```IDE Eval Resetter```还是现在的```ja-netfilter```。  
-```ja-netfilter```是大佬的新项目[Github](https://github.com/ja-netfilter/ja-netfilter)。
+# 比较麻烦地激活 idea
+
+# 使用 `ja-netfilter`激活 idea
+
+当前 idea 版本：2022.1.1  
+首先还是感谢[zhile](https://zhile.io)，不论是之前的`IDE Eval Resetter`还是现在的`ja-netfilter`。  
+`ja-netfilter`是大佬的新项目[Github](https://github.com/ja-netfilter/ja-netfilter)。
+
 ## 配置环境
-### 安装jdk8
+
+### 安装 jdk8
+
 ```bash
 sudo pacman -S jdk8-openjdk
 ```
-装jdk8是因为要用到里面```tools.jar```(在[JEP220](http://openjdk.java.net/jeps/220)移除)  
+
+装 jdk8 是因为要用到里面`tools.jar`(在[JEP220](http://openjdk.java.net/jeps/220)移除)
+
 ### 同步项目
+
 ```bash
 # ja-netfilter
 git clone https://github.com/ja-netfilter/ja-netfilter.git
 # 名为power的ja-netfilter组件
 git clone https://github.com/ja-netfilter/plugin-power.git
 ```
-### 安装```maven```
+
+### 安装`maven`
+
 ```bash
 sudo pacman -s maven
 ```
+
 ## 编译
-如果装有openjdk-18(装jdk默认就是这货)，先将```JAVA_HOME```指向```java-8-openjdk```  
+
+如果装有 openjdk-18(装 jdk 默认就是这货)，先将`JAVA_HOME`指向`java-8-openjdk`
+
 ```bash
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 ```
+
 开始编译
+
 ```bash
 cd ja-netfilter;mvn package;cd ../plugin-power;mvn package
 ```
+
 输出：
+
 ```bash
 [baizhi958216@TianXuan 下载]$ cd ja-netfilter;mvn package;cd ../plugin-power;mvn package;cd ..
 [INFO] Scanning for projects...
-[INFO] 
+[INFO]
 [INFO] -------------------< com.ja-netfilter:ja-netfilter >--------------------
 [INFO] Building ja-netfilter 2022.2.0
 [INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
+[INFO]
 [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ja-netfilter ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
 [INFO] Copying 1 resource
-[INFO] 
+[INFO]
 [INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ ja-netfilter ---
 [INFO] Nothing to compile - all classes are up to date
-[INFO] 
+[INFO]
 [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ ja-netfilter ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
 [INFO] skip non existing resourceDirectory /home/baizhi958216/下载/ja-netfilter/src/test/resources
-[INFO] 
+[INFO]
 [INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ ja-netfilter ---
 [INFO] No sources to compile
-[INFO] 
+[INFO]
 [INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ ja-netfilter ---
-[INFO] 
+[INFO]
 [INFO] --- maven-jar-plugin:3.1.0:jar (default-jar) @ ja-netfilter ---
-[INFO] 
+[INFO]
 [INFO] --- maven-assembly-plugin:3.0.0:single (make-assembly) @ ja-netfilter ---
 [INFO] Building jar: /home/baizhi958216/下载/ja-netfilter/target/ja-netfilter-jar-with-dependencies.jar
 [INFO] ------------------------------------------------------------------------
@@ -65,38 +82,38 @@ cd ja-netfilter;mvn package;cd ../plugin-power;mvn package
 [INFO] Finished at: 2022-05-28T21:21:13+08:00
 [INFO] ------------------------------------------------------------------------
 [INFO] Scanning for projects...
-[WARNING] 
+[WARNING]
 [WARNING] Some problems were encountered while building the effective model for com.ja-netfilter.plugins:plugin-power:jar:1.1.0
 [WARNING] The expression ${version} is deprecated. Please use ${project.version} instead.
-[WARNING] 
+[WARNING]
 [WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
-[WARNING] 
+[WARNING]
 [WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
-[WARNING] 
-[INFO] 
+[WARNING]
+[INFO]
 [INFO] ---------------< com.ja-netfilter.plugins:plugin-power >----------------
 [INFO] Building plugin-power 1.1.0
 [INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
+[INFO]
 [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ plugin-power ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
 [INFO] skip non existing resourceDirectory /home/baizhi958216/下载/plugin-power/src/main/resources
-[INFO] 
+[INFO]
 [INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ plugin-power ---
 [INFO] Nothing to compile - all classes are up to date
-[INFO] 
+[INFO]
 [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ plugin-power ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
 [INFO] skip non existing resourceDirectory /home/baizhi958216/下载/plugin-power/src/test/resources
-[INFO] 
+[INFO]
 [INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ plugin-power ---
 [INFO] No sources to compile
-[INFO] 
+[INFO]
 [INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ plugin-power ---
 [INFO] No tests to run.
-[INFO] 
+[INFO]
 [INFO] --- maven-jar-plugin:3.1.0:jar (default-jar) @ plugin-power ---
-[INFO] 
+[INFO]
 [INFO] --- maven-assembly-plugin:3.0.0:single (make-assembly) @ plugin-power ---
 [INFO] Building jar: /home/baizhi958216/下载/plugin-power/target/power-v1.1.0-jar-with-dependencies.jar
 [INFO] ------------------------------------------------------------------------
@@ -105,13 +122,16 @@ cd ja-netfilter;mvn package;cd ../plugin-power;mvn package
 [INFO] Total time:  0.733 s
 [INFO] Finished at: 2022-05-28T21:21:14+08:00
 [INFO] ------------------------------------------------------------------------
-[baizhi958216@TianXuan 下载]$ 
+[baizhi958216@TianXuan 下载]$
 
 ```
-我在此之前编译过，所以log会少一些，不过影响不大
 
-## 配置```ja-netfilter```
-上一步已经将```ja-netfilter```以及```power```编译好了，现在只需要把它们放到一个目录下。
+我在此之前编译过，所以 log 会少一些，不过影响不大
+
+## 配置`ja-netfilter`
+
+上一步已经将`ja-netfilter`以及`power`编译好了，现在只需要把它们放到一个目录下。
+
 ```bash
 # 我把ja-netfilter放在用户目录下了
 mkdir -p ~/ja-netfilter/plugins ~/ja-netfilter/config
@@ -123,7 +143,8 @@ touch ~/ja-netfilter/config/power.conf
 cp ja-netfilter/target/ja-netfilter-jar-with-dependencies.jar ~/ja-netfilter/ja-netfilter.jar
 cp plugin-power/target/power-v1.1.0-jar-with-dependencies.jar ~/ja-netfilter/plugins/power.jar
 ```
-然后再把下面的内容粘贴到```~/ja-netfilter/config/power.conf```里面   
+
+然后再把下面的内容粘贴到`~/ja-netfilter/config/power.conf`里面  
 (抄的[lzskyline](https://www.lzskyline.com/index.php/archives/157/)博客里的)
 
 ```
@@ -136,18 +157,26 @@ EQUAL,12050631930840502994303310119825952355765150026773459927078278207142507254
 EQUAL,8028659553836119901593655311677865290672387540027895708985570867455842278776015838142490556122515317003830575671206217290165955723210315889275621408086645995280770696135307020454887097794294273869941097888549275028604248332746117479367032100139091095818169444690976206636597409322539276252570779516636180497560345090851316373570301807158645002654208816162902430571101092599540795501152368695431168224953320283502815852695423193526255836776240019085157444254721864134058745605280085897450952937893645487302683006269553010996013513395044612932182772364336368242146044741660443063207438830622376694839772096688572619877,65537,21052260334349247097390263197515551021430500095747078612475171670547647379514624742422155617118382403386162585789957995106937640909858927441120214136124618650916253946431099279059999234690271861285094667690686174087562943995337813383652323725628494261414287817117703355799303086256914782640807165021059760198249458510362432176960683009890989990086614909076853502936665842869163947730574085863127445475967466399017447434906719734480523659879746056728772390182338236187070557277461449143752467418310063647027554915213099799725713708651142505590086828211040619445941301844994775362846837122335522584661592447560060751169->986236757547332986472011617696226561292849812918563355472727826767720188564083584387121625107510786855734801053524719833194566624465665316622563244215340671405971599343902468620306327831715457360719532421388780770165778156818229863337344187575566725786793391480600129482653072861971002459947277805295727097226389568776499707662505334062639449916265137796823793276300221537201727072401742985542559596685092673521228140822200236743113743661549252453726123450722876929538747702356573783116197523966334991563351853851212597377279504828784687920949198341066450537230593608440475006386024448307924665012521692416658191
 
 ```
-把下面的内容修改后追加到```/opt/intellij-idea-ultimate-edition/bin/idea64.vmoptions```这个文件的末尾
+
+把下面的内容修改后追加到`/opt/intellij-idea-ultimate-edition/bin/idea64.vmoptions`这个文件的末尾
+
 ```
 -javaagent:/home/用户名/ja-netfilter路径/ja-netfilter.jar
 ```
+
 我是这样做的：
+
 ```bash
 echo '-javaagent:/home/baizhi958216/ja-netfilter/ja-netfilter.jar' | sudo tee -a idea64.vmoptions
 ```
-## 激活idea
-打开idea就会提示激活才能用，选择通过服务器激活(License server)
+
+## 激活 idea
+
+打开 idea 就会提示激活才能用，选择通过服务器激活(License server)
 ![twDwe.png](https://s1.328888.xyz/2022/05/28/twDwe.png)  
-把网址敲上去```https://jetbra.in```  
-点击```Activate```激活
+把网址敲上去`https://jetbra.in`  
+点击`Activate`激活
+
 ## 激活成功
+
 ![twdoO.png](https://s1.328888.xyz/2022/05/28/twdoO.png)

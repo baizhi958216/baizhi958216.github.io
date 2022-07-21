@@ -1,6 +1,7 @@
-# ES6模块化
+# ES6 模块化
 
 a.js
+
 ```JavaScript
 let user = {
     name: 'baizhi958216',
@@ -12,6 +13,7 @@ export const hello = 'Hello'
 ```
 
 b.js
+
 ```JavaScript
 import {user, hello} from 'a.js'
 console.log(user, hello);

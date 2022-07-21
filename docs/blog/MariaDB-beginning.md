@@ -1,10 +1,15 @@
-# MariaDB入门
-## 安装```MariaDB```
-### 安装mariadb mariadb-libs
+# MariaDB 入门
+
+## 安装`MariaDB`
+
+### 安装 mariadb mariadb-libs
+
 ```bash
 sudo pacman -S mariadb mariadb-libs
 ```
+
 # 配置数据库目录
+
 ```bash
 [baizhi958216@TianXuan ~]$ sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 Installing MariaDB/MySQL system tables in '/var/lib/mysql' ...
@@ -37,17 +42,22 @@ The latest information about MariaDB is available at https://mariadb.org/.
 Consider joining MariaDB's strong and vibrant community:
 https://mariadb.org/get-involved/
 
-[baizhi958216@TianXuan ~]$ 
+[baizhi958216@TianXuan ~]$
 ```
-## 启动```mariadb.service```和```mysqld```
+
+## 启动`mariadb.service`和`mysqld`
+
 ```bash
 sudo systemctl enable mariadb.service mysqld
 sudo systemctl start mariadb.service mysqld
 ```
+
 ### 配置安全选项
+
 ```bash
 sudo mysql_secure_installation
 ```
+
 ```bash
 [baizhi958216@TianXuan ~]$ sudo mysql_secure_installation
 
@@ -58,7 +68,7 @@ In order to log into MariaDB to secure it, we'll need the current
 password for the root user. If you've just installed MariaDB, and
 haven't set the root password yet, you should just press enter here.
 
-Enter current password for root (enter for none): 
+Enter current password for root (enter for none):
 OK, successfully used password, moving on...
 
 Setting the root password or using the unix_socket ensures that nobody
@@ -110,47 +120,69 @@ installation should now be secure.
 Thanks for using MariaDB!
 [baizhi958216@TianXuan ~]$
 ```
+
 ### 启动服务
-直接运行mysql即可访问
+
+直接运行 mysql 即可访问
+
 ## 重置 root 密码
-### 停止```mysqld```
+
+### 停止`mysqld`
+
 ```bash
 sudo systemctl stop mysqld
 ```
-### 用```mysqld_safe```启动```mysqld```服务
+
+### 用`mysqld_safe`启动`mysqld`服务
+
 ```bash
 mysqld_safe --skip-grant-tables --skip-networking &
 ```
-### 以root身份登录mysql
+
+### 以 root 身份登录 mysql
+
 ```bash
 sudo mysql -u root
 ```
-### 修改root密码
+
+### 修改 root 密码
+
 ```bash
 MariaDB [(none)]> use mysql
 MariaDB [mysql]> flush privileges;
 MariaDB [mysql]> ALTER USER 'root'@'localhost' IDENTIFIED BY '你的新密码';
 MariaDB [mysql]> exit
 ```
-### 停止由```mysqld_safe```启动的```mysqld```
+
+### 停止由`mysqld_safe`启动的`mysqld`
+
 ```bash
 sudo kill $(cat /var/lib/mysql/计算机名.pid)
 ```
-## 启动```mysqld```
+
+## 启动`mysqld`
+
 ```bash
 sudo systemctl start mysqld
 ```
+
 ### 更多内容
-请移步[ArchWiki](https://wiki.archlinux.org/title/MariaDB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
-## 简单入门Mariadb
+
+请移步[ArchWiki](<https://wiki.archlinux.org/title/MariaDB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)
+
+## 简单入门 Mariadb
+
 ### 登录
-使用密码登录root
+
+使用密码登录 root
+
 ```bash
 mysql -u root -p
 ```
+
 ```bash
 [baizhi958216@TianXuan ~]$ mysql -u root -p
-Enter password: 
+Enter password:
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 11
 Server version: 10.8.3-MariaDB Arch Linux
@@ -159,12 +191,15 @@ Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-MariaDB [(none)]> 
+MariaDB [(none)]>
 ```
+
 ### 列出所有数据库
+
 ```sql
 show databases;
 ```
+
 ```sql
 MariaDB [(none)]> show databases;
 +--------------------+
@@ -178,44 +213,53 @@ MariaDB [(none)]> show databases;
 +--------------------+
 5 rows in set (0.000 sec)
 
-MariaDB [(none)]> 
+MariaDB [(none)]>
 ```
+
 ### 选择数据库
-选择```test```数据库
+
+选择`test`数据库
+
 ```sql
 use test;
 ```
+
 ```sql
 MariaDB [(none)]> use test;
 Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
 
 Database changed
-MariaDB [test]> 
+MariaDB [test]>
 ```
+
 ### 创建表
+
 ```sql
 CREATE TABLE IF NOT EXISTS books (
-  BookID INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
-  Title VARCHAR(100) NOT NULL, 
+  BookID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  Title VARCHAR(100) NOT NULL,
   SeriesID INT, AuthorID INT);
 
-CREATE TABLE IF NOT EXISTS authors 
+CREATE TABLE IF NOT EXISTS authors
 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT);
 
-CREATE TABLE IF NOT EXISTS series 
+CREATE TABLE IF NOT EXISTS series
 (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT);
 
-INSERT INTO books (Title,SeriesID,AuthorID) 
-VALUES('The Fellowship of the Ring',1,1), 
-      ('The Two Towers',1,1), ('The Return of the King',1,1),  
-      ('The Sum of All Men',2,2), ('Brotherhood of the Wolf',2,2), 
+INSERT INTO books (Title,SeriesID,AuthorID)
+VALUES('The Fellowship of the Ring',1,1),
+      ('The Two Towers',1,1), ('The Return of the King',1,1),
+      ('The Sum of All Men',2,2), ('Brotherhood of the Wolf',2,2),
       ('Wizardborn',2,2), ('The Hobbbit',0,1);
 ```
+
 ### 查看表
+
 ```sql
 SHOW TABLES;
 ```
+
 ```sql
 MariaDB [test]> SHOW TABLES;
 +----------------+
@@ -227,13 +271,17 @@ MariaDB [test]> SHOW TABLES;
 +----------------+
 3 rows in set (0.000 sec)
 
-MariaDB [test]> 
+MariaDB [test]>
 ```
+
 ### 描述表数据
-描述刚创建的```books```  
+
+描述刚创建的`books`
+
 ```sql
 DESCRIBE books;
 ```
+
 ```sql
 MariaDB [test]> DESCRIBE books;
 +----------+--------------+------+-----+---------+----------------+
@@ -246,13 +294,17 @@ MariaDB [test]> DESCRIBE books;
 +----------+--------------+------+-----+---------+----------------+
 4 rows in set (0.001 sec)
 
-MariaDB [test]> 
+MariaDB [test]>
 ```
+
 ### 查找表数据
-查找```books```的所有数据
+
+查找`books`的所有数据
+
 ```sql
 SELECT * FROM books;
 ```
+
 ```sql
 MariaDB [test]> SELECT * FROM books;
 +--------+----------------------------+----------+----------+
@@ -266,23 +318,32 @@ MariaDB [test]> SELECT * FROM books;
 +--------+----------------------------+----------+----------+
 5 rows in set (0.000 sec)
 
-MariaDB [test]> 
+MariaDB [test]>
 ```
+
 ### 增加数据
-新增一本标题为```Lair of Bones```，系列编号为```2```，作者编号为```2```的书：
+
+新增一本标题为`Lair of Bones`，系列编号为`2`，作者编号为`2`的书：
+
 ```sql
 insert into books(Title,SeriesID,AuthorID) values ("Lair of Bones",2,2);
 ```
+
 ```sql
 MariaDB [test]> insert into books(Title,SeriesID,AuthorID) values ("Lair of Bones",2,2);
 Query OK, 1 row affected (0.004 sec)
 
-MariaDB [test]> 
+MariaDB [test]>
 ```
+
 ### 修改数据
-将书籍编号为```2```的书名改为```The Hobbit```
+
+将书籍编号为`2`的书名改为`The Hobbit`
+
 ```sql
 update books set title = "The Hobbit" where BookID = 2;
 ```
+
 ### 更多基础内容
+
 移步[Mariadb](https://mariadb.com/kb/en/mariadb-basics/)

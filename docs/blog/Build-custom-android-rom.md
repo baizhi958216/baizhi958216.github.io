@@ -1,19 +1,28 @@
-# 安卓第三方ROM源码编译
-# 以BlissROMs安卓12为例
-笔者用的是```ArchLinux```
+# 安卓第三方 ROM 源码编译
+
+# 以 BlissROMs 安卓 12 为例
+
+笔者用的是`ArchLinux`
+
 ## 配置环境
+
 ```bash
 yay lineageos_devel
 # 某些设备编译内核的时候可能需要用到data加密，libcrypt在libxcrypt-compat里
 # 我绝对不是指haydn，绝对不是haydn哦
 sudo pacman -S libxcrypt-compat
 ```
+
 ## 同步源码
-### 初始化repo
+
+### 初始化 repo
+
 ```bash
 mkdir blissroms;cd blissroms;repo init --depth=1 -u https://github.com/BlissRoms/platform_manifest.git -b arcadia-next
 ```
+
 输出
+
 ```bash
 Downloading Repo source from https://gerrit.googlesource.com/git-repo
 repo: Updating release signing keys to keyset ver 2.3
@@ -27,8 +36,8 @@ Your identity is: baizhi958216 <1475289190@qq.com>
 If you want to change this, please re-run 'repo init' with --config-name
 # 询问是否在commit显示颜色 (y/n)
 Testing colorized output (for 'repo diff', 'repo status'):
-  black    red      green    yellow   blue     magenta   cyan     white 
-  bold     dim      ul       reverse 
+  black    red      green    yellow   blue     magenta   cyan     white
+  bold     dim      ul       reverse
 Enable color display in this user account (y/N)? y
 
 repo has been initialized in /home/baizhi958216/blissroms/
@@ -36,11 +45,15 @@ If this is not the directory in which you want to initialize repo, please run:
    rm -r /home/baizhi958216/blissroms//.repo
 and try again
 ```
+
 ### 开始同步
+
 ```bash
 repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
 ```
+
 输出
+
 ```bash
 remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
 Fetching: 100% (1107/1107), done in 28m5.487s
@@ -151,12 +164,16 @@ Checking out: 94% (1046/1107) android_prebuilts_gcc_linux-x86_arm_arm-linux-andr
 Checking out: 100% (1107/1107), done in 1m53.836s
 repo sync has finished successfully.
 ```
+
 ## 编译
+
 ```bash
  . build/envsetup.sh
  blissify options deviceCodename
 ```
+
 ### options:
+
 ```bash
 -h | --help: Shows the help dialog
 -c | --clean: Clean up before running the build
@@ -165,7 +182,9 @@ repo sync has finished successfully.
 -g | --gapps: Build with Google Play Services added
 -f | --foss: build with FOSS (arm64-v8a) app store solutions added **requires vendor/foss**
 ```
+
 ## 完成
+
 ```bash
 [0529/172427.179235:INFO:delta_diff_generator.cc(254)] All done. Successfully created delta file with metadata size = 207347
 Done generating full update.
@@ -194,18 +213,18 @@ Done generating hash.
 Done signing payload.
 [0529/172441.869745:INFO:generate_delta_main.cc(268)] Generated properties file at /home/baizhi958216/blissroms/out/soong/.temp/payload-properties-pMpt0q.txt
 2022-05-29 17:24:55 - ota_from_target_files.py - INFO    : done.
-[100% 52660/52660] -e 
-      ___           ___                   ___           ___      
-     /\  \         /\__\      ___        /\  \         /\  \     
-    /::\  \       /:/  /     /\  \      /::\  \       /::\  \    
-   /:/\:\  \     /:/  /      \:\  \    /:/\ \  \     /:/\ \  \   
-  /::\~\:\__\   /:/  /       /::\__\  _\:\~\ \  \   _\:\~\ \  \  
- /:/\:\ \:\__\ /:/__/     __/:/\/__/ /\ \:\ \ \__\ /\ \:\ \ \__\ 
- \:\~\:\/:/  / \:\  \    /\/:/  /    \:\ \:\ \/__/ \:\ \:\ \/__/ 
-  \:\ \::/  /   \:\  \   \::/__/      \:\ \:\__\    \:\ \:\__\   
-   \:\/:/  /     \:\  \   \:\__\       \:\/:/  /     \:\/:/  /   
-    \::/__/       \:\__\   \/__/        \::/  /       \::/  /    
-     ~~            \/__/                 \/__/         \/__/     
+[100% 52660/52660] -e
+      ___           ___                   ___           ___
+     /\  \         /\__\      ___        /\  \         /\  \
+    /::\  \       /:/  /     /\  \      /::\  \       /::\  \
+   /:/\:\  \     /:/  /      \:\  \    /:/\ \  \     /:/\ \  \
+  /::\~\:\__\   /:/  /       /::\__\  _\:\~\ \  \   _\:\~\ \  \
+ /:/\:\ \:\__\ /:/__/     __/:/\/__/ /\ \:\ \ \__\ /\ \:\ \ \__\
+ \:\~\:\/:/  / \:\  \    /\/:/  /    \:\ \:\ \/__/ \:\ \:\ \/__/
+  \:\ \::/  /   \:\  \   \::/__/      \:\ \:\__\    \:\ \:\__\
+   \:\/:/  /     \:\  \   \:\__\       \:\/:/  /     \:\/:/  /
+    \::/__/       \:\__\   \/__/        \::/  /       \::/  /
+     ~~            \/__/                 \/__/         \/__/
 
 ===========-Bliss Package Complete-===========
 Zip:  /home/baizhi958216/blissroms/out/target/product/haydn/Bliss-v15.5-haydn-OFFICIAL-gapps-20220529.zip
@@ -220,5 +239,7 @@ Have A Truly Blissful Experience
 
 [baizhi958216@TianXuan blissroms]$
 ```
-在```$OUT```里面
+
+在`$OUT`里面
+
 ## 常见问题

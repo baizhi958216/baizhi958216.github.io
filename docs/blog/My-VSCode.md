@@ -1,5 +1,7 @@
-# VSCode配置
+# VSCode 配置
+
 ## Setting.json
+
 ```json
 {
   "workbench.iconTheme": "material-icon-theme",
@@ -16,5 +18,4 @@
   "editor.formatOnSave": true,
   "editor.fontSize": 16
 }
-
 ```
