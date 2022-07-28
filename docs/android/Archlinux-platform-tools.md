@@ -81,3 +81,11 @@ $ sudo udevadm control --reload
 $ fastboot devices
 1c744062        fastboot
 ```
+
+## 最后
+
+其实还有一个办法, 装一个[`android-udev`](https://archlinux.org/packages/community/any/android-udev/)就可以了
+
+```bash
+$ sudo pacman -S android-udev
+```
