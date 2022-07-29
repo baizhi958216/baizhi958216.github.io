@@ -1,4 +1,4 @@
-# NodeJs 配置 NPM 和 Yarn(Windows)
+# 配置 NPM 和 Yarn(Windows)
 
 请注意, npm `-g`已不再适用, 请使用`--global`
 
@@ -49,3 +49,38 @@ npm install yarn --location=global
 ```bash
 yarn config set registry https://registry.npmmirror.com --location=global
 ```
+
+![Fj3zP.png](https://s1.328888.xyz/2022/07/30/Fj3zP.png)
+
+### 配置 yarn 全局模块路径
+
+```bash
+# yarn config set global-folder C:\Users\14752\.node\yarn_global
+yarn config set prefix C:\Users\14752\.node\yarn_global
+```
+
+### 配置 yarn 缓存路径
+
+```bash
+yarn config set cache-folder C:\Users\14752\.node\yarn_cache
+```
+
+### 配置 yarn 环境变量
+
+[![FjwwX.png](https://s1.328888.xyz/2022/07/30/FjwwX.png)](https://imgloc.com/image/FjwwX)
+
+### yarn 安装全局模块
+
+比如 typescript
+
+```bash
+yarn global add typescript
+```
+
+### 测试
+
+```bash
+tsc --version
+```
+
+![Fjk6r.png](https://s1.328888.xyz/2022/07/30/Fjk6r.png)
