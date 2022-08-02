@@ -12,7 +12,7 @@
 
 阿里！我来白嫖你辣~ (手动狗头:>)
 
-# 浏览器我用的是 `edge`
+# 浏览器我用的是 `edge`, 工具用的是[y1ndan](https://github.com/y1ndan)的原神签到小助手
 
 (只要你是 Windows10/11, 系统自带)
 
@@ -77,6 +77,9 @@
   ![OkABC.png](https://s1.328888.xyz/2022/08/02/OkABC.png)
 - 函数配置如下, 配置好后记得点击页面后面的创建
 
+- 代码包下载地址  
+  https://wwa.lanzoui.com/b07mk6dla 访问密码 ed03
+
 ```txt
 请选择一种创建函数的方式: 使用标准 Runtime 从零创建
 函数名称: mygenshinbbs(自定义)
@@ -138,3 +141,7 @@ CRON表达式: 0 0 22 * * *
 
 ![OK42U.png](https://s1.328888.xyz/2022/08/02/OK42U.png)  
 点击确定, 大功告成, 每 22 小时函数会自动执行一次
+
+## 参考链接
+
+[银弹博客](https://www.yindan.me/tutorial/genshin-impact-helper.html)
