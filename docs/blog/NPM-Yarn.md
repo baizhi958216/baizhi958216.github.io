@@ -76,7 +76,13 @@ yarn config set cache-folder C:\Users\14752\.node\yarn_cache
 ```bash
 yarn global add typescript
 ```
-
+### yarn 更新依赖
+```bash
+# 自动更新全部到最新版本
+yarn upgrade --latest
+# 手动选择升级的依赖包，按空格键选择，a 键切换所有，i 键反选选择
+yarn upgrade-interactive --latest
+```
 ### 测试
 
 ```bash
