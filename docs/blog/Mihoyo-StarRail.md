@@ -109,7 +109,14 @@ static function OnBeforeRequest(oS: Session) {
 - 按下键盘 `Ctrl + s` 保存, 变绿  
 [![jUA1N.png](https://s1.328888.xyz/2022/08/04/jUA1N.png)](https://imgloc.com/i/jUA1N)  
 ## 五、开始游戏
-### 登录
+- 运行 `崩坏 星穹铁道`  
+- 开始游戏  
+- 所有的弹出窗口均点击 `yes`  
+[![jURty.png](https://s1.328888.xyz/2022/08/04/jURty.png)](https://imgloc.com/i/jURty)  
 - 密码为任意字符  
 [![jxavh.png](https://s1.328888.xyz/2022/08/04/jxavh.png)](https://imgloc.com/i/jxavh)  
 [![jx1bn.png](https://s1.328888.xyz/2022/08/04/jx1bn.png)](https://imgloc.com/i/jx1bn)
+
+## 参考链接
+[Moeyy - 崩坏星穹铁道私服搭建](https://moeyy.cn/2209)  
+[CrepeSR-Resources](https://github.com/memetrollsXD/CrepeSR-Resources)
