@@ -24,9 +24,9 @@ git log
 ## 4、尝试cherry-pick  
 ```bash
 # 单个commit
-git cheery-pick commit_id
+git cherry-pick commit_id
 # 多个commit
-git cheery-pick commit_id1 commit_id2 commit_id3 ...
+git cherry-pick commit_id1 commit_id2 commit_id3 ...
 ```
 ### 如果遇到冲突 需要解决冲突
 [![uI5h6.png](https://s1.328888.xyz/2022/08/06/uI5h6.png)](https://imgloc.com/i/uI5h6)  
