@@ -16,13 +16,12 @@ git fetch upstream
 git checkout -b pr1 upstream/master
 ```
 [![uICCB.png](https://s1.328888.xyz/2022/08/06/uICCB.png)](https://imgloc.com/i/uICCB)
-## cherry-pick
-- 找到commit记录id  
+## 3、找到commit记录id
 ```bash
 git log
 ``` 
 [![uV0km.png](https://s1.328888.xyz/2022/08/06/uV0km.png)](https://imgloc.com/i/uV0km)  
-## 3、尝试cherry-pick  
+## 4、尝试cherry-pick  
 ```bash
 # 单个commit
 git cheery-pick commit_id
@@ -47,12 +46,12 @@ git add .
 git cherry-pick --continue
 ```
 [![uVwui.png](https://s1.328888.xyz/2022/08/06/uVwui.png)](https://imgloc.com/i/uVwui)  
-## 4、推送分支到远端
+## 5、推送分支到远端
 ```bash
 git push upstream pr1
 ```
 此时, 上游仓库会多出一个pr1分支用于合并
-## 5、提交Pull Request(PR)
+## 6、提交Pull Request(PR)
 ### 创建PR
 1、源分支选择刚刚推送的 `pr1`, 目标分支 `master`  
 2、填写PR标题和说明  
