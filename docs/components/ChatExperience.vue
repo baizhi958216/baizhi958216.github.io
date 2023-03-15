@@ -1,14 +1,16 @@
 <template>
   <div class="container">
     <div class="result">
-      <div
-        class="chat"
-        v-for="(ri, index) in result"
-        :key="index"
-        :class="ri.role == 'a' ? 'chat_a' : 'chat_b'"
-      >
-        <div>
-          <div v-html="ri.message"></div>
+      <div class="chat_l">
+        <div
+          class="chat"
+          v-for="(ri, index) in result"
+          :key="index"
+          :class="ri.role == 'a' ? 'chat_a' : 'chat_b'"
+        >
+          <div>
+            <div v-html="ri.message"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -30,6 +32,7 @@ import { reactive, ref } from "vue";
 import MarkdownIt from "markdown-it";
 const mdi = new MarkdownIt();
 const chatipt = ref();
+
 let result = reactive([
   {
     role: "a",
@@ -82,6 +85,9 @@ const submit = async () => {
       });
       disable.value = false;
     });
+  document.querySelector(".result")!.scrollTop = document.querySelector(
+    ".result"
+  )!.scrollHeight as number;
 };
 </script>
 
@@ -93,25 +99,27 @@ const submit = async () => {
 .result {
   padding: 20px;
   line-height: 26px;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+.chat_l {
   display: flex;
   flex-direction: column;
-  overflow: scroll;
-  max-height: 70vh;
 }
 .chat {
   width: fit-content;
   padding: 10px;
   margin: 10px;
-  color: white;
   border-radius: 10px;
   max-width: 60%;
-  overflow: scroll;
+  overflow-y: visible;
+  overflow-x: scroll;
 }
 .chat_a {
-  background-color: #b288d6;
+  border: 1px solid #b288d6;
 }
 .chat_b {
-  background-color: #7075df;
+  border: 1px solid #7075df;
   align-self: flex-end;
 }
 .ipt {
