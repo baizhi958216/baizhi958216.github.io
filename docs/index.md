@@ -9,6 +9,7 @@ hero:
   text: 互联网开发文档
   tagline: 永远不要熄灭心中的火，哪怕别人只看见烟。
   image:
+    src: /baizhi958216.png
     alt:
   actions:
     - theme: brand

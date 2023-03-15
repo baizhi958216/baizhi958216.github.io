@@ -11,7 +11,12 @@
       </div>
     </div>
     <div class="ipt">
-      <input class="c_ipt" type="text" v-model="chatipt" />
+      <input
+        class="c_ipt"
+        type="text"
+        v-model="chatipt"
+        @keyup.enter="submit"
+      />
       <button @click="submit" class="submit">✈</button>
     </div>
   </div>
