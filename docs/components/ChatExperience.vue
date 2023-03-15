@@ -12,7 +12,7 @@
     </div>
     <div class="ipt">
       <input class="c_ipt" type="text" v-model="chatipt" />
-      <button @click="submit" class="submit">确定</button>
+      <button @click="submit" class="submit">✈</button>
     </div>
   </div>
 </template>
@@ -58,18 +58,6 @@ const submit = async () => {
 </script>
 
 <style scoped>
-.chat {
-  background-color: black;
-  width: fit-content;
-  padding: 10px;
-  margin: 10px;
-  color: white;
-  border-radius: 10px;
-  max-width: 60%;
-}
-.chat_b {
-  align-self: flex-end;
-}
 .container {
   border: 1px solid gray;
   border-radius: 20px;
@@ -80,28 +68,39 @@ const submit = async () => {
   display: flex;
   flex-direction: column;
   overflow: scroll;
-  max-height: 80vh;
+  max-height: 70vh;
+}
+.chat {
+  width: fit-content;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  border-radius: 10px;
+  max-width: 60%;
+}
+.chat_a {
+  background-color: #843dc1;
+}
+.chat_b {
+  background-color: #7075df;
+  align-self: flex-end;
 }
 .ipt {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 .c_ipt {
   border: 1px solid gray;
   height: 40px;
-  width: 300px;
+  width: 80%;
   border-radius: 10px;
-  padding-left: 20px;
+  padding: 0 20px;
 }
 .submit {
-  background-color: white;
-  border: 1px solid gray;
-  color: black;
-  outline: none;
-  padding: 8px 30px;
+  border: none;
   margin: 20px;
-  border-radius: 20px;
+  font-size: 20px;
 }
 </style>
