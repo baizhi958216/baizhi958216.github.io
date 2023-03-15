@@ -16,7 +16,7 @@ hero:
       link: /
     - theme: alt
       text: Chat Start
-      link: /
+      link: /chat.md
 
 features:
   - title: 🔗
