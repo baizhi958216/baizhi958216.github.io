@@ -12,12 +12,13 @@
     </div>
     <div class="ipt">
       <input
+        :disabled="disable"
         class="c_ipt"
         type="text"
         v-model="chatipt"
         @keyup.enter="submit"
       />
-      <button @click="submit" class="submit">✈</button>
+      <button @click="submit" :disabled="disable" class="submit">✈</button>
     </div>
   </div>
 </template>
@@ -33,6 +34,23 @@ let result = reactive([
   },
 ]);
 
+const disable = ref(false);
+
+fetch(
+  "https://baizhi958216-literate-goggles-qp4p6v44g55f6697-3000.preview.app.github.dev"
+)
+  .then((res) => {
+    if (res.status !== 200) {
+      disable.value = true;
+    }
+  })
+  .catch((err) => {
+    if (err) {
+      disable.value = true;
+      result[0].message = "当阁下看到这条消息的时候说明咱的服务器关机了(●ˇ∀ˇ●)";
+    }
+  });
+
 const submit = async () => {
   result.push({
     role: "b",
@@ -40,6 +58,7 @@ const submit = async () => {
   });
   const ipttmp = chatipt.value;
   chatipt.value = "";
+  disable.value = true;
   await fetch(
     "https://baizhi958216-literate-goggles-qp4p6v44g55f6697-3000.preview.app.github.dev/api/chat/chatgpt",
     {
@@ -58,6 +77,7 @@ const submit = async () => {
         role: "a",
         message: data,
       });
+      disable.value = false;
     });
 };
 </script>
@@ -84,7 +104,7 @@ const submit = async () => {
   max-width: 60%;
 }
 .chat_a {
-  background-color: #843dc1;
+  background-color: #b288d6;
 }
 .chat_b {
   background-color: #7075df;
