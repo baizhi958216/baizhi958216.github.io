@@ -1,6 +1,6 @@
+# node_modules
+node_modules
+
 # vitepress
 .vitepress/dist
 .vitepress/cache
-
-# node_modules
-node_modules

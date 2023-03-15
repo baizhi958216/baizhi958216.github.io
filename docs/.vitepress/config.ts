@@ -1,7 +1,12 @@
 import { defineConfig } from "vitepress";
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "(o゜▽゜)o☆",
-  description: "baizhi958216",
+  lang: "zh-cn",
+  title: "纸儿",
+  description: "baizhi958216 互联网开发笔记",
+  themeConfig: {
+    nav: [{ text: "首页", link: "/" }],
+
+    socialLinks: [{ icon: "github", link: "https://github.com/baizhi958216" }],
+  },
 });
