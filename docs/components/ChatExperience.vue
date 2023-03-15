@@ -87,9 +87,9 @@ const submit = async () => {
 }
 .ipt {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
+  padding: 20px;
 }
 .c_ipt {
   border: 1px solid gray;
@@ -100,7 +100,6 @@ const submit = async () => {
 }
 .submit {
   border: none;
-  margin: 20px;
   font-size: 20px;
 }
 </style>
