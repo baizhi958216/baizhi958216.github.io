@@ -7,7 +7,9 @@
         :key="index"
         :class="ri.role == 'a' ? 'chat_a' : 'chat_b'"
       >
-        <div>{{ ri.message }}</div>
+        <div>
+          <div v-html="ri.message"></div>
+        </div>
       </div>
     </div>
     <div class="ipt">
@@ -25,12 +27,13 @@
 
 <script setup lang="ts">
 import { reactive, ref } from "vue";
-
+import MarkdownIt from "markdown-it";
+const mdi = new MarkdownIt();
 const chatipt = ref();
 let result = reactive([
   {
     role: "a",
-    message: "喵喵喵？",
+    message: "喵喵喵?",
   },
 ]);
 
@@ -75,7 +78,7 @@ const submit = async () => {
     .then((data) => {
       result.push({
         role: "a",
-        message: data,
+        message: mdi.render(data),
       });
       disable.value = false;
     });
@@ -102,6 +105,7 @@ const submit = async () => {
   color: white;
   border-radius: 10px;
   max-width: 60%;
+  overflow: scroll;
 }
 .chat_a {
   background-color: #b288d6;
