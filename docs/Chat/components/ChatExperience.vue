@@ -36,18 +36,20 @@ const chatipt = ref();
 let result = reactive([
   {
     role: "a",
-    message: "喵喵喵?",
+    message: "",
   },
 ]);
 
-const disable = ref(false);
+const disable = ref(true);
 
-fetch(
-  "https://baizhi958216-literate-goggles-qp4p6v44g55f6697-3000.preview.app.github.dev"
-)
+fetch("http://localhost:3000")
   .then((res) => {
     if (res.status !== 200) {
       disable.value = true;
+      result[0].message = "当阁下看到这条消息的时候说明咱的服务器关机了(●ˇ∀ˇ●)";
+    } else {
+      disable.value = false;
+      result[0].message = "喵喵喵？";
     }
   })
   .catch((err) => {
@@ -65,18 +67,15 @@ const submit = async () => {
   const ipttmp = chatipt.value;
   chatipt.value = "";
   disable.value = true;
-  await fetch(
-    "https://baizhi958216-literate-goggles-qp4p6v44g55f6697-3000.preview.app.github.dev/api/chat/chatgpt",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        inMessage: ipttmp,
-      }),
-    }
-  )
+  await fetch("http://localhost:3000/api/chat/chatgpt", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      inMessage: ipttmp,
+    }),
+  })
     .then((res) => res.text())
     .then((data) => {
       result.push({

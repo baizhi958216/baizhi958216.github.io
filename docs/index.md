@@ -13,11 +13,8 @@ hero:
     alt:
   actions:
     - theme: brand
-      text: 所有文档
-      link: /
-    - theme: alt
-      text: Chat Start
-      link: /chat.md
+      text: 全部文档
+      link: /AllDocs/
 
 features:
   - title: 🔗
