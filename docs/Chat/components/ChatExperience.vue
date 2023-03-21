@@ -10,6 +10,9 @@
         >
           <div>
             <div v-html="ri.message"></div>
+            <audio style="width: 100%" v-if="ri.wav" controls preload="auto">
+              <source :src="ri.wav" />
+            </audio>
           </div>
         </div>
       </div>
@@ -33,7 +36,13 @@ import MarkdownIt from "markdown-it";
 const mdi = new MarkdownIt();
 const chatipt = ref();
 
-let result = reactive([
+let result = reactive<
+  Array<{
+    role: string;
+    message: string;
+    wav?: string;
+  }>
+>([
   {
     role: "a",
     message: "",
@@ -76,11 +85,13 @@ const submit = async () => {
       inMessage: ipttmp,
     }),
   })
-    .then((res) => res.text())
+    .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       result.push({
         role: "a",
-        message: mdi.render(data),
+        message: mdi.render(data.message),
+        wav: `http://localhost:3000/${data.wav}`,
       });
       disable.value = false;
     });
