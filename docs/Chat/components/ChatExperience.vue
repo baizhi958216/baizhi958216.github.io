@@ -10,9 +10,7 @@
         >
           <div>
             <div v-html="ri.message"></div>
-            <audio style="width: 100%" v-if="ri.wav" controls preload="auto">
-              <source :src="ri.wav" />
-            </audio>
+            <div class="audio" @click="play(ri.wav!)" v-if="ri.wav">🔊</div>
           </div>
         </div>
       </div>
@@ -87,7 +85,6 @@ const submit = async () => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       result.push({
         role: "a",
         message: mdi.render(data.message),
@@ -98,6 +95,10 @@ const submit = async () => {
   document.querySelector(".result")!.scrollTop = document.querySelector(
     ".result"
   )!.scrollHeight as number;
+};
+
+const play = (src: string) => {
+  new Audio(src).play();
 };
 </script>
 
@@ -148,5 +149,16 @@ const submit = async () => {
 .submit {
   border: none;
   font-size: 20px;
+}
+.audio {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 </style>
