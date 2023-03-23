@@ -16,7 +16,7 @@ export default defineConfig({
     sidebar: sidebar(),
     editLink: {
       pattern:
-        "https://github.com/baizhi958216/baizhi958216/edit/vitepress/docs/:path",
+        "https://github.com/baizhi958216/baizhi958216.github.io/edit/vitepress/docs/:path",
       text: "在GitHub上编辑该文档",
     },
     socialLinks: [{ icon: "github", link: "https://github.com/baizhi958216" }],
