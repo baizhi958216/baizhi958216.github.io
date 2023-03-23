@@ -5,6 +5,10 @@ function sidebarFrontend() {
     { text: "求多次prompt输入之和", link: "/AllDocs/Frontend/multiprompt" },
     { text: "数组去重", link: "/AllDocs/Frontend/uniquearray" },
     { text: "统计数组中元素出现的次数", link: "/AllDocs/Frontend/count" },
+    {
+      text: "Github Page部署VitePress",
+      link: "/AllDocs/Frontend/VitePress/deploy",
+    },
   ];
 }
 export { sidebarFrontend };
