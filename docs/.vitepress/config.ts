@@ -5,6 +5,7 @@ import { sidebarFrontend } from "../AllDocs/Frontend/Frontend";
 import { sidebarLinux } from "../AllDocs/Linux/Linux";
 
 export default defineConfig({
+  base: "/",
   lang: "zh-CN",
   title: "纸儿",
   lastUpdated: true,
