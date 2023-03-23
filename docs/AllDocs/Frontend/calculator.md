@@ -56,7 +56,7 @@ while (true) {
       continue;
   }
   const strOperator = ["+", "-", "x", "÷"];
-  alert(`${num1}${strOperator[operator]}${num2}=${result}`);
+  alert(`${num1}${strOperator[operator - 1]}${num2}=${result}`);
 }
 alert("程序已退出！");
 ```

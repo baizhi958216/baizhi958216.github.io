@@ -1,4 +1,4 @@
-function sidebarFrontend() {
+function sidebarFrontend(): Array<{ text: string; link: string }> {
   return [
     { text: "Frontend", link: "/AllDocs/Frontend/" },
     { text: "JS实现简易计算器", link: "/AllDocs/Frontend/calculator" },
@@ -9,6 +9,7 @@ function sidebarFrontend() {
       text: "Github Page部署VitePress",
       link: "/AllDocs/Frontend/VitePress/deploy",
     },
+    { text: "TypeScript5正式发布", link: "/AllDocs/Frontend/ts5" },
   ];
 }
 export { sidebarFrontend };
