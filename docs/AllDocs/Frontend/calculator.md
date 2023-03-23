@@ -31,10 +31,8 @@ while (true) {
     `)
   );
   if (!input || input == 5) break;
-  if (num1 == null) {
-    num1 = parseFloat(prompt("请输入第一个数字："));
-  }
   operator = input;
+  num1 = parseFloat(prompt("请输入第一个数字："));
   num2 = parseFloat(prompt("请输入第二个数字："));
   switch (operator) {
     case 1:
