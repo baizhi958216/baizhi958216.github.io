@@ -3,6 +3,7 @@ import { sidebarBackend } from "../AllDocs/Backend/Backend";
 import { sidebarDocker } from "../AllDocs/Docker/Docker";
 import { sidebarFrontend } from "../AllDocs/Frontend/Frontend";
 import { sidebarLinux } from "../AllDocs/Linux/Linux";
+import { sidebarNodeJSHomework } from "../AllDocs/NodeJSHomework/NodeJSHomework";
 
 export default defineConfig({
   base: "/",
@@ -64,6 +65,11 @@ function sidebar() {
         text: "Linux",
         collapsed: true,
         items: sidebarLinux(),
+      },
+      {
+        text: "NodeJS 作业",
+        collapsed: true,
+        items: sidebarNodeJSHomework(),
       },
     ],
     "/Chat/": [],
