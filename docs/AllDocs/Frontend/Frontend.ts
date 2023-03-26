@@ -10,6 +10,7 @@ function sidebarFrontend(): Array<{ text: string; link: string }> {
       link: "/AllDocs/Frontend/VitePress/deploy",
     },
     { text: "TypeScript5正式发布", link: "/AllDocs/Frontend/ts5" },
+    { text: "实现一个简易版的虚拟DOM", link: "/AllDocs/Frontend/virtualdom" },
   ];
 }
 export { sidebarFrontend };
