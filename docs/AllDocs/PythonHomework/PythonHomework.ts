@@ -30,6 +30,10 @@ function sidebarPythonHomework() {
       text: "时间差之天数计算",
       link: "/AllDocs/PythonHomework/daystimecal",
     },
+    {
+      text: "凯撒密码——加密",
+      link: "/AllDocs/PythonHomework/caesarcipher",
+    },
   ];
 }
 export { sidebarPythonHomework };
