@@ -27,14 +27,16 @@
 ## 代码
 
 ```python
-try:
-    x = float(eval(input()))
-    s = (1/x)**x
-    print("{:.4f}".format(s))
-except ValueError:
-    print("请输入数字")
-except ArithmeticError:
-    print("运算异常")
-except:
-    print("请输入数字")
+import re;
+import datetime
+a,b=input().split(',')
+a1 = re.findall("\d+",a)
+b1 = re.findall("\d+",b)
+d1 = datetime.datetime(int(a1[0]),int(a1[1]),int(a1[2]))
+d2 = datetime.datetime(int(b1[0]),int(b1[1]),int(b1[2]))
+day = d1 - d2
+if a1[0]=='1980':
+    print(int(re.findall("\d+",str(day))[0])-1)
+else:
+    print(re.findall("\d+",str(day))[0])
 ```
