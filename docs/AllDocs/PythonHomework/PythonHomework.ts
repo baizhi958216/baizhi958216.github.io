@@ -22,6 +22,14 @@ function sidebarPythonHomework() {
       text: "存款买房（C）",
       link: "/AllDocs/PythonHomework/purchasehouse",
     },
+    {
+      text: "稳定的计算程序",
+      link: "/AllDocs/PythonHomework/stablecal",
+    },
+    {
+      text: "时间差之天数计算",
+      link: "/AllDocs/PythonHomework/daystimecal",
+    },
   ];
 }
 export { sidebarPythonHomework };
