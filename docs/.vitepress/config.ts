@@ -5,6 +5,9 @@ import { sidebarFrontend } from "../AllDocs/Frontend/Frontend";
 import { sidebarLinux } from "../AllDocs/Linux/Linux";
 import { sidebarNodeJSHomework } from "../AllDocs/NodeJSHomework/NodeJSHomework";
 import { sidebarPythonHomework } from "../AllDocs/PythonHomework/PythonHomework";
+import { Header } from "../YunBase/Header";
+import { Navbar } from "../YunBase/Navbar";
+import { YBase } from "../YunBase/YBase";
 
 export default defineConfig({
   base: "/",
@@ -36,6 +39,11 @@ function nav() {
       text: "全部文档",
       link: "/AllDocs/",
       activeMatch: "/AllDocs/",
+    },
+    {
+      text: "Yun组件文档",
+      link: "/YunBase/",
+      activeMatch: "/YunBase/",
     },
     { text: "Chat", link: "/Chat/", activeMatch: "/Chat/" },
   ];
@@ -79,5 +87,22 @@ function sidebar() {
       },
     ],
     "/Chat/": [],
+    "/YunBase/": [
+      {
+        text: "顶部菜单 Header",
+        collapsed: true,
+        items: Header(),
+      },
+      {
+        text: "基础组件",
+        collapsed: false,
+        items: YBase(),
+      },
+      {
+        text: "底部导航 Navbar",
+        collapsed: true,
+        items: Navbar(),
+      },
+    ],
   };
 }
