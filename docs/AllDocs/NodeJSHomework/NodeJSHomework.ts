@@ -7,6 +7,10 @@ function sidebarNodeJSHomework() {
     },
     { text: "数组去重", link: "/AllDocs/NodeJSHomework/uniquearray" },
     { text: "统计数组中元素出现的次数", link: "/AllDocs/NodeJSHomework/count" },
+    {
+      text: "商城网站购物车实现",
+      link: "/AllDocs/NodeJSHomework/shoppingcart",
+    },
   ];
 }
 export { sidebarNodeJSHomework };
