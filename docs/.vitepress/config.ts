@@ -8,6 +8,8 @@ import { sidebarPythonHomework } from "../AllDocs/PythonHomework/PythonHomework"
 import { Header } from "../YunBase/Header";
 import { Navbar } from "../YunBase/Navbar";
 import { YBase } from "../YunBase/YBase";
+import { Standard } from "../YunDoc/Standard";
+import { Interface } from "../YunDoc/Interface";
 
 export default defineConfig({
   base: "/",
@@ -41,9 +43,14 @@ function nav() {
       activeMatch: "/AllDocs/",
     },
     {
-      text: "Yun组件文档",
+      text: "Yun振兴前端组件文档",
       link: "/YunBase/",
       activeMatch: "/YunBase/",
+    },
+    {
+      text: "Yun振兴前端开发文档",
+      link: "/YunDoc/",
+      activeMatch: "/YunDoc/",
     },
     { text: "Chat", link: "/Chat/", activeMatch: "/Chat/" },
   ];
@@ -102,6 +109,22 @@ function sidebar() {
         text: "底部导航 Navbar",
         collapsed: true,
         items: Navbar(),
+      },
+    ],
+    "/YunDoc/": [
+      {
+        text: "概述",
+        link: "/YunDoc/",
+      },
+      {
+        text: "规范文档",
+        collapsed: false,
+        items: Standard(),
+      },
+      {
+        text: "各页面接口文档",
+        collapsed: false,
+        items: Interface(),
       },
     ],
   };
