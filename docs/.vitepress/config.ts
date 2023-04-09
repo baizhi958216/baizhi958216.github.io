@@ -10,6 +10,7 @@ import { Navbar } from "../YunBase/Navbar";
 import { YBase } from "../YunBase/YBase";
 import { Standard } from "../YunDoc/Standard";
 import { Interface } from "../YunDoc/Interface";
+import VueNotes from "../AllDocs/VueNotes";
 
 export default defineConfig({
   base: "/",
@@ -71,6 +72,11 @@ function sidebar() {
         text: "前端",
         collapsed: true,
         items: sidebarFrontend(),
+      },
+      {
+        text: "Vue3 学习笔记",
+        collapsed: true,
+        items: VueNotes,
       },
       {
         text: "Docker",
