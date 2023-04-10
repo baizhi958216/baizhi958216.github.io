@@ -8,14 +8,15 @@
 
 ## 装饰器(Decorators)
 
-:::tip
-也就是 JAVA 人常说的`注解`
-:::
+:::tip 也就是 JAVA 人常说的`注解`
 
+:::
+:::tip 需要在`tsconfig.json`打开`experimentalDecorators`
+
+:::
 装饰器以非侵入方式增强`类`、`方法`、`访问器`、`属性`、`参数`的能力, 将业务/服务/工具等代码进行分割, 是一个即将到来的 ECMAScript 新特性。
 
-ECMAScript 新特性的产生
-:::details
+:::details ECMAScript 新特性的产生
 
 [The TC39 Process](https://tc39.es/process-document/)
 
@@ -26,3 +27,105 @@ ECMAScript 新特性的产生
 - 完成（Finish），该提案会出现在正式的规范文档中，并在下一个版本的 ES 中正式支持。
 
 :::
+
+简单的方法装饰器
+
+```ts
+class Chat {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  @Login // [!code focus]
+  apply() {
+    console.log(`${this.name}申请进入聊天`);
+  }
+}
+
+function Login(originalMethod: any, context: ClassMethodDecoratorContext) {
+  return function replacementMethod(this: any, ...args: any[]) {
+    return originalMethod.call(this, ...args);
+  };
+}
+new Chat("baizhi958216").apply();
+```
+
+带上参数(也叫做装饰器工厂)
+
+```ts
+class Chat {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  @Login("不准") // [!code focus]
+  apply() {
+    console.log(`${this.name}申请进入聊天`);
+  }
+}
+
+function Login(message: string) {
+  return (originalMethod: any, context: ClassMethodDecoratorContext) => {
+    return function replacementMethod(this: any, ...args: any[]) {
+      this.name = message;
+      return originalMethod.call(this, ...args);
+    };
+  };
+}
+new Chat("baizhi958216").apply();
+```
+
+类装饰器
+
+```ts
+const Base: ClassDecorator = (target: Function) => {
+  target.prototype.a = "param a";
+  target.prototype.b = () => {
+    console.log("function b");
+  };
+};
+@Base // [!code focus]
+class Http {}
+const http = new Http() as any;
+http.b();
+console.log(http.a);
+```
+
+访问器装饰器(get/set)
+
+```ts
+function uppercase(target: any, name: any, desc: any) {
+  return {
+    enumerable: false,
+    configurable: false,
+    get: function () {
+      return desc.get.call(this).toUpperCase(); // [!code focus]
+    },
+    set: function (name: string) {
+      desc.set.call(this, name);
+    },
+  };
+}
+
+class Message {
+  constructor(public message: string) {}
+
+  // 获取消息时进行uppercase // [!code focus]
+  @uppercase
+  get fullname(): string {
+    return this.message;
+  }
+
+  set fullname(message: string) {
+    this.message = message;
+  }
+}
+
+var m = new Message("message");
+console.log(m.message);
+console.log(m.fullname);
+```
+
+属性装饰器
