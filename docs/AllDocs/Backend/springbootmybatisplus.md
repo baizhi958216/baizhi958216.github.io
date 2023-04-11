@@ -24,12 +24,12 @@ CREATE TABLE user (
 <dependency>
     <groupId>com.baomidou</groupId>
     <artifactId>mybatis-plus-boot-starter</artifactId>
-    <version>3.4.3.1</version>
+    <version>3.5.3.1</version>
 </dependency>
 <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
-    <version>8.0.26</version>
+    <version>8.0.32</version>
 </dependency>
 ```
 
