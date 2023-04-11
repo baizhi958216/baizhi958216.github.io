@@ -9,6 +9,10 @@ function sidebarBackend() {
       text: "SpringBoot添加RESTful服务",
       link: "/AllDocs/Backend/springbootrest",
     },
+    {
+      text: "配置国内 Maven 镜像源",
+      link: "/AllDocs/Backend/mavenrepository.md",
+    },
   ];
 }
 export { sidebarBackend };
