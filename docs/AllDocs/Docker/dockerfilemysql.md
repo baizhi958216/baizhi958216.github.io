@@ -94,3 +94,9 @@ docker run -d -p 3306:3306 --name mysql-shop mysql-shop
 `-p` 选项将容器的 3306 端口映射到宿主机的 3306 端口上
 
 `--name` 选项指定了容器的名称。
+
+## 进入 MySQL 容器的 bash 终端
+
+```bash
+docker exec -it mysql-shop bash
+```
