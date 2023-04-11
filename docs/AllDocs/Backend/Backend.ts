@@ -11,7 +11,11 @@ function sidebarBackend() {
     },
     {
       text: "配置国内 Maven 镜像源",
-      link: "/AllDocs/Backend/mavenrepository.md",
+      link: "/AllDocs/Backend/mavenrepository",
+    },
+    {
+      text: "SpringBoot配置MyBatis-Plus",
+      link: "/AllDocs/Backend/springbootmybatisplus",
     },
   ];
 }
