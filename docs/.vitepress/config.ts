@@ -11,6 +11,7 @@ import { YBase } from "../YunBase/YBase";
 import { Standard } from "../YunDoc/Standard";
 import { Interface } from "../YunDoc/Interface";
 import VueNotes from "../AllDocs/VueNotes";
+import { NestJS } from "../AllDocs/NestJS";
 
 export default defineConfig({
   base: "/",
@@ -64,29 +65,34 @@ function sidebar() {
   return {
     "/AllDocs/": [
       {
+        text: "NestJS",
+        collapsed: false,
+        items: NestJS(),
+      },
+      {
         text: "SpringBoot",
-        collapsed: true,
+        collapsed: false,
         items: SpringBoot(),
       },
       {
         text: "前端",
-        collapsed: true,
+        collapsed: false,
         items: sidebarFrontend(),
+      },
+      {
+        text: "Docker",
+        collapsed: false,
+        items: sidebarDocker(),
+      },
+      {
+        text: "Linux",
+        collapsed: false,
+        items: sidebarLinux(),
       },
       {
         text: "Vue3 学习笔记",
         collapsed: true,
         items: VueNotes,
-      },
-      {
-        text: "Docker",
-        collapsed: true,
-        items: sidebarDocker(),
-      },
-      {
-        text: "Linux",
-        collapsed: true,
-        items: sidebarLinux(),
       },
       {
         text: "NodeJS 作业",
