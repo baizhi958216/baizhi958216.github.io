@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import { sidebarBackend } from "../AllDocs/Backend/Backend";
+import { SpringBoot } from "../AllDocs/SpringBoot";
 import { sidebarDocker } from "../AllDocs/Docker/Docker";
 import { sidebarFrontend } from "../AllDocs/Frontend/Frontend";
 import { sidebarLinux } from "../AllDocs/Linux/Linux";
@@ -64,9 +64,9 @@ function sidebar() {
   return {
     "/AllDocs/": [
       {
-        text: "后端",
+        text: "SpringBoot",
         collapsed: true,
-        items: sidebarBackend(),
+        items: SpringBoot(),
       },
       {
         text: "前端",
