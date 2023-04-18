@@ -91,3 +91,27 @@ service httpd restart
 ## 验证
 
 ![validate](./tencentcloud/validate.png)
+
+## html 模板
+
+```html
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>白云白金瀚!</title>
+  </head>
+  <body>
+    <h1>整个**一半姓高</h1>
+    <ul>
+      <li><a href="">高启辉</a></li>
+      <li><a href="">高启生</a></li>
+      <li><a href="">高启萌</a></li>
+      <li><a href="">高启聪</a></li>
+      <li><a href="">高启扬</a></li>
+      <li><a href="">高启静</a></li>
+    </ul>
+  </body>
+</html>
+```
