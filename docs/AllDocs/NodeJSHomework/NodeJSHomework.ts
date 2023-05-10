@@ -11,6 +11,10 @@ function sidebarNodeJSHomework() {
       text: "商城网站购物车实现",
       link: "/AllDocs/NodeJSHomework/shoppingcart",
     },
+    {
+      text: "MySQL实战演练",
+      link: "/AllDocs/NodeJSHomework/mysql",
+    },
   ];
 }
 export { sidebarNodeJSHomework };
