@@ -972,7 +972,7 @@ export const routes: {
 
 ## 启动服务器
 
-`app.ts`
+- 编辑 `app.ts`
 
 ```ts
 import { log } from "console";
@@ -1005,3 +1005,5 @@ createServer((req, res) => {
   );
 });
 ```
+
+- 运行 `pnpm start`
