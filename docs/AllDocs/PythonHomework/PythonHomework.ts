@@ -34,6 +34,10 @@ function sidebarPythonHomework() {
       text: "凯撒密码——加密",
       link: "/AllDocs/PythonHomework/caesarcipher",
     },
+    {
+      text: "统计文件中的字符",
+      link: "/AllDocs/PythonHomework/charcount",
+    },
   ];
 }
 export { sidebarPythonHomework };
