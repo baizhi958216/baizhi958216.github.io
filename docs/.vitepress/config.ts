@@ -43,7 +43,7 @@ function nav() {
       text: "全部文档",
       link: "/AllDocs/",
       activeMatch: "/AllDocs/",
-    },
+    } /* 
     {
       text: "Yun振兴前端组件文档",
       link: "/YunBase/",
@@ -53,7 +53,7 @@ function nav() {
       text: "Yun振兴前端开发文档",
       link: "/YunDoc/",
       activeMatch: "/YunDoc/",
-    },
+    }, */,
     { text: "Chat", link: "/Chat/", activeMatch: "/Chat/" },
   ];
 }
@@ -65,28 +65,28 @@ function sidebar() {
   return {
     "/AllDocs/": [
       {
+        text: "前端",
+        collapsed: true,
+        items: sidebarFrontend(),
+      },
+      {
         text: "NestJS",
-        collapsed: false,
+        collapsed: true,
         items: NestJS(),
       },
       {
         text: "SpringBoot",
-        collapsed: false,
+        collapsed: true,
         items: SpringBoot(),
       },
       {
-        text: "前端",
-        collapsed: false,
-        items: sidebarFrontend(),
-      },
-      {
         text: "Docker",
-        collapsed: false,
+        collapsed: true,
         items: sidebarDocker(),
       },
       {
         text: "Linux",
-        collapsed: false,
+        collapsed: true,
         items: sidebarLinux(),
       },
       {
@@ -95,12 +95,12 @@ function sidebar() {
         items: VueNotes,
       },
       {
-        text: "NodeJS 作业",
+        text: "NodeJS",
         collapsed: true,
         items: sidebarNodeJSHomework(),
       },
       {
-        text: "Python 作业",
+        text: "Python",
         collapsed: true,
         items: sidebarPythonHomework(),
       },
@@ -123,7 +123,7 @@ function sidebar() {
         items: Navbar(),
       },
     ],
-    "/YunDoc/": [
+    /*  "/YunDoc/": [
       {
         text: "概述",
         link: "/YunDoc/",
@@ -138,6 +138,6 @@ function sidebar() {
         collapsed: false,
         items: Interface(),
       },
-    ],
+    ], */
   };
 }
