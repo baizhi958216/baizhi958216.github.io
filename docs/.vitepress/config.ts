@@ -5,13 +5,9 @@ import { sidebarFrontend } from "../AllDocs/Frontend/Frontend";
 import { sidebarLinux } from "../AllDocs/Linux/Linux";
 import { sidebarNodeJSHomework } from "../AllDocs/NodeJSHomework/NodeJSHomework";
 import { sidebarPythonHomework } from "../AllDocs/PythonHomework/PythonHomework";
-import { Header } from "../YunBase/Header";
-import { Navbar } from "../YunBase/Navbar";
-import { YBase } from "../YunBase/YBase";
-import { Standard } from "../YunDoc/Standard";
-import { Interface } from "../YunDoc/Interface";
 import VueNotes from "../AllDocs/VueNotes";
 import { NestJS } from "../AllDocs/NestJS";
+import { sidebarInterview } from "../AllDocs/Interview";
 
 export default defineConfig({
   base: "/",
@@ -70,6 +66,11 @@ function sidebar() {
         items: sidebarFrontend(),
       },
       {
+        text: "前端面试",
+        collapsed: true,
+        items: sidebarInterview(),
+      },
+      {
         text: "NestJS",
         collapsed: true,
         items: NestJS(),
@@ -106,7 +107,7 @@ function sidebar() {
       },
     ],
     "/Chat/": [],
-    "/YunBase/": [
+    /* "/YunBase/": [
       {
         text: "顶部菜单 Header",
         collapsed: true,
@@ -122,7 +123,7 @@ function sidebar() {
         collapsed: true,
         items: Navbar(),
       },
-    ],
+    ], */
     /*  "/YunDoc/": [
       {
         text: "概述",
