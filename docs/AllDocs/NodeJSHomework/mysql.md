@@ -12,6 +12,12 @@
 
 ![mysqlresult](./imgs/mysqlresult.png)
 
+## 参考代码
+
+::: tip 参考代码
+https://github.com/baizhi958216/NodeJS_XML/tree/nodejs_sql_realexerc
+:::
+
 ## 步骤分析
 
 1. 新建项目
