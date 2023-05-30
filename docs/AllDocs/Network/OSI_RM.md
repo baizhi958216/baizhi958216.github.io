@@ -82,6 +82,18 @@ OSI 模型在 ISO/IEC 7498 中定义，它由以下部分组成：
 ISO/IEC 7498-1 也作为 ITU-T Recommendation X.200 发布。
 :::
 
+## [对应协议](https://en.wikipedia.org/wiki/OSI_model#Comparison_to_other_networking_suites)
+
+| OSI Layer  |                                      OSI protocols                                      |            TCP/IP protocols |
+| ---------- | :-------------------------------------------------------------------------------------: | --------------------------: |
+| 应用层     |                        FTAM X.400 X.500 DAP ROSE RTSE ACSE CMIP                         |         HTTP HTTPS FTP SMTP |
+| 表示层     |                         ISO/IEC 8823 X.266 ISO/IEC 9576-1 X.236                         |            MIME SSL/TLS XDR |
+| 会话层     |                         ISO/IEC 8327 X.255 ISO/IEC 9548-1 X.235                         |         Socket TCP/RTP/PPTP |
+| 传输层     |               ISO/IEC 8073 TP0 TP1 TP2 TP3 TP4(X.224) ISO/IEC 8602 X.234                |           TCP UDP SCTP DCCP |
+| 网络层     | ISO/IEC 8208 X.25(PLP) ISO/IEC 8878 X.223 ISO/IEC 8473-1 CLNP X.233 ISO/IEC 10589 IS-IS | IP IPsec ICMP IGMP OSPF RIP |
+| 数据链路层 |          ISO/IEC 7666 X.25(LAPB) Token Bus X.222 ISO/IEC 8802-2 LLC(type 1/2)           |               PPP SBTV SLIP |
+| 物理层     |                     X.25(X.21bisEIA/TIA-232EIA/TIA-449EIA-530G.703)                     |                           / |
+
 ## 第一层: 物理层 [Physical layer](https://en.wikipedia.org/wiki/OSI_model#Layer_1:_Physical_layer)
 
 物理层是直接和物理介质打交道的。
