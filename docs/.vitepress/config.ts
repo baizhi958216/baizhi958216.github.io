@@ -8,6 +8,7 @@ import { sidebarPythonHomework } from "../AllDocs/PythonHomework/PythonHomework"
 import VueNotes from "../AllDocs/VueNotes";
 import { NestJS } from "../AllDocs/NestJS";
 import { sidebarInterview } from "../AllDocs/Interview";
+import Network from "../AllDocs/Network";
 
 export default defineConfig({
   base: "/",
@@ -89,6 +90,11 @@ function sidebar() {
         text: "Linux",
         collapsed: true,
         items: sidebarLinux(),
+      },
+      {
+        text: "计算机网络",
+        collapsed: true,
+        items: Network,
       },
       {
         text: "Vue3 学习笔记",
