@@ -511,15 +511,22 @@ Object.isFrozen(person); //[!code focus]
 
 创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。
 
+:::tip 语法
+function.bind(thisArg[, arg1[, arg2[, ...]]])
+
+thisArg 是绑定到新函数的 this 关键字的值，arg1、arg2 等是附加到新函数的参数。
+:::
+
 ```js
 const obj = {
   name: "baizhi958216",
-  getName: function () {
-    return this.name;
+  getName: function (greeting) {
+    return `${greeting},${this.name}`;
   },
 };
 
-const boundGetName = obj.getName.bind(obj);
+const boundGetName = obj.getName.bind(obj, "Hello"); //[!code focus]
+boundGetName();
 ```
 
 ## 数组和对象字面量中的尾随逗号
