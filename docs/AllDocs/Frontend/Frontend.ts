@@ -17,6 +17,7 @@ function sidebarFrontend(): Array<{ text: string; link: string }> {
     { text: "TypeScript5正式发布", link: "/AllDocs/Frontend/ts5" },
     { text: "实现一个简易版的虚拟DOM", link: "/AllDocs/Frontend/virtualdom" },
     { text: "让对象也可以解构", link: "/AllDocs/Frontend/objiterator" },
+    { text: "实现HashMap", link: "/AllDocs/Frontend/hashmap" },
   ];
 }
 export { sidebarFrontend };
