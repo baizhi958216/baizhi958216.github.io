@@ -2,24 +2,135 @@
 
 ## 特性一览
 
+- [模板字符串](#模板字符串)
+- [对象相关扩展](#对象相关扩展)
+- [2 进制和 8 进制的字面量语法](#_2-进制和-8-进制的字面量语法)
 - [let 关键字](#let-关键字)
 - [const 关键字](#const-关键字)
+- [Symbol](#symbol)
 - [箭头函数](#箭头函数)
-- [解构赋值](#解构赋值)
+- [函数参数默认值](#函数参数默认值)
+- [函数剩余参数](#函数剩余参数)
+- [生成器和迭代器](#生成器和迭代器)
 - [For...of 循环](#for-of-循环)
+- [模块化](#模块化)
+- [解构赋值](#解构赋值)
 - [Map 对象](#map-对象)
 - [Set 对象](#set-对象)
 - [类](#类)
-- [Promises 对象](#promises-对象)
-- [Symbol](#symbol)
-- [函数参数默认值](#函数参数默认值)
-- [函数剩余参数](#函数剩余参数)
+- [Promises](#promises)
+- [Proxy](#proxy)
+- [Reflection](#reflection)
+- [新的全局方法](#新的全局方法)
 - [新的字符串相关方法](#新的字符串相关方法)
 - [新的数组相关方法](#新的数组相关方法)
 - [新的 Math 相关方法](#新的-math-相关方法)
 - [新的 Number 相关属性和方法](#新的-number-相关属性和方法)
-- [新的全局方法](#新的全局方法)
-- [模块化](#模块化)
+
+## 模板字符串
+
+通过反引号（``）来创建字符串
+
+```js
+const a = "Hello";
+const b = `${a} World`;
+```
+
+多行字符串
+
+```javascript
+const poem = `Roses are red,
+Violets are blue,
+I love coding,
+And so do you.`;
+```
+
+## 对象相关扩展
+
+- 属性值的简写
+
+ES6 允许在对象字面量中使用属性值的简写。如果属性名和属性值的变量名相同，则可以省略属性值的变量名。
+
+```javascript
+const name = "John";
+const age = 30;
+
+const person = {
+  name,
+  age,
+};
+
+console.log(person); // {name: "John", age: 30}
+```
+
+- 方法的简写
+
+ES6 允许在对象字面量中使用方法的简写。如果方法名和函数名相同，则可以省略函数名和 function 关键字。
+
+```javascript
+const person = {
+  name: "John",
+  age: 30,
+  sayHello() {
+    console.log(`Hello, my name is ${this.name}`);
+  },
+};
+
+person.sayHello(); // Hello, my name is John
+```
+
+- 计算属性名
+
+ES6 允许在对象字面量中使用计算属性名，即使用变量或表达式作为属性名。
+
+```javascript
+const prefix = "user_";
+
+const user = {
+  [prefix + "id"]: 123,
+  [prefix + "name"]: "John",
+};
+
+console.log(user); // {user_id: 123, user_name: "John"}
+```
+
+- Object.assign()
+
+ES6 提供了 Object.assign()方法，可以将多个对象合并成一个对象，并返回合并后的对象。如果多个对象有相同的属性名，则后面的对象的属性值会覆盖前面的对象的属性值。
+
+```javascript
+const obj1 = { a: 1, b: 2 };
+const obj2 = { b: 3, c: 4 };
+const obj3 = { c: 5, d: 6 };
+
+const result = Object.assign({}, obj1, obj2, obj3);
+
+console.log(result); // {a: 1, b: 3, c: 5, d: 6}
+```
+
+## 2 进制和 8 进制的字面量语法
+
+- 2 进制字面量
+
+在 ES6 之前，二进制字面量无法直接表示，需要使用`parseInt()`方法将其转化成十进制。例如`parseInt('1010', 2)`表示的十进制数为`10`。
+
+ES6 引入了前缀`0b`表示二进制字面量，将二进制数直接表示为相应的十进制数。
+
+```javascript
+const binary = 0b1010;
+console.log(binary); // 10
+```
+
+- 8 进制字面量
+
+在 ES6 之前，八进制字面量可以通过前缀`0`或`0o`表示，例如`0710`或`0o710`表示的十进制数为`456`。
+
+但是，在 ES6 中引入了严格模式，使用八进制字面量的代码会被视为语法错误。为了支持八进制字面量，ES6 引入了前缀`0o`表示八进制字面量，并且在严格模式下也是合法的。
+
+```javascript
+const octal = 0o710;
+console.log(octal); // 456
+```
 
 ## let 关键字
 
@@ -53,6 +164,54 @@ if (true) {
 1. 在声明时必须进行初始化，不能先声明，再赋值，否则会抛出错误。
 2. 一旦声明了常量，其值就不能被改变，试图改变常量的值会抛出错误。
 3. 如果常量是一个对象，则可以修改该对象的属性，但不能给该对象赋值为另一个对象。
+
+:::
+
+## Symbol
+
+symbol 是一种基本数据类型。Symbol() 函数会返回 symbol 类型的值。
+
+每个从 Symbol() 返回的 symbol 值都是唯一的。
+
+```js
+const symbol1 = Symbol(123);
+const symbol2 = Symbol(123);
+const symbol3 = Symbol("foo");
+
+console.log(typeof symbol1); //"symbol"
+
+console.log(symbol1 === symbol2); //false
+
+console.log(symbol3.toString()); //Symbol(foo)
+```
+
+一个 symbol 值能作为对象属性的标识符，它表示一个唯一的“隐藏”标识符，一般情况下迭代器无法访问该标识符。
+
+```js
+const person = {
+  name: "baizhi958216",
+};
+
+let age = Symbol("age");
+person[age] = 22;
+// person[age] 22
+// person.age undefined
+for (key in person) {
+  // name
+  console.log(key);
+}
+```
+
+:::tip 等同
+
+```js
+const person = {
+  name: "baizhi958216",
+  [age]: 22,
+};
+// person[age] 22
+// person.age undefined
+```
 
 :::
 
@@ -90,6 +249,128 @@ sum(1, 2);
 
 :::
 
+## 函数参数默认值
+
+支持在给函数参数赋予默认值。
+
+```js
+const add = (x, y = 1) => x + y;
+add(1); //2
+```
+
+## 函数剩余参数
+
+rest 参数(...)允许函数将不确定数量的参数视为数组。
+
+```js
+const sum = (...args) => {
+  let sum = 0;
+  for (let arg of args) sum += arg;
+  return sum;
+};
+
+sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); // 55
+```
+
+## 生成器和迭代器
+
+- yield
+
+yield 语句用于中断 Generator 函数并返回一个值，并将当前状态保存下来，下次再调用 next()方法时可以从上次中断的地方继续执行。
+
+yield 语句可以接收一个参数，表示这是迭代器返回的值。
+
+- 迭代器 Iterators
+
+ES6 中引入了可迭代对象（Iterable），可迭代对象是指实现了 `Symbol.iterator` 方法的对象。
+
+该方法返回一个迭代器对象（Iterator），迭代器对象具有 `next()`方法，每次调用 `next()`方法会返回一个包含 `value` 和 `done` 属性的对象
+
+`value`: 表示当前元素的值。
+
+`done`: 表示是否迭代结束。
+
+```javascript
+let myIterable = {
+  *[Symbol.iterator]() {
+    yield 1;
+    yield 2;
+    yield 3;
+  },
+};
+
+for (let value of myIterable) {
+  console.log(value);
+}
+// 输出：1 2 3
+```
+
+该例子创建了一个可迭代对象 myIterable，实现了 Symbol.iterator 方法并返回一个 Generator 对象，每次迭代返回 1、2、3。
+
+- 生成器 Generators
+
+```javascript
+function* fibonacci() {
+  let prev = 0,
+    curr = 1;
+  while (true) {
+    yield curr;
+    [prev, curr] = [curr, prev + curr];
+  }
+}
+
+let iterator = fibonacci();
+for (let i = 0; i < 10; i++) {
+  console.log(iterator.next().value);
+}
+// 输出：1 1 2 3 5 8 13 21 34 55
+```
+
+这是一个返回斐波那契数列的 Generator 函数 fibonacci，通过 yield 语句在每次迭代返回当前值，同时使用 es6 的解构赋值来更新 prev 和 curr 的值，控制了 Generator 函数的执行过程。在 for 循环中使用 next()方法来依次获取迭代器的值，并输出前 10 个数。
+
+## For...of 循环
+
+在[可迭代对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols)（包括 Array，Map，Set，String，TypedArray，arguments 对象等等）上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句
+
+```js
+const arr = ["a", "b", "c"];
+
+for (const el of arr) {
+  console.log(el);
+}
+```
+
+:::tip `for...in`, `for...of`, `for`区别
+
+for...in 适用于遍历对象中的可枚举属性（包括继承而来的属性），循环变量是属性名，因此，遍历对象时的顺序是不确定的
+
+for...of 适用于遍历可迭代对象（例如数组、Map、Set、字符串等），循环变量是元素值。
+
+for 循环适用于遍历数组等可迭代对象，循环变量可以是下标或元素值。可以使用 break 跳出循环，也可以使用 continue 跳过本次循环。
+
+:::
+
+## 模块化
+
+ES6 的模块化可以让 JavaScript 代码分割成独立的、可重复使用的组件。
+
+ES6 模块化可以让开发者按逻辑组织代码，并且在不同的文件之间共享代码，避免了全局变量的污染和重复定义的问题。
+
+- 模块 1，导出一个函数
+
+```js
+export function sayHello(name) {
+  console.log(`Hello, ${name}!`);
+}
+```
+
+- 模块 2，导入模块 1 中的函数并使用
+
+```js
+import { sayHello } from "./module1.js";
+sayHello("Alice");
+```
+
 ## 解构赋值
 
 从数组和对象中提取值和对变量进行赋值。
@@ -113,40 +394,6 @@ const [, , d] = [1, 2, 3];
 // e = [2, 3]
 const [, ...e] = [1, 2, 3];
 ```
-
-- 对象的解构赋值
-
-```js
-const obj = { a: 1, b: 2 };
-const { a, b } = obj; //[!code focus]
-```
-
-```js
-const obj = { a: 1, b: 2 };
-const { a, b: d } = obj; //[!code focus]
-```
-
-## For...of 循环
-
-在[可迭代对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols)（包括 Array，Map，Set，String，TypedArray，arguments 对象等等）上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句
-
-```js
-const arr = ["a", "b", "c"];
-
-for (const el of arr) {
-  console.log(el);
-}
-```
-
-:::tip `for...in`, `for...of`, `for`区别
-
-for...in 适用于遍历对象中的可枚举属性（包括继承而来的属性），循环变量是属性名，因此，遍历对象时的顺序是不确定的
-
-for...of 适用于遍历可迭代对象（例如数组、Map、Set、字符串等），循环变量是元素值。
-
-for 循环适用于遍历数组等可迭代对象，循环变量可以是下标或元素值。可以使用 break 跳出循环，也可以使用 continue 跳过本次循环。
-
-:::
 
 ## Map 对象
 
@@ -611,7 +858,7 @@ animal.bark(); // Woof!
 animal.play(); // Tiger is playing.
 ```
 
-## Promise 对象
+## Promises
 
 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
@@ -642,7 +889,7 @@ new Promise((resolve, reject) => {
 
 - then: Promise 的成功和失败情况的回调函数。
 - catch: Promise 被拒绝时的回调函数。
-- finally: Promise 结束时，无论结果是 fulfilled 或者是 rejected，都会执行指定的回调函数。
+- finally (ES2018): Promise 结束时，无论结果是 fulfilled 或者是 rejected，都会执行指定的回调函数。
 
 :::
 
@@ -680,89 +927,81 @@ new Promise((resolve, reject) => {
 });
 ```
 
-- finally
+## Proxy
 
-:::tip 语法
+ES6 中的 Proxy 是一种用于拦截并自定义对象属性访问的机制。
 
-p.finally(onFinally)
+Proxy 对象包括一个`目标对象`和一个`处理程序对象`，在`处理程序对象`中定义了各种拦截操作，如 get、set、has、delete、apply 等，可以在`目标对象`上进行代理操作。
 
-:::
+使用 Proxy 的好处在于，可以将针对对象的拦截操作集中在一个单独的地方进行定义，避免了代码中分散的、重复的、易错的判断逻辑，从而提高了代码的简洁性、可读性和可维护性。
 
-```js
-new Promise((resolve, reject) => {}).finally(() => {
-  console.log("Done!");
-});
+```javascript
+const obj = new Proxy(
+  {},
+  {
+    get: function (target, key) {
+      console.log(`Getting ${key}`);
+      return target[key];
+    },
+    set: function (target, key, value) {
+      console.log(`Setting ${key} to ${value}`);
+      target[key] = value;
+    },
+  }
+);
+
+obj.foo = "bar";
+console.log(obj.foo); // "Getting foo" "bar"
 ```
 
-## Symbol
+在上述代码中，我们定义了一个空的对象，使用 Proxy 代理该对象，并为其定义了 get 和 set 方法，拦截对对象属性的读写操作，当该对象的属性被读取或者设置时，控制台会输出相应的信息。
 
-symbol 是一种基本数据类型。Symbol() 函数会返回 symbol 类型的值。
+## Reflection
 
-每个从 Symbol() 返回的 symbol 值都是唯一的。
+Reflection 是 ES6 中引入的一种新的特性，它允许我们在运行时访问和修改对象的属性和方法。
 
-```js
-const symbol1 = Symbol(123);
-const symbol2 = Symbol(123);
-const symbol3 = Symbol("foo");
+- 设置对象的属性值
 
-console.log(typeof symbol1); //"symbol"
-
-console.log(symbol1 === symbol2); //false
-
-console.log(symbol3.toString()); //Symbol(foo)
+```javascript
+const obj = { name: "Alice", age: 25 };
+Reflect.set(obj, "age", 26);
+console.log(obj); // {name: "Alice", age: 26}
 ```
 
-一个 symbol 值能作为对象属性的标识符，它表示一个唯一的“隐藏”标识符，一般情况下迭代器无法访问该标识符。
+## 新的全局方法
+
+- isFinite()
+
+用来判断一个数值是否有限（finite），即非 NaN、非正无穷大、非负无穷小的数值。
+
+它返回一个布尔值，如果参数是一个有限的数值，则返回 true，否则返回 false。
 
 ```js
-const person = {
-  name: "baizhi958216",
-};
+isFinite(10); // true
+isFinite(NaN); // false
+isFinite(Infinity); // false
+```
 
-let age = Symbol("age");
-person[age] = 22;
-// person[age] 22
-// person.age undefined
-for (key in person) {
-  // name
-  console.log(key);
+它能够识别字符串和其他类型的值，并且将它们转换成数值以进行判断。如果参数不是数值类型，则会先调用 Number()方法将其转换成数值类型。例如：
+
+```js
+isFinite("10"); // true
+isFinite("abc"); // false
+```
+
+- isNaN()
+
+用于检测一个值是否是 NaN（Not a Number）。如果接受的参数不能转换为数字或者本身就是 NaN，返回 true，否则返回 false。
+
+```js
+function milliseconds(x) {
+  if (isNaN(x)) {
+    return "Not a Number!";
+  }
+  return x * 1000;
 }
-```
-
-:::tip 等同
-
-```js
-const person = {
-  name: "baizhi958216",
-  [age]: 22,
-};
-// person[age] 22
-// person.age undefined
-```
-
-:::
-
-## 函数参数默认值
-
-支持在给函数参数赋予默认值。
-
-```js
-const add = (x, y = 1) => x + y;
-add(1); //2
-```
-
-## 函数剩余参数
-
-rest 参数(...)允许函数将不确定数量的参数视为数组。
-
-```js
-const sum = (...args) => {
-  let sum = 0;
-  for (let arg of args) sum += arg;
-  return sum;
-};
-
-sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); // 55
+milliseconds("100F"); //Not a Number!
+milliseconds("0.0314E+2"); //3140
 ```
 
 ## 新的字符串相关方法
@@ -937,61 +1176,4 @@ fits(5, 10);
 ```js
 Number.isSafeInteger(Math.pow(2, 53)); // false
 Number.isSafeInteger(Math.pow(2, 53) - 1); // true
-```
-
-## 新的全局方法
-
-- isFinite()
-
-用来判断一个数值是否有限（finite），即非 NaN、非正无穷大、非负无穷小的数值。
-
-它返回一个布尔值，如果参数是一个有限的数值，则返回 true，否则返回 false。
-
-```js
-isFinite(10); // true
-isFinite(NaN); // false
-isFinite(Infinity); // false
-```
-
-它能够识别字符串和其他类型的值，并且将它们转换成数值以进行判断。如果参数不是数值类型，则会先调用 Number()方法将其转换成数值类型。例如：
-
-```js
-isFinite("10"); // true
-isFinite("abc"); // false
-```
-
-- isNaN()
-
-用于检测一个值是否是 NaN（Not a Number）。如果接受的参数不能转换为数字或者本身就是 NaN，返回 true，否则返回 false。
-
-```js
-function milliseconds(x) {
-  if (isNaN(x)) {
-    return "Not a Number!";
-  }
-  return x * 1000;
-}
-milliseconds("100F"); //Not a Number!
-milliseconds("0.0314E+2"); //3140
-```
-
-## 模块化
-
-ES6 的模块化可以让 JavaScript 代码分割成独立的、可重复使用的组件。
-
-ES6 模块化可以让开发者按逻辑组织代码，并且在不同的文件之间共享代码，避免了全局变量的污染和重复定义的问题。
-
-- 模块 1，导出一个函数
-
-```js
-export function sayHello(name) {
-  console.log(`Hello, ${name}!`);
-}
-```
-
-- 模块 2，导入模块 1 中的函数并使用
-
-```js
-import { sayHello } from "./module1.js";
-sayHello("Alice");
 ```
