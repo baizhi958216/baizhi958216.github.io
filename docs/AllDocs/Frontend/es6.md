@@ -17,6 +17,8 @@
 - [解构赋值](#解构赋值)
 - [Map 对象](#map-对象)
 - [Set 对象](#set-对象)
+- [WeakMap](#weakmap)
+- [WeakSet](#weakset)
 - [类](#类)
 - [Promises](#promises)
 - [Proxy](#proxy)
@@ -689,6 +691,64 @@ for (let value of values) {
 3. Set 和 Map 都有自己的迭代器，可以使用 for...of 循环遍历，也可以使用 forEach 方法遍历。但是 Map 的迭代器默认遍历的是键值对组成的数组，需要使用 entries()方法获取这个数组，而 Set 的迭代器默认就是迭代 Set 中的元素。
 
 :::
+
+## WeakMap
+
+:::tip Map 可能会导致内存泄漏，因为数组会一直引用着每个键和值。这种引用使得垃圾回收算法不能回收处理他们，即使没有其他任何引用存在。
+:::
+
+`WeakMap`对象也是键值对的集合，它的键被弱引用，当其键所指对象没有其他地方引用的时候，它会被 GC 回收掉。
+
+与 Map 对象不同的是，WeakMap 的键是`不可枚举`的。不提供列出其键的方法。列表是否存在取决于垃圾回收器的状态，是不可预知的。
+
+```js
+const wm1 = new WeakMap(),
+  wm2 = new WeakMap(),
+  wm3 = new WeakMap();
+const o1 = {},
+  o2 = function () {},
+  o3 = window;
+wm1.set(o1, 37);
+wm1.set(o2, "azerty");
+wm2.set(o1, o2); // value 可以是任意值，包括一个对象或一个函数
+wm2.set(o3, undefined);
+wm2.set(wm1, wm2); // 键和值可以是任意对象，甚至另外一个 WeakMap 对象
+wm1.get(o2); // "azerty"
+wm2.get(o2); // undefined，wm2 中没有 o2 这个键
+wm2.get(o3); // undefined，值就是 undefined
+wm1.has(o2); // true
+wm2.has(o2); // false
+wm2.has(o3); // true (即使值是 undefined)
+wm3.set(o1, 37);
+wm3.get(o1); // 37
+wm1.has(o1); // true
+wm1.delete(o1);
+wm1.has(o1); // false
+```
+
+## WeakSet
+
+WeakSet 是一些对象值的集合。且其与 Set 类似，WeakSet 中的每个对象值都只能出现一次。在 WeakSet 的集合中，所有对象都是唯一的。
+
+WeakSet 只能是对象的集合，而不能像 Set 那样，可以是任何类型的任意值。
+
+WeakSet 为弱引用。如果没有其他的对 WeakSet 中对象的引用，那么这些对象会被当成垃圾回收掉。
+
+```js
+const ws = new WeakSet();
+const foo = {};
+const bar = {};
+
+ws.add(foo);
+ws.add(bar);
+
+ws.has(foo); // true
+ws.has(bar); // true
+
+ws.delete(foo); // 从 set 中删除 foo 对象
+ws.has(foo); // false，foo 对象已经被删除了
+ws.has(bar); // true，bar 依然存在
+```
 
 ## 类
 
