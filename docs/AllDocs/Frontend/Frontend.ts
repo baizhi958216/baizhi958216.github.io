@@ -10,6 +10,7 @@ function sidebarFrontend(): Array<{ text: string; link: string }> {
     { text: "ES2020", link: "/AllDocs/Frontend/es2020" },
     { text: "ES2021", link: "/AllDocs/Frontend/es2021" },
     { text: "ES2022", link: "/AllDocs/Frontend/es2022" },
+    { text: "Lodash", link: "/AllDocs/Frontend/lodash" },
     {
       text: "Github Page部署VitePress",
       link: "/AllDocs/Frontend/VitePress/deploy",
