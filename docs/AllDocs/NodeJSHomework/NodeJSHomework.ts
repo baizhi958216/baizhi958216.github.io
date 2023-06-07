@@ -1,5 +1,9 @@
 function sidebarNodeJSHomework() {
   return [
+    {
+      text: "爬取豆瓣电影TOP250",
+      link: "/AllDocs/NodeJSHomework/doubantop250",
+    },
     { text: "JS实现简易计算器", link: "/AllDocs/NodeJSHomework/calculator" },
     {
       text: "求多次prompt输入之和",
