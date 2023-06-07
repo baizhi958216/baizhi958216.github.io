@@ -38,6 +38,10 @@ function sidebarPythonHomework() {
       text: "统计文件中的字符",
       link: "/AllDocs/PythonHomework/charcount",
     },
+    {
+      text: "CSV 绘制折线图",
+      link: "/AllDocs/PythonHomework/matplotlib",
+    },
   ];
 }
 export { sidebarPythonHomework };
