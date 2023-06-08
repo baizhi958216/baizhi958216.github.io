@@ -62,6 +62,11 @@ function sidebar() {
   return {
     "/AllDocs/": [
       {
+        text: "Vue3 学习笔记",
+        collapsed: false,
+        items: VueNotes,
+      },
+      {
         text: "前端",
         collapsed: true,
         items: sidebarFrontend(),
@@ -95,11 +100,6 @@ function sidebar() {
         text: "计算机网络",
         collapsed: true,
         items: Network,
-      },
-      {
-        text: "Vue3 学习笔记",
-        collapsed: true,
-        items: VueNotes,
       },
       {
         text: "NodeJS",
