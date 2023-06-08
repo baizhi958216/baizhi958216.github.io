@@ -9,6 +9,7 @@ import VueNotes from "../AllDocs/VueNotes";
 import { NestJS } from "../AllDocs/NestJS";
 import { sidebarInterview } from "../AllDocs/Interview";
 import Network from "../AllDocs/Network";
+import {Git} from '../AllDocs/Git'
 
 export default defineConfig({
   base: "/",
@@ -75,6 +76,11 @@ function sidebar() {
         text: "前端面试",
         collapsed: true,
         items: sidebarInterview(),
+      },
+      {
+        text:'Git',
+        collapsed:true,
+        items: Git()
       },
       {
         text: "NestJS",
