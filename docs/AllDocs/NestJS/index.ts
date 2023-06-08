@@ -1,4 +1,4 @@
-function NestJS() {
+export const NestJS = (): { text: string; link: string }[] => {
   return [
     { text: "NestJS项目结构", link: "/AllDocs/NestJS/nestjsdirs" },
     {
@@ -6,5 +6,4 @@ function NestJS() {
       link: "/AllDocs/NestJS/setdeprecated",
     },
   ];
-}
-export { NestJS };
+};

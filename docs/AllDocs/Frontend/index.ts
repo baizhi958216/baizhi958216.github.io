@@ -1,4 +1,4 @@
-function sidebarFrontend(): Array<{ text: string; link: string }> {
+export const Frontend = (): { text: string; link: string }[] => {
   return [
     { text: "ECMAScript", link: "/AllDocs/Frontend/ecmascript" },
     { text: "ES5", link: "/AllDocs/Frontend/es5" },
@@ -20,5 +20,4 @@ function sidebarFrontend(): Array<{ text: string; link: string }> {
     { text: "让对象也可以解构", link: "/AllDocs/Frontend/objiterator" },
     { text: "实现HashMap", link: "/AllDocs/Frontend/hashmap" },
   ];
-}
-export { sidebarFrontend };
+};

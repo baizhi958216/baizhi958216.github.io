@@ -1,4 +1,4 @@
-function sidebarPythonHomework() {
+export const Python = (): { text: string; link: string }[] => {
   return [
     { text: "温度转换 I", link: "/AllDocs/PythonHomework/tempcal" },
     { text: "货币转换 I", link: "/AllDocs/PythonHomework/currencycal" },
@@ -43,5 +43,4 @@ function sidebarPythonHomework() {
       link: "/AllDocs/PythonHomework/matplotlib",
     },
   ];
-}
-export { sidebarPythonHomework };
+};

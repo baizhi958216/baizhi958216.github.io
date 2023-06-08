@@ -1,4 +1,4 @@
-function SpringBoot() {
+export const SpringBoot = (): { text: string; link: string }[] => {
   return [
     { text: "SpringBoot", link: "/AllDocs/SpringBoot/" },
     {
@@ -18,5 +18,4 @@ function SpringBoot() {
       link: "/AllDocs/SpringBoot/springbootmybatisplus",
     },
   ];
-}
-export { SpringBoot };
+};

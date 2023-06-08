@@ -1,4 +1,4 @@
-function sidebarNodeJSHomework() {
+export const NodeJS = (): { text: string; link: string }[] => {
   return [
     {
       text: "爬取豆瓣电影TOP250",
@@ -20,5 +20,4 @@ function sidebarNodeJSHomework() {
       link: "/AllDocs/NodeJSHomework/mysql",
     },
   ];
-}
-export { sidebarNodeJSHomework };
+};

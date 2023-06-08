@@ -1,15 +1,15 @@
 import { defineConfig } from "vitepress";
 import { SpringBoot } from "../AllDocs/SpringBoot";
-import { sidebarDocker } from "../AllDocs/Docker/Docker";
-import { sidebarFrontend } from "../AllDocs/Frontend/Frontend";
-import { sidebarLinux } from "../AllDocs/Linux/Linux";
-import { sidebarNodeJSHomework } from "../AllDocs/NodeJSHomework/NodeJSHomework";
-import { sidebarPythonHomework } from "../AllDocs/PythonHomework/PythonHomework";
-import VueNotes from "../AllDocs/VueNotes";
+import { VueNotes } from "../AllDocs/VueNotes";
 import { NestJS } from "../AllDocs/NestJS";
-import { sidebarInterview } from "../AllDocs/Interview";
-import Network from "../AllDocs/Network";
-import {Git} from '../AllDocs/Git'
+import { Frontend } from "../AllDocs/Frontend";
+import { InterviewFrontend } from "../AllDocs/InterviewFrontend";
+import { Git } from "../AllDocs/Git";
+import { Docker } from "../AllDocs/Docker";
+import { Linux } from "../AllDocs/Linux";
+import { NodeJS } from "../AllDocs/NodeJS";
+import { Network } from "../AllDocs/Network";
+import { Python } from "../AllDocs/Python";
 
 export default defineConfig({
   base: "/",
@@ -52,7 +52,7 @@ function nav() {
       link: "/YunDoc/",
       activeMatch: "/YunDoc/",
     }, */,
-    { text: "Chat", link: "/Chat/", activeMatch: "/Chat/" },
+    // { text: "Chat", link: "/Chat/", activeMatch: "/Chat/" },
   ];
 }
 
@@ -65,27 +65,22 @@ function sidebar() {
       {
         text: "Vue3 学习笔记",
         collapsed: false,
-        items: VueNotes,
+        items: VueNotes(),
       },
       {
         text: "前端",
         collapsed: true,
-        items: sidebarFrontend(),
+        items: Frontend(),
       },
       {
         text: "前端面试",
         collapsed: true,
-        items: sidebarInterview(),
+        items: InterviewFrontend(),
       },
       {
-        text:'Git',
-        collapsed:true,
-        items: Git()
-      },
-      {
-        text: "NestJS",
+        text: "Git",
         collapsed: true,
-        items: NestJS(),
+        items: Git(),
       },
       {
         text: "SpringBoot",
@@ -95,27 +90,32 @@ function sidebar() {
       {
         text: "Docker",
         collapsed: true,
-        items: sidebarDocker(),
+        items: Docker(),
       },
       {
         text: "Linux",
         collapsed: true,
-        items: sidebarLinux(),
+        items: Linux(),
       },
       {
         text: "计算机网络",
         collapsed: true,
-        items: Network,
+        items: Network(),
       },
       {
         text: "NodeJS",
         collapsed: true,
-        items: sidebarNodeJSHomework(),
+        items: NodeJS(),
+      },
+      {
+        text: "NestJS",
+        collapsed: true,
+        items: NestJS(),
       },
       {
         text: "Python",
         collapsed: true,
-        items: sidebarPythonHomework(),
+        items: Python(),
       },
     ],
     "/Chat/": [],

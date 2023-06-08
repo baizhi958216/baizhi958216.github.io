@@ -1,4 +1,4 @@
-function sidebarDocker() {
+export const Docker = (): { text: string; link: string }[] => {
   return [
     { text: "Docker", link: "/AllDocs/Docker/" },
     {
@@ -6,5 +6,4 @@ function sidebarDocker() {
       link: "/AllDocs/Docker/dockerfilemysql",
     },
   ];
-}
-export { sidebarDocker };
+};
