@@ -12,6 +12,10 @@ export const VueNotes = (): { text: string; link: string }[] => {
       link: "/AllDocs/VueNotes/elementplusondemand",
     },
     {
+      text:"更新带参路由",
+      link:"/AllDocs/VueNotes/fixroutercache"
+    },
+    {
       text: "模板语法 && vue指令",
       link: "/AllDocs/VueNotes/p5",
     },
