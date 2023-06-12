@@ -1,16 +1,16 @@
 # 广州好智前端面试试题
 
-1.  在 css 中，下面（ ）不是 css 选择器 (1 分)  
+1.  在 css 中，下面（ ）不是 css 选择器
     A、文本选择器  
     B、ID 选择器  
     C、类选择器  
     D、标签选择器
 
-2.  什么是线程？什么是进程？线程和进程有什么区别？ (2 分)
+2.  什么是线程？什么是进程？线程和进程有什么区别？
 
-3.  求值 sin260°+cos260°= ? (2 分)
+3.  求值 sin260°+cos260°= ?
 
-4.  声明一个对象，给它加上 name 属性和 show 方法显示其 name 值，以下代码中正确的是（ ） (1 分)
+4.  声明一个对象，给它加上 name 属性和 show 方法显示其 name 值，以下代码中正确的是（ ）
 
     A、`var obj = {name:"zhangsan",show:function(){alert(name);}};`
 
@@ -20,7 +20,7 @@
 
     D、`var obj = [name:"zhangsan",show:function(){alert(name);}];`
 
-5.  What is the order of values alerted? (1 分)
+5.  What is the order of values alerted?
 
     ```js
     var x = 3;
@@ -48,7 +48,7 @@
     E、2，3  
     F、1，2
 
-6.  用一个字节最多能编出( )不同的码 (1 分)
+6.  用一个字节最多能编出( )不同的码
 
     A、8  
     B、128  
@@ -57,14 +57,14 @@
 
 7.  "1" + 2 + "3" + 4;
 
-    What does the above statement evaluate to? (1 分)
+    What does the above statement evaluate to?
 
     A、1234  
     B、10  
     C、46  
     D、37
 
-8.  以下关于 HTTP 状态码描述错误的是（） (1 分)
+8.  以下关于 HTTP 状态码描述错误的是（）
 
     A、503 Service Unavailable：服务器处于超负载或正在停机维护，暂时无法处理请求  
     B、403 Forbidden：请求资源的访问被服务器拒绝  
@@ -90,21 +90,21 @@
     C、1,3, 2, 3  
     D、1,undefined,2,3
 
-10. If you have a page of search results and want to highlight the search term, what HTML tag would you use? (1 分)
+10. If you have a page of search results and want to highlight the search term, what HTML tag would you use?
 
     A、`<highlight>`  
      B、`<mark>`  
      C、`<em>`  
      D、`<strong>`
 
-11. 在 jquery 中，想要给第一个指定的元素添加样式，下面哪一个是正确的? ( ) (1 分)
+11. 在 jquery 中，想要给第一个指定的元素添加样式，下面哪一个是正确的? ( )
 
     A、`css(name)`  
     B、`eq(1)`  
     C、`css(name,value)`  
     D、`first`
 
-12. 下列 css 代码，（ ）能控制鼠标悬浮其上的超链接样式 (1 分)
+12. 下列 css 代码，（ ）能控制鼠标悬浮其上的超链接样式
 
     A、
 
@@ -138,14 +138,14 @@
     }
     ```
 
-13. 计算机系统的组成部分 (1 分)
+13. 计算机系统的组成部分
 
     A、硬件，软件，用户  
     B、软件 用户  
     C、硬件，软件  
     D、硬件，用户
 
-14. 使用 Git 从当前分支创建一个新分支，　新分支名为：nb, 则创建命令是**\_**. (1 分)
+14. 使用 Git 从当前分支创建一个新分支，　新分支名为：nb, 则创建命令是_____.
 
 15. What's the output?
 
@@ -220,7 +220,7 @@
     A、YES  
     B、NO
 
-21. Does setting margin-top and margin-bottom have an affect on an inline element? (1 分)
+21. Does setting margin-top and margin-bottom have an affect on an inline element?
 
     A、YES  
     B、NO
@@ -275,7 +275,7 @@
     B、Blue  
     C、Unkonw
 
-27. 将栈存区内容提交到代码区中（提交代码到本地仓库) 的命令是:\_\_\_\_? (1 分)
+27. 将栈存区内容提交到代码区中（提交代码到本地仓库）的命令是:\_\_\_\_?
 
 28. 阅读以下代码，代码运行后，alert 方法弹出的内容为
 
