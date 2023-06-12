@@ -73,7 +73,7 @@ function sidebar() {
         items: Frontend(),
       },
       {
-        text: "前端面试",
+        text: "前端面试笔试",
         collapsed: true,
         items: InterviewFrontend(),
       },
