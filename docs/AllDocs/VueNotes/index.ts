@@ -1,31 +1,37 @@
 export const VueNotes = (): { text: string; link: string }[] => {
   return [
-    { text: "目录", link: "/AllDocs/VueNotes/" },
-    { text: "Vue2生命周期", link: "/AllDocs/VueNotes/lifecyclevue2" },
+    { text: "目录", link: "" },
+    { text: "Vue2生命周期", link: "lifecyclevue2" },
     {
       text: "Vue3生命周期(组合式API)",
-      link: "/AllDocs/VueNotes/lifecyclevue3",
+      link: "lifecyclevue3",
     },
-    { text: "使用Pinia", link: "/AllDocs/VueNotes/usepinia" },
+    { text: "使用Pinia", link: "usepinia" },
     {
       text: "ElementPlus组件按需导入",
-      link: "/AllDocs/VueNotes/elementplusondemand",
+      link: "elementplusondemand",
     },
     {
-      text:"更新带参路由",
-      link:"/AllDocs/VueNotes/fixroutercache"
+      text: "使用ElementPlus实现无限滚动",
+      link: "elementinfinityscroll",
+    },
+    {
+      text: "更新带参路由",
+      link: "fixroutercache",
     },
     {
       text: "模板语法 && vue指令",
-      link: "/AllDocs/VueNotes/p5",
+      link: "p5",
     },
     {
       text: "虚拟dom和diff算法",
-      link: "/AllDocs/VueNotes/p6",
+      link: "p6",
     },
     {
       text: "Ref 全家桶 & 源码解析",
-      link: "/AllDocs/VueNotes/p7",
+      link: "p7",
     },
-  ];
+  ].map((obj) => {
+    return { text: obj.text, link: `/AllDocs/VueNotes/${obj.link}` };
+  });
 };

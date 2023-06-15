@@ -1,21 +1,26 @@
 export const SpringBoot = (): { text: string; link: string }[] => {
   return [
-    { text: "SpringBoot", link: "/AllDocs/SpringBoot/" },
+    { text: "SpringBoot", link: "" },
     {
       text: "SpringBoot项目子文件夹简介",
-      link: "/AllDocs/SpringBoot/springbootdirs",
+      link: "springbootdirs",
     },
     {
       text: "SpringBoot添加RESTful服务",
-      link: "/AllDocs/SpringBoot/springbootrest",
+      link: "springbootrest",
     },
     {
       text: "配置国内 Maven 镜像源",
-      link: "/AllDocs/SpringBoot/mavenrepository",
+      link: "mavenrepository",
     },
     {
       text: "SpringBoot配置MyBatis-Plus",
-      link: "/AllDocs/SpringBoot/springbootmybatisplus",
+      link: "springbootmybatisplus",
     },
-  ];
+  ].map((obj) => {
+    return {
+      text: obj.text,
+      link: `/AllDocs/SpringBoot/${obj.link}`,
+    };
+  });;
 };

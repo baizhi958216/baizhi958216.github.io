@@ -1,13 +1,18 @@
 export const Network = (): { text: string; link: string }[] => {
   return [
-    { text: "OSI 七层模型", link: "/AllDocs/Network/OSI" },
+    { text: "OSI 七层模型", link: "OSI" },
     {
       text: "TCP/IP 三次握手",
-      link: "/AllDocs/Network/TCPhandshake",
+      link: "TCPhandshake",
     },
     {
       text: "TCP/IP 四次挥手",
-      link: "/AllDocs/Network/TCPhandwave",
+      link: "TCPhandwave",
     },
-  ];
+  ].map((obj) => {
+    return {
+      text: obj.text,
+      link: `/AllDocs/NetWork/${obj.link}`,
+    };
+  });
 };

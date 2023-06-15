@@ -1,46 +1,51 @@
 export const Python = (): { text: string; link: string }[] => {
   return [
-    { text: "温度转换 I", link: "/AllDocs/PythonHomework/tempcal" },
-    { text: "货币转换 I", link: "/AllDocs/PythonHomework/currencycal" },
+    { text: "温度转换 I", link: "tempcal" },
+    { text: "货币转换 I", link: "currencycal" },
     {
       text: "垂直的世界，你好！",
-      link: "/AllDocs/PythonHomework/verticalworld",
+      link: "verticalworld",
     },
     {
       text: "3位水仙花数计算",
-      link: "/AllDocs/PythonHomework/daffodils",
+      link: "daffodils",
     },
     {
       text: "鸡兔同笼",
-      link: "/AllDocs/PythonHomework/crcage",
+      link: "crcage",
     },
     {
       text: "中国古代数学问题——二鼠打洞",
-      link: "/AllDocs/PythonHomework/tworice",
+      link: "tworice",
     },
     {
       text: "存款买房（C）",
-      link: "/AllDocs/PythonHomework/purchasehouse",
+      link: "purchasehouse",
     },
     {
       text: "稳定的计算程序",
-      link: "/AllDocs/PythonHomework/stablecal",
+      link: "stablecal",
     },
     {
       text: "时间差之天数计算",
-      link: "/AllDocs/PythonHomework/daystimecal",
+      link: "daystimecal",
     },
     {
       text: "凯撒密码——加密",
-      link: "/AllDocs/PythonHomework/caesarcipher",
+      link: "caesarcipher",
     },
     {
       text: "统计文件中的字符",
-      link: "/AllDocs/PythonHomework/charcount",
+      link: "charcount",
     },
     {
       text: "CSV 绘制折线图",
-      link: "/AllDocs/PythonHomework/matplotlib",
+      link: "matplotlib",
     },
-  ];
+  ].map((obj) => {
+    return {
+      text: obj.text,
+      link: `/AllDocs/Python/${obj.link}`,
+    };
+  });;
 };
