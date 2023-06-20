@@ -10,6 +10,7 @@ import { Linux } from "../AllDocs/Linux";
 import { NodeJS } from "../AllDocs/NodeJS";
 import { Network } from "../AllDocs/Network";
 import { Python } from "../AllDocs/Python";
+import { Windows } from "../AllDocs/Windows";
 
 export default defineConfig({
   base: "/",
@@ -116,6 +117,11 @@ function sidebar() {
         text: "Python",
         collapsed: true,
         items: Python(),
+      },
+      {
+        text: "Windows",
+        collapsed: true,
+        items: Windows(),
       },
     ],
     "/Chat/": [],
