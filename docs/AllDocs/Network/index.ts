@@ -12,7 +12,7 @@ export const Network = (): { text: string; link: string }[] => {
   ].map((obj) => {
     return {
       text: obj.text,
-      link: `/AllDocs/NetWork/${obj.link}`,
+      link: `/AllDocs/Network/${obj.link}`,
     };
   });
 };
