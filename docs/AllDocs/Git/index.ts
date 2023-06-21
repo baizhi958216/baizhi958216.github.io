@@ -5,6 +5,10 @@ export const Git = (): { text: string; link: string }[] => {
       text: "git安装和配置",
       link: "setup",
     },
+    {
+      text: "为git提交记录签名",
+      link: "gitsign",
+    },
   ].map((obj) => {
     return {
       text: obj.text,
