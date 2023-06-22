@@ -13,6 +13,10 @@ export const Docker = (): { text: string; link: string }[] => {
       text: "Docker运行并配置ArchLinux",
       link: "dockerarchlinux",
     },
+    {
+      text: "制作Docker镜像然后推送到Docker Hub",
+      link: "dockerpushhub",
+    },
   ].map((obj) => {
     return {
       text: obj.text,
