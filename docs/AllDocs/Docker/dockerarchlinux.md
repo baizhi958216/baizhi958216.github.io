@@ -54,13 +54,19 @@ pacman -S nano
 
 在 `/etc/pacman.conf` 文件添加:
 
-```conf
+```txt
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 
 [archlinuxcn]
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ```
+
+:::tip 使用nano
+```bash
+nano /etc/pacman.conf
+```
+:::
 
 ![conf](./arch/conf.png)
 
@@ -77,6 +83,10 @@ pacman-key --init && pacman-key --populate archlinux
 pacman -Sy
 ```
 
-安装`archlinuxcn-keyring`包导入 GPG key
+安装`archlinuxcn-keyring`包导入 GPG key:
+
+```bash
+pacman -S archlinuxcn-keyring
+```
 
 ![cngpgkey](./arch/cngpgkey.png)
