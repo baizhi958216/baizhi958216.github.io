@@ -65,7 +65,7 @@ function sidebar() {
     "/AllDocs/": [
       {
         text: "Vue3 学习笔记",
-        collapsed: false,
+        collapsed: true,
         items: VueNotes(),
       },
       {
