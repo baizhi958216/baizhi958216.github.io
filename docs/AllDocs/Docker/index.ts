@@ -9,6 +9,10 @@ export const Docker = (): { text: string; link: string }[] => {
       text: "Dockerfile创建MySQL容器",
       link: "dockerfilemysql",
     },
+    {
+      text: "Docker运行并配置ArchLinux",
+      link: "dockerarchlinux",
+    },
   ].map((obj) => {
     return {
       text: obj.text,
