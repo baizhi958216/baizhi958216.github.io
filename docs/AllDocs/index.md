@@ -10,14 +10,10 @@ const bangumi_list = ref()
 
 const w = ['一','二','三','四','五','六','日']
 
-fetch('https://api.okmiku.com/bangumi_list', 
-  {
-    method : "POST",
-    mode: 'no-cors',
-  })
+fetch('http://120.78.174.154:3001/bangumi_list')
   .then(res => res.json())
   .then(data => {
-    bangumi_list.value = data.data
+    bangumi_list.value = data
   })
 </script>
 
