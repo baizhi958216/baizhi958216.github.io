@@ -33,30 +33,33 @@ const DEFAULT_REGISTRY =
 
 ## 解决办法
 
-1. 配置`process.env.NUXI_INIT_REGISTRY`, 可以自己搭建 gitea 或者别的代码管理仓库
+配置`process.env.NUXI_INIT_REGISTRY`, 可以自己搭建 gitea 或者别的代码管理仓库
 
-   :::tip
+:::tip
 
-   在下载模板的时候会读取`process.env.NUXI_INIT_REGISTRY`用来读取自定 义模板仓库
+在下载模板的时候会读取`process.env.NUXI_INIT_REGISTRY`用来读取自定 义模板仓库
 
-   ```ts
-   // ...
-   await downloadTemplate(template, {
-     dir: args._[0] as string,
-     force: args.force,
-     offline: args.offline,
-     preferOffline: args["prefer-offline"],
-     registry: process.env.NUXI_INIT_REGISTRY || DEFAULT_REGISTRY,
-   });
-   // ...
-   ```
+```ts
+// ...
+await downloadTemplate(template, {
+  dir: args._[0] as string,
+  force: args.force,
+  offline: args.offline,
+  preferOffline: args["prefer-offline"],
+  registry: process.env.NUXI_INIT_REGISTRY | DEFAULT_REGISTRY,
+});
+// ...
+```
 
-   :::
+:::
+设置环境变量
+```powershell
+$Env:NUXI_INIT_REGISTRY = "http://120.78.174.154:3000/baizhi958216/starter/raw/branch/templates/templates"
+```
+  
+初始化项目
+```powershell
+pnpm dlx nuxi init
+```
 
-2. 修改 host
-
-   位于`C:\Windows\System32\drivers\etc`目录下的 host 文件, 追加
-
-   ```txt
-   185.199.111.133 raw.githubusercontent.com
-   ```
+![success](./nuxi/success.png)
