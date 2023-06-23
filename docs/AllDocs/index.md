@@ -10,7 +10,7 @@ const bangumi_list = ref()
 
 const w = ['一','二','三','四','五','六','日']
 
-fetch('http://120.78.174.154:3001/bangumi_list')
+fetch('https://baizhi958216.xyz/bangumi_list')
   .then(res => res.json())
   .then(data => {
     bangumi_list.value = data
