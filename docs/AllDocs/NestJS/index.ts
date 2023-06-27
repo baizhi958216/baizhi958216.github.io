@@ -5,6 +5,10 @@ export const NestJS = (): { text: string; link: string }[] => {
       text: "NestJS Swagger 接口设置 Deprecated(过期)标签",
       link: "setdeprecated",
     },
+    {
+      text: "NestJS环境变量使用",
+      link: "nestconfigurate",
+    },
   ].map((obj) => {
     return {
       text: obj.text,
