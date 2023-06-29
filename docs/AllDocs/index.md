@@ -9,6 +9,7 @@ import 'element-plus/es/components/tag/style/css'
 const bangumi_list = ref()
 
 const w = ['一','二','三','四','五','六','日']
+const today = `周${w[new Date().getDay()==0?7:new Date().getDay()-1]}`
 
 fetch('https://baizhi958216.xyz/bangumi_list')
   .then(res => res.json())
@@ -20,8 +21,8 @@ fetch('https://baizhi958216.xyz/bangumi_list')
 # 动漫番组放送信息
 
 <el-skeleton :rows="10" animated  v-if="!bangumi_list"/>
-<el-tabs v-else>
-  <el-tab-pane :label="`周${day}`" v-for="day in w">
+<el-tabs v-model="today" v-else>
+  <el-tab-pane :name="`周${day}`" :label="`周${day}`" v-for="day in w">
     <div v-for="fan in bangumi_list[day]">
       <el-tag effect="dark">{{ fan['date'] }}</el-tag>
       {{ fan['title']['cn'] }} 
