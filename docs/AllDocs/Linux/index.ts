@@ -2,6 +2,8 @@ export const Linux = (): { text: string; link: string }[] => {
   return [
     { text: "Linux", link: "" },
     { text: "腾讯云搭建 httpd 服务", link: "tencentcloud" },
+    { text: "配置中文输入", link: "archfcitx5" },
+    { text: "配置bash环境变量", link: "bashenv" },
   ].map((obj) => {
     return {
       text: obj.text,
