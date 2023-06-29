@@ -579,3 +579,152 @@ repo has been initialized in /home/baizhi958216/android/lineage
 ```bash
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 ```
+
+:::details sync 日志
+
+```bash
+[baizhi958216@TianXuan lineage]$ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+Fetching: 100% (1242/1242), done in 1h4m43.952s
+device/qcom/sepolicy: Shared project LineageOS/android_device_qcom_sepolicy found, disabling pruning.
+device/qcom/sepolicy-legacy-um: Shared project LineageOS/android_device_qcom_sepolicy found, disabling pruning.
+device/qcom/sepolicy_vndr: Shared project LineageOS/android_device_qcom_sepolicy_vndr found, disabling pruning.
+device/qcom/sepolicy_vndr-legacy-um: Shared project LineageOS/android_device_qcom_sepolicy_vndr found, disabling pruning.
+hardware/qcom-caf/msm8953/audio: Shared project LineageOS/android_hardware_qcom_audio found, disabling pruning.
+hardware/qcom-caf/msm8953/display: Shared project LineageOS/android_hardware_qcom_display found, disabling pruning.
+hardware/qcom-caf/msm8953/media: Shared project LineageOS/android_hardware_qcom_media found, disabling pruning.
+hardware/qcom-caf/msm8996/audio: Shared project LineageOS/android_hardware_qcom_audio found, disabling pruning.
+hardware/qcom-caf/msm8996/display: Shared project LineageOS/android_hardware_qcom_display found, disabling pruning.
+hardware/qcom-caf/msm8996/media: Shared project LineageOS/android_hardware_qcom_media found, disabling pruning.
+hardware/qcom-caf/msm8998/audio: Shared project LineageOS/android_hardware_qcom_audio found, disabling pruning.
+hardware/qcom-caf/msm8998/display: Shared project LineageOS/android_hardware_qcom_display found, disabling pruning.
+hardware/qcom-caf/msm8998/media: Shared project LineageOS/android_hardware_qcom_media found, disabling pruning.
+hardware/qcom-caf/sdm660/audio: Shared project LineageOS/android_hardware_qcom_audio found, disabling pruning.
+hardware/qcom-caf/sdm660/display: Shared project LineageOS/android_hardware_qcom_display found, disabling pruning.
+hardware/qcom-caf/sdm660/media: Shared project LineageOS/android_hardware_qcom_media found, disabling pruning.
+hardware/qcom-caf/sdm845/audio: Shared project LineageOS/android_hardware_qcom_audio found, disabling pruning.
+hardware/qcom-caf/sdm845/display: Shared project LineageOS/android_hardware_qcom_display found, disabling pruning.
+hardware/qcom-caf/sdm845/media: Shared project LineageOS/android_hardware_qcom_media found, disabling pruning.
+hardware/qcom-caf/sm8150/audio: Shared project LineageOS/android_hardware_qcom_audio found, disabling pruning.
+hardware/qcom-caf/sm8150/display: Shared project LineageOS/android_hardware_qcom_display found, disabling pruning.
+hardware/qcom-caf/sm8150/media: Shared project LineageOS/android_hardware_qcom_media found, disabling pruning.
+hardware/qcom-caf/sm8250/audio: Shared project LineageOS/android_hardware_qcom_audio found, disabling pruning.
+hardware/qcom-caf/sm8250/display: Shared project LineageOS/android_hardware_qcom_display found, disabling pruning.
+hardware/qcom-caf/sm8250/media: Shared project LineageOS/android_hardware_qcom_media found, disabling pruning.
+hardware/qcom-caf/sm8350/audio: Shared project LineageOS/android_hardware_qcom_audio found, disabling pruning.
+hardware/qcom-caf/sm8350/display: Shared project LineageOS/android_hardware_qcom_display found, disabling pruning.
+hardware/qcom-caf/sm8350/media: Shared project LineageOS/android_hardware_qcom_media found, disabling pruning.
+hardware/qcom-caf/wlan: Shared project LineageOS/android_hardware_qcom_wlan found, disabling pruning.
+hardware/qcom/audio: Shared project LineageOS/android_hardware_qcom_audio found, disabling pruning.
+hardware/qcom/display: Shared project LineageOS/android_hardware_qcom_display found, disabling pruning.
+hardware/qcom/media: Shared project LineageOS/android_hardware_qcom_media found, disabling pruning.
+hardware/qcom/wlan: Shared project LineageOS/android_hardware_qcom_wlan found, disabling pruning.
+kernel/google/gs101/private/google-modules/amplifiers: Shared project kernel/google-modules/amplifiers found, disabling pruning.
+kernel/google/gs101/private/google-modules/aoc: Shared project kernel/google-modules/aoc found, disabling pruning.
+kernel/google/gs101/private/google-modules/aoc_ipc: Shared project kernel/google-modules/aoc-ipc found, disabling pruning.
+kernel/google/gs101/private/google-modules/bluetooth/broadcom: Shared project kernel/google-modules/bluetooth/broadcom found, disabling pruning.
+kernel/google/gs101/private/google-modules/bms: Shared project kernel/google-modules/bms found, disabling pruning.
+kernel/google/gs101/private/google-modules/display: Shared project kernel/google-modules/display found, disabling pruning.
+kernel/google/gs101/private/google-modules/gpu: Shared project kernel/google-modules/gpu found, disabling pruning.
+kernel/google/gs101/private/google-modules/lwis: Shared project kernel/google-modules/lwis found, disabling pruning.
+kernel/google/gs101/private/google-modules/nfc: Shared project kernel/google-modules/nfc found, disabling pruning.
+kernel/google/gs101/private/google-modules/power/reset: Shared project kernel/google-modules/power/reset found, disabling pruning.
+kernel/google/gs101/private/google-modules/touch/common: Shared project kernel/google-modules/touch/common found, disabling pruning.
+kernel/google/gs101/private/google-modules/touch/sec: Shared project kernel/google-modules/touch/sec_touch found, disabling pruning.
+kernel/google/gs101/private/google-modules/uwb: Shared project kernel/google-modules/uwb found, disabling pruning.
+kernel/google/gs101/private/google-modules/video/gchips: Shared project kernel/google-modules/video/gchips found, disabling pruning.
+kernel/google/gs101/private/google-modules/wlan/bcmdhd4389: Shared project kernel/google-modules/wlan/bcmdhd/bcm4389 found, disabling pruning.
+kernel/google/gs201/private/google-modules/amplifiers: Shared project kernel/google-modules/amplifiers found, disabling pruning.
+kernel/google/gs201/private/google-modules/aoc: Shared project kernel/google-modules/aoc found, disabling pruning.
+kernel/google/gs201/private/google-modules/aoc_ipc: Shared project kernel/google-modules/aoc-ipc found, disabling pruning.
+kernel/google/gs201/private/google-modules/bluetooth/broadcom: Shared project kernel/google-modules/bluetooth/broadcom found, disabling pruning.
+kernel/google/gs201/private/google-modules/bms: Shared project kernel/google-modules/bms found, disabling pruning.
+kernel/google/gs201/private/google-modules/display: Shared project kernel/google-modules/display found, disabling pruning.
+kernel/google/gs201/private/google-modules/gpu: Shared project kernel/google-modules/gpu found, disabling pruning.
+kernel/google/gs201/private/google-modules/lwis: Shared project kernel/google-modules/lwis found, disabling pruning.
+kernel/google/gs201/private/google-modules/nfc: Shared project kernel/google-modules/nfc found, disabling pruning.
+kernel/google/gs201/private/google-modules/power/reset: Shared project kernel/google-modules/power/reset found, disabling pruning.
+kernel/google/gs201/private/google-modules/touch/common: Shared project kernel/google-modules/touch/common found, disabling pruning.
+kernel/google/gs201/private/google-modules/touch/sec: Shared project kernel/google-modules/touch/sec_touch found, disabling pruning.
+kernel/google/gs201/private/google-modules/uwb: Shared project kernel/google-modules/uwb found, disabling pruning.
+kernel/google/gs201/private/google-modules/video/gchips: Shared project kernel/google-modules/video/gchips found, disabling pruning.
+kernel/google/gs201/private/google-modules/wlan/bcmdhd4389: Shared project kernel/google-modules/wlan/bcmdhd/bcm4389 found, disabling pruning.
+vendor/qcom/opensource/data-ipa-cfg-mgr: Shared project LineageOS/android_vendor_qcom_opensource_data-ipa-cfg-mgr found, disabling pruning.
+vendor/qcom/opensource/data-ipa-cfg-mgr-legacy-um: Shared project LineageOS/android_vendor_qcom_opensource_data-ipa-cfg-mgr found, disabling pruning.
+正在更新文件: 100% (255/255), 完成.
+正在更新文件: 100% (2809/2809), 完成.external/rust/crates/libsqlite3-sys正在更新文件:  56% (6638/11676)
+正在更新文件: 100% (7974/7974), 完成.
+正在更新文件: 100% (11676/11676), 完成.xternal/python/portpicker正在更新文件:  67% (7525/11231)
+正在更新文件: 100% (4887/4887), 完成./external/rappor正在更新文件: 100% (4887/4887)
+正在更新文件: 100% (10926/10926), 完成.xternal/rust/crates/pest_meta正在更新文件:  78% (8761/11231)
+正在更新文件: 100% (21683/21683), 完成.
+正在更新文件: 100% (11231/11231), 完成.xternal/liburing正在更新文件: 100% (11231/11231)
+正在更新文件: 100% (9463/9463), 完成./external/rust/crates/tinyvec正在更新文件:  85% (8044/9463)
+正在更新文件: 100% (4698/4698), 完成./external/gemmlowp正在更新文件:  91% (2225/2445)
+正在更新文件: 100% (2445/2445), 完成.
+正在更新文件: 100% (7408/7408), 完成.S/android_external_setupcompat正在更新文件:  97% (7235/7408)
+正在更新文件: 100% (3146/3146), 完成.S/android_hardware_qcom_audio正在更新文件:  16% (7006/43785)
+正在更新文件: 100% (4156/4156), 完成./external/boringssl正在更新文件: 100% (4156/4156)
+正在更新文件: 100% (8871/8871), 完成./external/bsdiff正在更新文件: 100% (8871/8871)
+正在更新文件: 100% (7979/7979), 完成.oogle-modules/bms正在更新文件:  72% (4709/6540)
+正在更新文件: 100% (9640/9640), 完成.oogle-modules/gxp/gs201正在更新文件:  39% (9613/24648)
+正在更新文件: 100% (6540/6540), 完成.
+正在更新文件: 100% (7276/7276), 完成./hardware/nxp/nfc正在更新文件:  80% (5881/7276)
+正在更新文件: 100% (4463/4463), 完成./external/TestParameterInjector正在更新文件: 100% (4463/4463)
+正在更新文件: 100% (567/567), 完成.rm/external/mp4parser正在更新文件:  64% (4002/6253)
+正在更新文件: 100% (16102/16102), 完成.
+正在更新文件: 100% (8147/8147), 完成.
+正在更新文件: 100% (14/14), 完成.
+正在更新文件: 100% (6253/6253), 完成.
+正在更新文件: 100% (8497/8497), 完成.
+正在更新文件: 100% (357/357), 完成.
+正在更新文件: 100% (8007/8007), 完成.
+正在更新文件: 100% (3210/3210), 完成./external/xz-java正在更新文件:  57% (10412/18265)
+正在更新文件: 100% (22/22), 完成.
+正在更新文件: 100% (16/16), 完成.ageOS/android_packages_apps_Nfc正在更新文件:  93% (15/16)
+正在更新文件: 100% (18265/18265), 完成.
+正在更新文件: 100% (24648/24648), 完成.ackages/apps/Car/LocalMediaPlayer正在更新文件: 100% (24648/24648)
+正在更新文件: 100% (5748/5748), 完成./packages/apps/Car/Provision正在更新文件:  72% (17651/24514)
+正在更新文件: 100% (24514/24514), 完成.
+正在更新文件: 100% (2399/2399), 完成.
+正在更新文件: 100% (16294/16294), 完成.
+正在更新文件: 100% (12/12), 完成.
+正在更新文件: 100% (1789/1789), 完成.
+正在更新文件: 100% (175/175), 完成.
+正在更新文件: 100% (8198/8198), 完成.
+正在更新文件: 100% (18387/18387), 完成.
+正在更新文件: 100% (9704/9704), 完成.
+正在更新文件: 100% (43785/43785), 完成.
+正在更新文件: 100% (1131/1131), 完成.
+正在更新文件: 100% (8464/8464), 完成.prebuilts/mainline/arm64正在更新文件:  94% (7957/8464)
+正在更新文件: 100% (723/723), 完成.
+正在更新文件: 100% (617/617), 完成.
+正在更新文件: 100% (4129/4129), 完成.
+正在更新文件: 100% (1688/1688), 完成.
+正在更新文件: 100% (410/410), 完成.
+正在更新文件: 100% (159/159), 完成.
+正在更新文件: 100% (5960/5960), 完成.
+正在更新文件: 100% (6526/6526), 完成.
+正在更新文件: 100% (5589/5589), 完成.
+正在更新文件: 100% (3959/3959), 完成.
+正在更新文件: 100% (11977/11977), 完成.
+正在更新文件: 100% (590/590), 完成.
+正在更新文件: 100% (11975/11975), 完成.
+正在更新文件: 100% (9218/9218), 完成.
+正在更新文件: 100% (34798/34798), 完成.
+正在更新文件: 100% (1523/1523), 完成.
+正在更新文件: 100% (1366/1366), 完成.
+正在更新文件: 100% (683/683), 完成.
+正在更新文件: 100% (9260/9260), 完成.
+正在更新文件: 100% (763/763), 完成.
+正在更新文件: 100% (8370/8370), 完成.m/prebuilts/ktlint正在更新文件:   6% (519/8370)
+正在更新文件: 100% (8703/8703), 完成.
+正在更新文件: 100% (1904/1904), 完成.
+正在更新文件: 100% (2101/2101), 完成.
+正在更新文件: 100% (21272/21272), 完成.
+Checking out: 100% (1242/1242), done in 2m11.494s
+repo sync has finished successfully.
+[baizhi958216@TianXuan lineage]$
+```
+
+:::
