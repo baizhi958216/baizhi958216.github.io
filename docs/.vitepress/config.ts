@@ -1,6 +1,6 @@
 import { defineConfig } from "vitepress";
 import { SpringBoot } from "../AllDocs/SpringBoot";
-import { VueNotes } from "../AllDocs/VueNotes";
+import { Vue3Notes } from "../AllDocs/Vue3Notes";
 import { NestJS } from "../AllDocs/NestJS";
 import { Frontend } from "../AllDocs/Frontend";
 import { InterviewFrontend } from "../AllDocs/InterviewFrontend";
@@ -11,6 +11,7 @@ import { NodeJS } from "../AllDocs/NodeJS";
 import { Network } from "../AllDocs/Network";
 import { Python } from "../AllDocs/Python";
 import { Windows } from "../AllDocs/Windows";
+import { Vue2Notes } from "../AllDocs/Vue2Notes";
 
 export default defineConfig({
   base: "/",
@@ -64,9 +65,14 @@ function sidebar() {
   return {
     "/AllDocs/": [
       {
+        text: "Vue2 学习笔记",
+        collapsed: true,
+        items: Vue2Notes(),
+      },
+      {
         text: "Vue3 学习笔记",
         collapsed: true,
-        items: VueNotes(),
+        items: Vue3Notes(),
       },
       {
         text: "前端",
