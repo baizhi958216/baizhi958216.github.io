@@ -11,6 +11,7 @@ import { NodeJS } from "../AllDocs/NodeJS";
 import { Network } from "../AllDocs/Network";
 import { Python } from "../AllDocs/Python";
 import { Windows } from "../AllDocs/Windows";
+import { Android } from "../AllDocs/Android";
 import { Vue2Notes } from "../AllDocs/Vue2Notes";
 
 export default defineConfig({
@@ -64,6 +65,11 @@ function nav() {
 function sidebar() {
   return {
     "/AllDocs/": [
+      {
+        text: "安卓开发",
+        collapsed: true,
+        items: Android(),
+      },
       {
         text: "Vue2 学习笔记",
         collapsed: true,
