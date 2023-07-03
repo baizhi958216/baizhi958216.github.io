@@ -13,6 +13,7 @@ import { Python } from "../AllDocs/Python";
 import { Windows } from "../AllDocs/Windows";
 import { Android } from "../AllDocs/Android";
 import { Vue2Notes } from "../AllDocs/Vue2Notes";
+import { SVN } from "../AllDocs/SVN";
 
 export default defineConfig({
   base: "/",
@@ -94,6 +95,11 @@ function sidebar() {
         text: "Git",
         collapsed: true,
         items: Git(),
+      },
+      {
+        text:'SVN',
+        collapsed:true,
+        items:SVN()
       },
       {
         text: "SpringBoot",
