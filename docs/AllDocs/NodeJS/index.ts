@@ -1,6 +1,10 @@
 export const NodeJS = (): { text: string; link: string }[] => {
   return [
     {
+      text:'NodeJS v17的OpenSSL更新',
+      link:'cryptochange'
+    },
+    {
       text: "爬取豆瓣电影TOP250",
       link: "doubantop250",
     },
