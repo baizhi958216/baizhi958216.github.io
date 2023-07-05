@@ -810,7 +810,7 @@ packages:
       - vue
     dev: false
 
-  /@vueuse/integrations@10.2.1(focus-trap@7.5.1)(vue@3.3.4):
+  /@vueuse/integrations@10.2.1(focus-trap@7.5.2)(vue@3.3.4):
     resolution: {integrity: sha512-FDP5lni+z9FjHE9H3xuvwSjoRV9U8jmDvJpmHPCBjUgPGYRynwb60eHWXCFJXLUtb4gSIHy0e+iaEbrKdalCkQ==}
     peerDependencies:
       async-validator: '*'
@@ -853,7 +853,7 @@ packages:
     dependencies:
       '@vueuse/core': 10.2.1(vue@3.3.4)
       '@vueuse/shared': 10.2.1(vue@3.3.4)
-      focus-trap: 7.5.1
+      focus-trap: 7.5.2
       vue-demi: 0.14.5(vue@3.3.4)
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -954,7 +954,7 @@ packages:
     dev: false
 
   /console@0.7.2:
-    resolution: {integrity: sha1-+aQzEkkpFZG3v5v/qOIFNW8gqfA=}
+    resolution: {integrity: sha512-+JSDwGunA4MTEgAV/4VBKwUHonP8CzJ/6GIuwPi6acKFqFfHUdSGCm89ZxZ5FfGWdZfkdgAroy5bJ5FSeN/t4g==}
     dev: false
 
   /constant-case@3.0.4:
@@ -1098,14 +1098,14 @@ packages:
     dev: true
 
   /escape-html@1.0.3:
-    resolution: {integrity: sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=}
+    resolution: {integrity: sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==}
     dev: false
 
   /estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
 
-  /focus-trap@7.5.1:
-    resolution: {integrity: sha512-Xm2j/zkKGc9ORKrVrbOqwCiJc5XnQOiBtmpa1YmEW0jqmkJ4ZJnRShuMYnEuho6LO8KKsbrqjir89KQLIDKKqA==}
+  /focus-trap@7.5.2:
+    resolution: {integrity: sha512-p6vGNNWLDGwJCiEjkSK6oERj/hEyI9ITsSwIUICBoKLlWiTWXJRfQibCwcoi50rTZdbi87qDtUlMCmQwsGSgPw==}
     dependencies:
       tabbable: 6.2.0
     dev: true
@@ -1144,7 +1144,7 @@ packages:
     optional: true
 
   /image-size@0.5.5:
-    resolution: {integrity: sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=}
+    resolution: {integrity: sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==}
     engines: {node: '>=0.10.0'}
     hasBin: true
     requiresBuild: true
@@ -1238,7 +1238,7 @@ packages:
     optional: true
 
   /mark.js@8.11.1:
-    resolution: {integrity: sha1-GA8fnr74sOY45BZq1S24eb6y/8U=}
+    resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
     dev: true
 
   /markdown-it@13.0.1:
@@ -1253,7 +1253,7 @@ packages:
     dev: false
 
   /mdurl@1.0.1:
-    resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=}
+    resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
     dev: false
 
   /memoize-one@6.0.0:
@@ -1359,7 +1359,7 @@ packages:
     dev: true
 
   /prr@1.0.1:
-    resolution: {integrity: sha1-0/wRS6BplaRexok/SEzrHXj19HY=}
+    resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
     optional: true
 
   /rollup@3.26.0:
@@ -1423,6 +1423,7 @@ packages:
 
   /sourcemap-codec@1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
+    deprecated: Please use @jridgewell/sourcemap-codec instead
     dev: false
 
   /tabbable@6.2.0:
@@ -1430,7 +1431,7 @@ packages:
     dev: true
 
   /to-fast-properties@2.0.0:
-    resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=}
+    resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
 
   /tslib@2.6.0:
@@ -1550,9 +1551,9 @@ packages:
       '@vitejs/plugin-vue': 4.2.3(vite@4.4.0-beta.3)(vue@3.3.4)
       '@vue/devtools-api': 6.5.0
       '@vueuse/core': 10.2.1(vue@3.3.4)
-      '@vueuse/integrations': 10.2.1(focus-trap@7.5.1)(vue@3.3.4)
+      '@vueuse/integrations': 10.2.1(focus-trap@7.5.2)(vue@3.3.4)
       body-scroll-lock: 4.0.0-beta.0
-      focus-trap: 7.5.1
+      focus-trap: 7.5.2
       mark.js: 8.11.1
       minisearch: 6.1.0
       shiki: 0.14.3
