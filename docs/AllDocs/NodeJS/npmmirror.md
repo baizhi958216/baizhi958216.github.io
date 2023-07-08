@@ -15,7 +15,7 @@
 命令:
 
 ```bash
-npm config get registry 镜像仓库地址
+npm config get registry
 ```
 
 ## 切换 registry 地址
