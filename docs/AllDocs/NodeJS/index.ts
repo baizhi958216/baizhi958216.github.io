@@ -5,6 +5,10 @@ export const NodeJS = (): { text: string; link: string }[] => {
       link:'cryptochange'
     },
     {
+      text:'NPM 镜像站',
+      link:'npmmirror'
+    },
+    {
       text: "爬取豆瓣电影TOP250",
       link: "doubantop250",
     },
