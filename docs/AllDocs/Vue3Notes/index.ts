@@ -29,6 +29,10 @@ export const Vue3Notes = (): { text: string; link: string }[] => {
       text: "Ref 全家桶 & 源码解析",
       link: "p7",
     },
+    {
+      text:'VUE 3.3新特性',
+      link:'vue3.3'
+    }
   ].map((obj) => {
     return { text: obj.text, link: `/AllDocs/Vue3Notes/${obj.link}` };
   });
