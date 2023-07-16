@@ -8,6 +8,10 @@ export const Windows = (): { text: string; link: string }[] => {
       text: "Windows安装安卓子系统",
       link: "subsystemforandroid",
     },
+    {
+      text: "美化 Windows Terminal(终端)",
+      link: 'beautiterminal'
+    }
   ].map((obj) => {
     return { text: obj.text, link: `/AllDocs/Windows/${obj.link}` };
   });
