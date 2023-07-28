@@ -25,6 +25,10 @@ export const Frontend = (): { text: string; link: string }[] => {
       text: "浅尝跨平台开发框架Ionic",
       link: "ionicstarter",
     },
+    {
+      text: "使用和配置ESLint",
+      link: "eslintinit"
+    }
   ].map((obj) => {
     return {
       text: obj.text,
