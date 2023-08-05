@@ -21,8 +21,19 @@ export const Frontend = (): { text: string; link: string }[] => {
     { text: "让对象也可以解构", link: "objiterator" },
     { text: "实现HashMap", link: "hashmap" },
     { text: "解决nuxt项目初始化失败", link: "nuxtinitfailed" },
+<<<<<<< HEAD
     { text: "浅尝跨平台开发框架Ionic", link: "ionicstarter" },
     { text: "AJAX", link: "AJAX" },
+=======
+    {
+      text: "浅尝跨平台开发框架Ionic",
+      link: "ionicstarter",
+    },
+    {
+      text: "使用和配置ESLint",
+      link: "eslintinit"
+    }
+>>>>>>> ae2a11536ebe76c0d690c30440039037b31835be
   ].map((obj) => {
     return {
       text: obj.text,

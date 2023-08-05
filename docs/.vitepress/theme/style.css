@@ -120,3 +120,11 @@
   transition: color 0.25s;
 }
 
+.vp-code-group .tabs::-webkit-scrollbar{
+  height: 6px;
+}
+
+.vp-code-group .tabs::-webkit-scrollbar-thumb{
+  background-color: var(--vp-c-brand-light);
+  border-radius: 4px;
+}
