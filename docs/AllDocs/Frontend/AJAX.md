@@ -1,9 +1,10 @@
 <script setup>
 import { ElButton } from 'element-plus'
+import { ref } from 'vue'
 import 'element-plus/es/components/button/style/css'
 const testXHR = () => {
     const xhr = new XMLHttpRequest()
-    xhr.open('get','http://localhost:3000',true)
+    xhr.open('GET','http://localhost:3000',true)
     xhr.onreadystatechange = () => {
         if(xhr.readyState===XMLHttpRequest.DONE && xhr.status===200){
             const { message } = JSON.parse(xhr.responseText)
@@ -11,6 +12,15 @@ const testXHR = () => {
         }
     }
     xhr.send()
+}
+
+const goUpload = () => {
+    const file = document.querySelector('#file').files
+    const formData = new FormData()
+    formData.append('file', file[0])
+    const xhr = new XMLHttpRequest()
+    xhr.open('POST','http://localhost:3000/upload',true)
+    xhr.send(formData)
 }
 </script>
 
@@ -43,7 +53,7 @@ XHR 的使用方法一般是:
 
 :::
 
-例如创建一个 GET 请求:
+## 创建一个 GET 请求:
 
 测试:
 
@@ -51,7 +61,7 @@ XHR 的使用方法一般是:
 
 前端代码:
 
-```ts
+```js
 const xhr = new XMLHttpRequest();
 xhr.open("get", "http://localhost:3000", true);
 xhr.onreadystatechange = () => {
@@ -107,3 +117,132 @@ server.listen(3000, "localhost", () => {
   }
 }
 ```
+
+:::
+
+## 上传文件
+
+测试:
+
+<input type="file" id="file"/>
+<br/>
+<el-button type="primary" id="upload" @click="goUpload">上传文件</el-button>
+
+前端代码:
+
+```vue
+<template>
+  <input type="file" id="file" />
+  <br />
+  <el-button type="primary" id="upload" @click="goUpload">上传文件</el-button>
+</template>
+
+<script setup>
+import { ElButton } from "element-plus";
+const goUpload = () => {
+  const file = document.querySelector("#file").files;
+  const formData = new FormData();
+  formData.append("file", file[0]);
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "http://localhost:3000/upload", true);
+  xhr.send(formData);
+};
+</script>
+```
+
+后端代码:
+
+:::code-group
+
+```js [index.js]
+import { createServer } from "http";
+import { Upload } from "./upload.js";
+
+const server = createServer((req, res) => {
+  const { method, url } = req;
+  if (method === "OPTIONS") {
+    res.writeHead(200, {
+      "Content-Type": "text/plain",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+    });
+
+    res.end();
+  }
+  if (url === "/" && method === "GET") {
+    res.writeHead(200, {
+      "content-type": "application/json",
+      // 处理浏览器跨域
+      "Access-Control-Allow-Origin": "*",
+    });
+
+    res.end(
+      JSON.stringify({
+        message: "GET AJAX",
+      })
+    );
+  } else if (url === "/upload" && method === "POST") {
+    Upload(req, res);
+  }
+});
+
+server.listen(3000, "localhost", () => {
+  console.log("服务已启动: http://localhost:3000");
+});
+```
+
+```js [upload.js]
+import formidable from "formidable";
+import { mkdirSync, readFile, writeFile, existsSync } from "fs";
+import path from "path";
+
+const Upload = (req, res) => {
+  const form = formidable({ multiples: false });
+  form.parse(req, (err, fields, files) => {
+    if (!existsSync("./file")) {
+      mkdirSync("./file", { recursive: true });
+    }
+    readFile(files.file[0].filepath, (err, data) => {
+      writeFile(
+        path.join("./file", files.file[0].originalFilename),
+        data,
+        () => {
+          sendResponse(res, 200, { message: "SUCCESS" });
+        }
+      );
+    });
+  });
+};
+
+const sendResponse = (res, statusCode, data) => {
+  res.writeHead(statusCode, {
+    "content-type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+  });
+  res.end(JSON.stringify(data));
+};
+
+export { Upload };
+```
+
+```json [package.json]
+{
+  "name": "study_backend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "d": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "formidable": "^3.5.0",
+    "nodemon": "^3.0.1"
+  }
+}
+```
+
+:::
