@@ -120,7 +120,7 @@ server.listen(3000, "localhost", () => {
 
 :::
 
-## 上传文件
+## 通过POST上传文件
 
 测试:
 
