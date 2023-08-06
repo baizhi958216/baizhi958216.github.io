@@ -27,6 +27,10 @@ export const NodeJS = (): { text: string; link: string }[] => {
       text: "MySQL实战演练",
       link: "mysql",
     },
+    {
+      text: "大文件分片上传",
+      link: 'chunkfileupload'
+    }
   ].map((obj) => {
     return {
       text: obj.text,
