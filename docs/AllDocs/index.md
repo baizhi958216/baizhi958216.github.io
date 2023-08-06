@@ -9,9 +9,8 @@ import 'element-plus/es/components/tag/style/css'
 const bangumi_list = ref()
 
 const w = ['一','二','三','四','五','六','日']
-const today = `周${w[new Date().getDay()==0?7:new Date().getDay()-1]}`
-
-fetch('https://baizhi958216.xyz/bangumi_list')
+const today = `周${w[new Date().getDay()==0?6:new Date().getDay()-1]}`
+fetch('http://localhost:3001/bangumi_list')
   .then(res => res.json())
   .then(data => {
     bangumi_list.value = data
