@@ -16,7 +16,6 @@ export const Frontend = (): { text: string; link: string }[] => {
       text: "Github Page部署VitePress",
       link: "VitePress/deploy",
     },
-    { text: "TypeScript5正式发布", link: "ts5" },
     { text: "实现一个简易版的虚拟DOM", link: "virtualdom" },
     { text: "让对象也可以解构", link: "objiterator" },
     { text: "实现HashMap", link: "hashmap" },

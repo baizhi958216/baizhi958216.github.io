@@ -14,6 +14,7 @@ import { Windows } from "../AllDocs/Windows";
 import { Android } from "../AllDocs/Android";
 import { Vue2Notes } from "../AllDocs/Vue2Notes";
 import { SVN } from "../AllDocs/SVN";
+import { TypeScript } from "../AllDocs/TypeScript";
 
 export default defineConfig({
   base: "/",
@@ -85,6 +86,11 @@ function sidebar() {
         text: "前端",
         collapsed: true,
         items: Frontend(),
+      },
+      {
+        text: "TypeScript",
+        collapsed: true,
+        items: TypeScript(),
       },
       {
         text: "前端面试笔试",
