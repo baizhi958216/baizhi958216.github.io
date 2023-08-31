@@ -193,12 +193,14 @@ One pain point TypeScript had with JSX was its requirements on the type of every
 
 For some context and background, a JSX element is either of the following:
 
+```jsx
 // A self-closing JSX tag
 <Foo />
 
 // A regular element with an opening/closing tag
 <Bar></Bar>
-When type-checking <Foo /> or <Bar></Bar>, TypeScript always looks up a namespace called JSX and fetches a type out of it called Element. In other words, it looks for JSX.Element.
+```
+When type-checking `<Foo />` or `<Bar></Bar>`, TypeScript always looks up a namespace called JSX and fetches a type out of it called Element. In other words, it looks for JSX.Element.
 
 But to check whether Foo or Bar themselves are valid tag names, TypeScript would roughly just grab the types returned or constructed by Foo or Bar and check for compatibility with JSX.Element (or another type called JSX.ElementClass if the type is constructable).
 
@@ -206,6 +208,7 @@ The limitations here meant that components could not be used if they returned or
 
 As a more concrete example, future versions of React have proposed limited support for components that return Promises, but existing versions of TypeScript cannot express that without someone drastically loosening the type of JSX.Element.
 
+```jsx
 import * as React from "react";
 
 async function Foo() {
@@ -216,8 +219,11 @@ let element = <Foo />;
 //             ~~~
 // 'Foo' cannot be used as a JSX component.
 //   Its return type 'Promise<Element>' is not a valid JSX element.
+```
+
 To provide libraries with a way to express this, TypeScript 5.1 now looks up a type called JSX.ElementType. ElementType specifies precisely what is valid to use as a tag in a JSX element. So it might be typed today as something like
 
+```jsx
 namespace JSX {
     export type ElementType =
         // All the valid lowercase tags
@@ -231,11 +237,13 @@ namespace JSX {
     export type Element = /*...*/;
     export type ClassElement = /*...*/;
 }
+```
 
 ## Namespaced JSX Attributes
 
 TypeScript now supports namespaced attribute names when using JSX.
 
+```jsx
 import * as React from "react";
 
 // Both of these are equivalent:
@@ -249,8 +257,10 @@ interface FooProps {
 function Foo(props: FooProps) {
     return <div>{props["a:b"]}</div>;
 }
+```
 Namespaced tag names are looked up in a similar way on JSX.IntrinsicAttributes when the first segment of the name is a lowercase name.
 
+```jsx
 // In some library's code or in an augmentation of that library:
 namespace JSX {
     interface IntrinsicElements {
@@ -260,6 +270,7 @@ namespace JSX {
 
 // In our code:
 let x = <a:b prop="hello!" />;
+```
 
 ## typeRoots Are Consulted In Module Resolution
 
@@ -278,10 +289,13 @@ Visual Studio Code's Editor: Linked Editing` option
 
 or configure editor.linkedEditing in your JSON settings file:
 
+```json
 {
     // ...
     "editor.linkedEditing": true,
 }
+```
+
 This feature will also be supported by Visual Studio 17.7 Preview 1.
 
 ## Snippet Completions for @param JSDoc Tags
