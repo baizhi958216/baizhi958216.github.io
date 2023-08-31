@@ -2,9 +2,8 @@
 import { ElButton } from 'element-plus'
 import 'element-plus/es/components/button/style/css'
 
-const xhr = new XMLHttpRequest();
-
 const testProgress=()=>{
+  const xhr = new XMLHttpRequest();
   document.querySelector('#progress').innerHTML=0
   const file = document.querySelector("#file").files;
   const formData = new FormData();
@@ -22,6 +21,7 @@ const testProgress=()=>{
 }
 
 const testProgress1=()=>{
+  const xhr = new XMLHttpRequest();
   document.querySelector('#progress1').innerHTML=0
   const file = document.querySelector("#file1").files;
   const formData = new FormData();
