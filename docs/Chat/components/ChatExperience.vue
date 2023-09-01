@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from "vue";
+import { reactive, ref, onMounted } from "vue";
 import MarkdownIt from "markdown-it";
 const mdi = new MarkdownIt();
 const chatipt = ref();
@@ -49,7 +49,8 @@ let result = reactive<
 
 const disable = ref(true);
 
-fetch("http://localhost:3000")
+onMounted(()=>{
+  fetch("http://localhost:3000")
   .then((res) => {
     if (res.status !== 200) {
       disable.value = true;
@@ -65,6 +66,8 @@ fetch("http://localhost:3000")
       result[0].message = "当阁下看到这条消息的时候说明咱的服务器关机了(●ˇ∀ˇ●)";
     }
   });
+})
+
 
 const submit = async () => {
   result.push({
