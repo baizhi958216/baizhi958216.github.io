@@ -1,4 +1,4 @@
-# VS Code 美化以及个人使用的 VSCode 配置
+# VSCode美化以及个人使用配置
 
 ![vscode](vscode/vscode.png)
 

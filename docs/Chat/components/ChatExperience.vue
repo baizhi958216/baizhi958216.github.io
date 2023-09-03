@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="container">
     <div class="result">
       <div class="chat_l">
@@ -165,3 +165,4 @@ const play = (src: string) => {
   cursor: pointer;
 }
 </style>
+ -->

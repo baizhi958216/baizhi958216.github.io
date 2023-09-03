@@ -13,7 +13,7 @@ export const Windows = (): { text: string; link: string }[] => {
       link: 'beautiterminal'
     },
     {
-      text: "VS Code 美化以及个人使用的 VSCode 配置",
+      text: "VSCode美化以及个人使用配置",
       link: 'vscodesettings'
     }
   ].map((obj) => {
