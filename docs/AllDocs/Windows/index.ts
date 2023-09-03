@@ -11,6 +11,10 @@ export const Windows = (): { text: string; link: string }[] => {
     {
       text: "美化 Windows Terminal(终端)",
       link: 'beautiterminal'
+    },
+    {
+      text: "VS Code 美化以及个人使用的 VSCode 配置",
+      link: 'vscodesettings'
     }
   ].map((obj) => {
     return { text: obj.text, link: `/AllDocs/Windows/${obj.link}` };
