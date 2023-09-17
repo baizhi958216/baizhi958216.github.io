@@ -15,6 +15,7 @@ import { Android } from "../AllDocs/Android";
 import { Vue2Notes } from "../AllDocs/Vue2Notes";
 import { SVN } from "../AllDocs/SVN";
 import { TypeScript } from "../AllDocs/TypeScript";
+import { MyIdeas } from "../AllDocs/MyIdeas";
 
 export default defineConfig({
   base: "/",
@@ -147,6 +148,11 @@ function sidebar() {
         collapsed: true,
         items: Windows(),
       },
+      {
+        text: "一些思考",
+        collapsed: true,
+        items: MyIdeas(),
+      }
     ],
     "/Chat/": [],
     /* "/YunBase/": [
