@@ -29,7 +29,9 @@ export const Frontend = (): { text: string; link: string }[] => {
       link: "eslintinit"
     },
     { text: "AJAX", link: "AJAX" },
-    { text: "监听AJAX请求进度", link:"AJAXprogress" }
+    { text: "监听AJAX请求进度", link:"AJAXprogress" },
+    { text: "Promise", link: 'Promise' },
+    { text: "Vue开发必须知道的36个技巧", link: 'somethingvue'}
   ].map((obj) => {
     return {
       text: obj.text,
