@@ -2,7 +2,7 @@
   "type": "module",
   "devDependencies": {
     "less": "^4.2.0",
-    "vitepress": "1.0.0-rc.14"
+    "vitepress": "1.0.0-rc.15"
   },
   "scripts": {
     "dev": "vitepress dev docs",
