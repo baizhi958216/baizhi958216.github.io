@@ -78,9 +78,9 @@ takesFunction((): undefined => {
 });
 ```
 
-This behavior was frustrating and confusing, especially when calling functions outside of one’s control. Understanding the interplay between inferring void over undefined, whether an undefined-returning function needs a return statement, etc. seems like a distraction.
+这种写法在写一些未知返回值的函数时，开发者常常会纠结void和undefined之间的关系，以及一个返回undefined的函数是否需要使用return语句等问题。
 
-TypeScript 5.1 允许没有返回语句的函数返回`undefined`。
+所以, TypeScript 5.1 允许没有返回语句的函数返回`undefined`。
 
 ```ts
 // ✅ Works in TypeScript 5.1!
@@ -129,7 +129,7 @@ function f(): undefined {
 
 ## Getters和Setters支持声明不同的类型
 
-TypeScript 4.3 made it possible to say that a get and set accessor pair might specify two different types.
+TypeScript 4.3 的 get/set访问器允许返回两种不同的类型.
 
 ```ts
 interface Serializer {
@@ -146,11 +146,11 @@ box.value = true;
 console.log(box.value.toUpperCase());
 ```
 
-Initially we required that the get type had to be a subtype of the set type. This meant that writing`box.value = box.value;`would always be valid.
+最初，我们要求获取类型必须是设置类型的子类型。这意味着写`box.value = box.value;`将始终有效。
 
-However, there are plenty of existing and proposed APIs that have completely unrelated types between their getters and setters. For example, consider one of the most common examples – the style property in the DOM and CSSStyleRule API. Every style rule has a style property that is a CSSStyleDeclaration; however, if you try to write to that property, it will only work correctly with a string!
+然而，有许多现有的和建议的API，在它们的getter和setter之间具有完全不相关的类型。例如，考虑最常见的示例之一 - DOM和CSSStyleRule API中的style属性。每个样式规则都有一个style属性，它是一个CSSStyleDeclaration；然而，如果您尝试写入该属性，它只能正确处理字符串！
 
-TypeScript 5.1 now allows completely unrelated types for get and set accessor properties, provided that they have explicit type annotations. And while this version of TypeScript does not yet change the types for these built-in interfaces, CSSStyleRule can now be defined in the following way:
+TypeScript 5.1现在允许完全不相关的类型用于获取和设置访问器属性，前提是它们具有明确的类型注释。虽然这个版本的TypeScript还没有改变这些内置接口的类型，但可以通过以下方式定义CSSStyleRule：
 
 ```ts
 interface CSSStyleRule {
