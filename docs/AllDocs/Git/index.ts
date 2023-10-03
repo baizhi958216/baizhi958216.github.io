@@ -9,6 +9,10 @@ export const Git = (): { text: string; link: string }[] => {
       text: "为git提交记录签名",
       link: "gitsign",
     },
+    {
+      text: "处理仓库远端与本地提交时间冲突",
+      link: "fixunrelated",
+    },
   ].map((obj) => {
     return {
       text: obj.text,
