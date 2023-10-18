@@ -16,6 +16,8 @@ import { Vue2Notes } from "../AllDocs/Vue2Notes";
 import { SVN } from "../AllDocs/SVN";
 import { TypeScript } from "../AllDocs/TypeScript";
 import { MyIdeas } from "../AllDocs/MyIdeas";
+import { React18 } from "../AllDocs/React18";
+import { kickme } from "../AllDocs/KickMe";
 
 export default defineConfig({
   base: "/",
@@ -69,6 +71,11 @@ function sidebar() {
   return {
     "/AllDocs/": [
       {
+        text: "我的指指点点",
+        collapsed: true,
+        items: kickme(),
+      },
+      {
         text: "安卓开发",
         collapsed: true,
         items: Android(),
@@ -82,6 +89,11 @@ function sidebar() {
         text: "Vue3 学习笔记",
         collapsed: true,
         items: Vue3Notes(),
+      },
+      {
+        text: "React 18",
+        collapsed: true,
+        items: React18()
       },
       {
         text: "前端",
