@@ -4,6 +4,10 @@ export const React18 = (): { text: string; link: string }[] => {
         text: "React 18",
         link: "react18",
       },
+      {
+        text: "手搓一个防抖函数",
+        link: "debounce"
+      }
     ].map((obj) => {
       return { text: obj.text, link: `/AllDocs/React18/${obj.link}` };
     });
