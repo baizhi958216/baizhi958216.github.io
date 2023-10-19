@@ -1,12 +1,12 @@
 # 腾讯凯博
 
 <el-timeline>
-  <el-timeline-item timestamp="2023/10/19" placement="top">
+  <el-timeline-item timestamp="2023/10/18" placement="top">
     <el-card>
-      <h4>进入人才库</h4>
+      <h4>进入人才库?(大概是人才库都不配进)</h4>
     </el-card>
   </el-timeline-item>
-  <el-timeline-item timestamp="2023/10/19" placement="top">
+  <el-timeline-item timestamp="2023/10/18" placement="top">
     <el-card>
       <h4>线上笔试</h4>
     </el-card>
@@ -47,7 +47,9 @@ for(let i = 0; i < 10; i++){
 }
 a[6]()
 ```
-<el-button @click="tryconsole">试一下</el-button>
+<el-button @click="tryconsole">在console试一下</el-button>
+
+<el-button @click="trydialog">我不会打开console！</el-button>
 
 :::
 
@@ -64,8 +66,10 @@ a[6]()
 
 <script setup>
 import { ElTimeline, ElTimelineItem, ElCard, ElButton }  from "element-plus"
+import { ElMessage } from 'element-plus'
 import 'element-plus/es/components/button/style/css'
 import 'element-plus/es/components/card/style/css'
+import 'element-plus/es/components/message/style/css'
 import 'element-plus/es/components/timeline/style/css'
 import 'element-plus/es/components/timeline-item/style/css'
 
@@ -77,5 +81,12 @@ const tryconsole=()=>{
         }
     }
     a[6]()
+}
+const trydialog = () => {
+  ElMessage.success({
+    showClose: true,
+    message: '6',
+    center: true,
+  })
 }
 </script>
