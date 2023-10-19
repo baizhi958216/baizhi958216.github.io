@@ -47,6 +47,7 @@ for(let i = 0; i < 10; i++){
 }
 a[6]()
 ```
+<el-button @click="tryconsole">试一下</el-button>
 
 :::
 
@@ -62,8 +63,19 @@ a[6]()
 人才库见
 
 <script setup>
-import { ElTimeline, ElTimelineItem, ElCard }  from "element-plus"
+import { ElTimeline, ElTimelineItem, ElCard, ElButton }  from "element-plus"
+import 'element-plus/es/components/button/style/css'
 import 'element-plus/es/components/card/style/css'
 import 'element-plus/es/components/timeline/style/css'
 import 'element-plus/es/components/timeline-item/style/css'
+
+const tryconsole=()=>{
+    let a = []
+    for(let i = 0; i < 10; i++){
+        a[i] = function(){
+            console.log(i)
+        }
+    }
+    a[6]()
+}
 </script>
