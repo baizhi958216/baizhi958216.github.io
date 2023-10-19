@@ -7,6 +7,10 @@ export const React18 = (): { text: string; link: string }[] => {
       {
         text: "手搓一个防抖函数",
         link: "debounce"
+      },
+      {
+        text: "各种Hook",
+        link: "hooks"
       }
     ].map((obj) => {
       return { text: obj.text, link: `/AllDocs/React18/${obj.link}` };
