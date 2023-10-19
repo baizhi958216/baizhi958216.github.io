@@ -315,6 +315,49 @@ useCallback和useMemo都用作缓存，使用时应注意函数用途
 
 ## Reducer
 
+useReducer 是 React 的一个 Hook，它允许你在组件中添加一个 reducer。
+
+在 React 中，reducer 是一种用于管理状态的函数。它接收当前的状态和一个 action，并返回新的状态。使用 reducer 可以将复杂的状态逻辑封装在一个函数中，使组件的状态管理更加可维护和可测试。
+
+useReducer Hook 的作用是在组件中使用 reducer 来管理状态。它接受两个参数：reducer 函数和初始状态。reducer 函数是一个用于处理状态更新的函数，初始状态是 reducer 函数的初始值。
+
+useReducer 返回一个包含当前状态和 dispatch 函数的数组。通过调用 dispatch 函数，并传递一个 action，可以触发 reducer 函数对状态进行更新。
+
+以下是一个示例，展示了如何使用 useReducer 添加一个 reducer 到组件中：
+
+```tsx
+import React, { useReducer } from 'react';
+
+// 定义 reducer 函数
+function reducer(state, action) {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { count: state.count + 1 };
+    case 'DECREMENT':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+
+function MyComponent() {
+  // 使用 useReducer 定义状态和 dispatch 函数
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch({ type: 'INCREMENT' })}>Increment</button>
+      <button onClick={() => dispatch({ type: 'DECREMENT' })}>Decrement</button>
+    </div>
+  );
+}
+```
+
+在上面的例子中，useReducer 用于添加一个 reducer 到 MyComponent 组件中。通过调用 dispatch 函数，并传递一个 action 对象，可以触发 reducer 函数对状态进行更新。每次状态更新后，组件会重新渲染，并显示更新后的状态。
+
+使用 useReducer 可以在组件中实现更复杂的状态管理逻辑，并将状态更新的代码集中在一个地方，提高代码的可读性和可维护性。
+
 ## Performance
 
 ## Resource
