@@ -35,6 +35,10 @@ export const Vue3Notes = (): { text: string; link: string }[] => {
     },{
       text: '封装一个供编程式使用的消息提示组件',
       link: 'popmessage'
+    },
+    {
+      text: '通过WebSocket搭建一个简易的即时聊天平台',
+      link: 'websocket'
     }
   ].map((obj) => {
     return { text: obj.text, link: `/AllDocs/Vue3Notes/${obj.link}` };
