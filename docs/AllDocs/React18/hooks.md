@@ -1,5 +1,54 @@
 # 各种Hook
 
+:::details 一些常用的内置钩子
+
+### State Hooks
+
+这些钩子可以让组件"记住"信息并管理自己的数据。
+
+`useState`: 返回一个状态变量和一个用于更新该变量的函数。
+可以直接调用更新函数来更新状态。
+
+`useReducer`: 适用于复杂的状态管理场景。接受一个 reducer 函数和一个初始状态值作为参数。
+reducer 函数接收当前状态和一个动作，并根据动作类型返回新的状态。
+
+### Context Hooks
+
+Context 允许组件从最顶层父组件接收信息，不需要通过 props 传递。 
+
+`useContext`: 用于读取和订阅一个 context。
+
+
+### Ref Hooks
+
+Refs是在React中用于保存组件的一些额外信息的机制。它们可以用来存储不用于渲染的数据，比如DOM节点、定时器的ID等。与状态不同，更新ref不会导致组件重新渲染。
+
+`useRef`: 声明一个引用，可以保存任何值，但最常用的是保存DOM节点。
+
+`useImperativeHandle`: 自定义组件暴露的ref。
+
+### Effect Hooks
+
+Effects是一种让组件与外部系统进行连接和同步的方式(包括处理网络请求、浏览器DOM操作、动画、使用不同UI库编写的小部件以及其他非React代码)。
+
+`useEffect`: 在组件渲染完成后执行副作用操作(发送网络请求、订阅事件、操作DOM等)。
+
+### Performance Hooks
+
+在React中，为了优化重新渲染的性能，如果数据自上次渲染以来没有发生变化，则跳过重新渲染。
+
+`useMemo`: 缓存一个复杂的计算结果，将计算结果存储在一个缓存变量中，避免在每次渲染时重新计算。
+
+`useCallback`: 缓存一个函数定义，然后将其传递给一个经过优化的组件，避免在每次渲染时重新创建函数，提高性能。
+
+### Resource Hooks
+
+在React中，组件可以在不将资源作为其状态的一部分的情况下访问资源。例如，一个组件可以从Promise中读取消息，或者从上下文中读取样式信息。
+
+`use`: 读取Promise或Context，从资源中获取值并将其用于组件的渲染或其他操作中。
+
+:::
+
 ## use🪄
 
 :::warning `use`Hook 只在React的`canary`和`experimental`中可用。
@@ -97,7 +146,7 @@ pnpm i react@experimental react-dom@experimental
 
 :::
 
-## State
+## useState
 
 保存一个变量的**初始值**并返回**状态值**, 使用设置函数更新状态。
 
@@ -147,7 +196,7 @@ function App() {
 export default App
 ```
 
-## Context
+## useContext
 
 使用Props可以在组件间进行传值，但是组件多了会变得很麻烦，因此，这个`Context`Hook可以用于多个组件共享数据。
 
@@ -188,7 +237,7 @@ export default App;
 
 :::
 
-## Ref
+## useRef
 
 创建一个可变的引用，这个引用在重新渲染时保持不变，但当值发生变化时不会触发重新渲染。
 
@@ -215,7 +264,7 @@ export default App;
 
 useRef Hook经常与其他Hook一起使用，比如useEffect，用于在函数组件中执行副作用、存储和管理可变的值。
 
-## Effect
+## useEffect
 
 `useEffect` 用来将组件与外部系统进行同步。
 
@@ -251,7 +300,19 @@ export default App;
 
 在上面的例子中，useEffect 的副作用函数会在组件渲染后执行一次，订阅事件。同时，通过返回一个清理函数，可以在组件卸载前取消订阅，以防止内存泄漏。
 
-## Callback
+:::warning 
+
+React的设计范例鼓励我们将数据流的协调放在其他地方，而不是在Effects中。
+
+数据流的协调通常是通过组件之间的Props传递和状态管理来完成的，比如使用Redux、Context API等。
+
+Effects的主要目的是用于处理副作用，而不是协调应用程序的数据流。
+
+如果组件没有与外部系统交互，在这种情况下，直接在组件函数中处理逻辑，不需要使用Effect来处理副作用。
+
+:::
+
+## useCallback
 
 在组件重新渲染时,`useCallback`缓存已有的函数定义。
 
@@ -278,7 +339,7 @@ export default App
 ```
 在上面的例子中，useCallback 的回调函数会在组件首次渲染时创建，并在后续重新渲染时保持相同的引用。这样，当父组件重新渲染时，即使 MyComponent 作为 prop 传递给其他子组件，也不会触发子组件的不必要重新渲染。
 
-## Memo
+## useMemo
 
 在组件重新渲染时, `useMemo`可以缓存计算的结果。
 
@@ -313,7 +374,7 @@ useCallback和useMemo都用作缓存，使用时应注意函数用途
 
 :::
 
-## Reducer
+## useReducer
 
 useReducer 是 React 的一个 Hook，它允许你在组件中添加一个 reducer。
 
@@ -357,7 +418,3 @@ function MyComponent() {
 在上面的例子中，useReducer 用于添加一个 reducer 到 MyComponent 组件中。通过调用 dispatch 函数，并传递一个 action 对象，可以触发 reducer 函数对状态进行更新。每次状态更新后，组件会重新渲染，并显示更新后的状态。
 
 使用 useReducer 可以在组件中实现更复杂的状态管理逻辑，并将状态更新的代码集中在一个地方，提高代码的可读性和可维护性。
-
-## Performance
-
-## Resource
