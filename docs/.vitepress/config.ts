@@ -18,6 +18,7 @@ import { TypeScript } from "../AllDocs/TypeScript";
 import { MyIdeas } from "../AllDocs/MyIdeas";
 import { React18 } from "../AllDocs/React18";
 import { kickme } from "../AllDocs/KickMe";
+import { Nuxt } from "../AllDocs/Nuxt";
 
 export default defineConfig({
   base: "/",
@@ -89,6 +90,11 @@ function sidebar() {
         text: "Vue3 学习笔记",
         collapsed: true,
         items: Vue3Notes(),
+      },
+      {
+        text: "NuxtJS",
+        collasped: true,
+        items: Nuxt()
       },
       {
         text: "React 18",
