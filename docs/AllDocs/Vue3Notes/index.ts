@@ -31,7 +31,7 @@ export const Vue3Notes = (): { text: string; link: string }[] => {
     },
     {
       text:'VUE 3.3新特性',
-      link:'vue3.3'
+      link:'vue33'
     },{
       text: '封装一个供编程式使用的消息提示组件',
       link: 'popmessage'
