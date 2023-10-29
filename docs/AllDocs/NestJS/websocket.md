@@ -2,6 +2,8 @@
 
 使用MySQL + Prisma + NestJS + socket.io
 
+仓库: [websocket-nest-vue/nest-websocket](https://github.com/baizhi958216/websocket-nest-vue/tree/main/nest-websocket)
+
 [前端](/AllDocs/Vue3Notes/websocket)
 
 ## MySQL环境配置
