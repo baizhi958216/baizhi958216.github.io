@@ -19,6 +19,7 @@ import { MyIdeas } from "../AllDocs/MyIdeas";
 import { React18 } from "../AllDocs/React18";
 import { kickme } from "../AllDocs/KickMe";
 import { Nuxt } from "../AllDocs/Nuxt";
+import { AndroidGeek } from "../AllDocs/AndroidGeek";
 
 export default defineConfig({
   base: "/",
@@ -165,6 +166,11 @@ function sidebar() {
         text: "Windows",
         collapsed: true,
         items: Windows(),
+      },
+      {
+        text: "安卓玩机",
+        collapsed: true,
+        items: AndroidGeek()
       },
       {
         text: "一些思考",
