@@ -2,7 +2,7 @@
   "type": "module",
   "devDependencies": {
     "less": "^4.2.0",
-    "vitepress": "1.0.0-rc.22"
+    "vitepress": "1.0.0-rc.24"
   },
   "scripts": {
     "dev": "vitepress dev docs",
@@ -10,11 +10,11 @@
     "preview": "vitepress preview docs"
   },
   "dependencies": {
-    "@types/markdown-it": "^13.0.2",
+    "@types/markdown-it": "^13.0.5",
     "element-plus": "^2.4.1",
     "markdown-it": "^13.0.2",
-    "vite": "^4.4.11",
+    "vite": "^4.5.0",
     "vite-plugin-style-import": "^2.0.0",
-    "vue": "^3.3.4"
+    "vue": "^3.3.7"
   }
 }
