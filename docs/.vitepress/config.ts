@@ -93,13 +93,13 @@ function sidebar() {
       },
       {
         text: "NuxtJS",
-        collasped: true,
-        items: Nuxt()
+        collapsed: true,
+        items: Nuxt(),
       },
       {
         text: "React 18",
         collapsed: true,
-        items: React18()
+        items: React18(),
       },
       {
         text: "前端",
@@ -122,9 +122,9 @@ function sidebar() {
         items: Git(),
       },
       {
-        text:'SVN',
-        collapsed:true,
-        items:SVN()
+        text: "SVN",
+        collapsed: true,
+        items: SVN(),
       },
       {
         text: "SpringBoot",
@@ -170,7 +170,7 @@ function sidebar() {
         text: "一些思考",
         collapsed: true,
         items: MyIdeas(),
-      }
+      },
     ],
     "/Chat/": [],
     /* "/YunBase/": [
