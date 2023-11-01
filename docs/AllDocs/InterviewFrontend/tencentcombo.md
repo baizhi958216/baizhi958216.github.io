@@ -1,9 +1,15 @@
 # 腾讯凯博
 
 <el-timeline>
-  <el-timeline-item timestamp="2023/10/18" placement="top">
+  <el-timeline-item timestamp="2023/10/20" placement="top">
     <el-card>
-      <h4>进入人才库?(大概是人才库都不配进)</h4>
+    <p>...：</p>
+    <p>你好呀，很遗憾，你在本次凯博-全栈开发/实习的招聘旅程暂时告一段落。再次感谢你对腾讯凯博游戏的关注和支持，你的资料将进入公司的人才库，有合适的岗位我们将在第一时间与你联系。</p>
+    <p>请带着属于你自己的能量，继续向前进。</p>
+    <p>祝你愉快，我们一直在，期待有机会再相逢！</p>
+    <p align="right">广州腾讯凯博信息科技有限公司</p>
+    <p align="right">2023-10-20</p>
+    <div style="font-size:11px">在这个卷的不得了的环境下能看我简历一眼，给我发通知发笔试发结果，无论结果如何，我都很感谢凯博能给我机会。</div>
     </el-card>
   </el-timeline-item>
   <el-timeline-item timestamp="2023/10/18" placement="top">
