@@ -14,7 +14,15 @@
 
 ## Lodash 是什么
 
-Lodash 是一个 JavaScript 的实用工具库，封装了 JavaScript 常用的函数和数据操作，提高了开发效率并且减少了代码量。
+Lodash ~~是一个 JavaScript 的实用工具库~~，封装了 JavaScript 常用的函数和数据操作，提高了开发效率并且减少了代码量。
+
+:::tip 使用TypeScript重写
+
+2023年9月17日，lodash作者使用bun+js对项目进行了重构: [wip: migrate to bun](https://github.com/lodash/lodash/commit/97d4a2fe193a66f5f96d7b813bed96b35b5abf15)
+
+![lodash_ts](./imgs/lodashts.png)
+
+:::
 
 Lodash 是 Underscore.js 的前端大型衍生项目，提供了诸如`数组操作`，`字符串操作`，`对象操作`等工具函数。
 
