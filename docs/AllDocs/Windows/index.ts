@@ -10,12 +10,16 @@ export const Windows = (): { text: string; link: string }[] => {
     },
     {
       text: "美化 Windows Terminal(终端)",
-      link: 'beautiterminal'
+      link: "beautiterminal",
     },
     {
       text: "VSCode美化以及个人使用配置",
-      link: 'vscodesettings'
-    }
+      link: "vscodesettings",
+    },
+    {
+      text: "官网 U 盘引导安装 Windows 11 专业版",
+      link: "installwindows11",
+    },
   ].map((obj) => {
     return { text: obj.text, link: `/AllDocs/Windows/${obj.link}` };
   });
