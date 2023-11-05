@@ -25,6 +25,15 @@ export default defineConfig({
   base: "/",
   lang: "zh-CN",
   title: "纸儿",
+  head: [
+    [
+      "link",
+      {
+        rel: "shortcut icon",
+        href: "/favicon.ico",
+      },
+    ],
+  ],
   lastUpdated: true,
   description: "baizhi958216 互联网开发笔记",
   themeConfig: {
