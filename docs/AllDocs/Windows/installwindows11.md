@@ -7,24 +7,43 @@
 1. 滚动页面到 `下载 Windows 11 磁盘映像 (ISO)`, 下拉选择`Windows 11 (multi-edition ISO)` :
 
 - 点击`下载`:
-
+    <el-card shadow="always"> 
+    
     ![download](./installwindows11/download.png)
+    
+    </el-card>
 
 2. `选择产品语言`下拉选择你所熟悉的语言, 我更倾向于***简体中文***
 
+    <el-card shadow="always"> 
+    
     ![download2](./installwindows11/download2.png)
+
+    </el-card>
 
 3. 点击`确认`出现`64-bit Download`按钮, 点击它:
 
+    <el-card shadow="always"> 
+
     ![download3](./installwindows11/download3.png)
+
+    </el-card>
 
 :::tip 可以将链接复制到`迅雷`下载
 
+<el-card shadow="always"> 
+
 ![download4thunder](./installwindows11/download4thunder.png)
+
+</el-card>
 
 下载速度会相对快些
 
+<el-card shadow="always"> 
+
 ![download4thunder2](./installwindows11/download4thunder2.png)
+
+</el-card>
 
 :::
 
@@ -42,7 +61,12 @@
 官网下载链接: [Rufus Download](https://rufus.ie/zh/)
 
 滚动页面到`最新版本`
+
+<el-card shadow="always"> 
+
 ![downloadrufus](./installwindows11/downloadrufus.png)
+
+</el-card>
 
 点击`rufus-4.3p.exe`下载 rufus 便携版
 
@@ -52,7 +76,9 @@
 
 - 制作前请确保以下文件已完成下载并且插入`一个U盘`或者`一个移动硬盘`。
 
+<el-card shadow="always">
     <img src="./installwindows11/flashtoudesk.png" width="200"/>
+</el-card>
 
 - 制作前请确保已完成 U 盘资料备份(制作 U 盘引导将会格式化(清空)U 盘内容)。
 
@@ -60,29 +86,45 @@
 
 1. 打开`rufus`, `设备`项应默认选择你所插入的`U盘`或者`移动硬盘`
 
-<img src="./installwindows11/rufus.png" width="240"/>
+<el-card shadow="always">
+    <img src="./installwindows11/rufus.png" width="240"/>
+</el-card>
 
 2. 点击`目标系统类型`菜单上方的`选择`, 双击之前下载的[镜像](#一、下载镜像)
 
-<img src="./installwindows11/rufus3.png" width="340" />
+<el-card shadow="always">
+    <img src="./installwindows11/rufus3.png" width="340" />
+</el-card>
 
 3. 此时 rufus 应是以下界面
 
-<img src="./installwindows11/rufus1.png" width="240" />
+
+<el-card shadow="always">
+    <img src="./installwindows11/rufus1.png" width="240" />
+</el-card>
 
 4. 点击`开始`, 将弹出的窗口的已选选项***全部取消***
 
-<img src="./installwindows11/rufus4.png" width="340" />
+
+<el-card shadow="always">
+    <img src="./installwindows11/rufus4.png" width="340" />
+</el-card>
 
 5. 格式化警告窗口点击`OK`进行写入 (<span style="color:red">请确保已完成 U 盘资料备份</span>)
 
-<img src="./installwindows11/rufus5.png" width="340" />
+<el-card shadow="always">
+    <img src="./installwindows11/rufus5.png" width="340" />
+</el-card>
 
 6. 等待镜像完成复制
 
+<el-card shadow="always">
    <img src="./installwindows11/rufus6.png" width="240" />
+</el-card>
 
+<el-card shadow="always">
    <img src="./installwindows11/rufus7.png" width="240" />
+</el-card>
 
 ## 四、引导 U 盘启动
 
@@ -120,11 +162,6 @@
 | 联想     | F12    | 清华同方 | F12    |
 | 惠普     | F12    | 海尔     | F12    |
 
-
-
-
-
-
 品牌笔记本:
 
 | 品牌             | 快捷键         |品牌             | 快捷键         |
@@ -146,38 +183,79 @@
 
 U盘引导成功后进入系统安装引导
 
+<el-card shadow="always">
+
 ![install](./installwindows11/install.png)
+
+</el-card>
 
 点击`下一页`
 
+<el-card shadow="always">
+
 ![install1](./installwindows11/install1.png)
+
+</el-card>
 
 点击`现在安装`
 
+<el-card shadow="always">
+
 ![install2](./installwindows11/install2.png)
+
+</el-card>
 
 点击`我没有产品密钥`
 
+<el-card shadow="always">
+
 ![install3](./installwindows11/install3.png)
+
+</el-card>
 
 选中`Windows11 专业版`, 点击`下一页`
 
+<el-card shadow="always">
+
 ![install4](./installwindows11/install4.png)
+
+</el-card>
 
 勾选 `我接受 Microsoft 软件许可条款。如果某组织授予许可，则我有权绑定该组织。(A)`, 点击`下一页`
 
+<el-card shadow="always">
+
 ![install5](./installwindows11/install5.png)
+
+</el-card>
 
 点击`自定义: 仅安装 Windows (高级)`
 
+<el-card shadow="always">
+
 ![install6](./installwindows11/install6.png)
+
+</el-card>
 
 点击`下一页`, 等待系统文件完成复制
 
+<el-card shadow="always">
+
 ![install7](./installwindows11/install7.png)
+
+</el-card>
 
 ## 六、完成安装
 
 系统文件完成复制后会自动重启进入系统部署阶段, 下面按照个人需求进行部署即可
 
+<el-card shadow="always">
+
 ![installed](./installwindows11/installed.png)
+
+</el-card>
+
+<script setup>
+import { ElCard }  from "element-plus"
+import 'element-plus/es/components/card/style/css'
+</script>
