@@ -18,7 +18,7 @@
 
 下载地址3: [百度网盘](https://pan.baidu.com/s/14U3zIG4tG6ZdMBrHaPaLzw?pwd=c65c)
 
-## 激活Windows
+## 二、激活Windows
 
 :::danger 注意
 
@@ -48,6 +48,6 @@
 
 ![active4](./active/active4.png)
 
-## 完成激活
+## 三、完成激活
 
 ![active5](./active/active5.png)
