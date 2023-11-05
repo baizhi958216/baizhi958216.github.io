@@ -20,6 +20,10 @@ export const Windows = (): { text: string; link: string }[] => {
       text: "官网 U 盘引导安装 Windows 11 专业版",
       link: "installwindows11",
     },
+    {
+      text: "通过数字激活 Windows 11 专业版",
+      link: "activewindows"
+    },
   ].map((obj) => {
     return { text: obj.text, link: `/AllDocs/Windows/${obj.link}` };
   });
