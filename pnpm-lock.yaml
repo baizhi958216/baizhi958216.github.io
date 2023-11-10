@@ -11,6 +11,9 @@ dependencies:
   element-plus:
     specifier: ^2.4.1
     version: 2.4.1(vue@3.3.7)
+  flipbook-vue:
+    specifier: 1.0.0-beta.4
+    version: 1.0.0-beta.4(vue@3.3.7)
   markdown-it:
     specifier: ^13.0.2
     version: 13.0.2
@@ -857,6 +860,15 @@ packages:
   /estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
 
+  /flipbook-vue@1.0.0-beta.4(vue@3.3.7):
+    resolution: {integrity: sha512-4FycLNWkxEpHUCk08s1g9q1G/r1S/r3GI7LCalwMtr4G7Y7IDgKbA9AF7AjDPFudny+Rqndw74SHKVnksSebCA==}
+    peerDependencies:
+      vue: '>=2.6.10'
+    dependencies:
+      rematrix: 0.7.2
+      vue: 3.3.7
+    dev: false
+
   /focus-trap@7.5.4:
     resolution: {integrity: sha512-N7kHdlgsO/v+iD/dMoJKtsSqs5Dz/dXZVebRgJw23LDk+jMi/974zyiOYDziY2JPp8xivq9BmUGwIJMiuSBi7w==}
     dependencies:
@@ -898,7 +910,7 @@ packages:
     optional: true
 
   /image-size@0.5.5:
-    resolution: {integrity: sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==}
+    resolution: {integrity: sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=}
     engines: {node: '>=0.10.0'}
     hasBin: true
     requiresBuild: true
@@ -1118,6 +1130,10 @@ packages:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
     requiresBuild: true
     optional: true
+
+  /rematrix@0.7.2:
+    resolution: {integrity: sha512-NYLmE17dX15eUPhngLMTKlRYwATxEhcRdn9LKtk/iOXHxDKglCZnD2MrMLKwLlB5FX8u9kF/9yMhlQJpeDcuPw==}
+    dev: false
 
   /rollup@3.29.4:
     resolution: {integrity: sha512-oWzmBZwvYrU0iJHtDmhsm662rC15FRXmcjCk1xD771dFDx5jJ02ufAQQTn0etB2emNk4J9EZg/yWKpsn9BWGRw==}
