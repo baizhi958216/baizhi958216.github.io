@@ -46,6 +46,9 @@ export default defineConfig({
       text: "在GitHub上编辑该文档",
     },
     socialLinks: [{ icon: "github", link: "https://github.com/baizhi958216" }],
+    search: {
+      provider: 'local'
+    }
   },
 });
 
