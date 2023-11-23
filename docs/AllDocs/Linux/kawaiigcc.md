@@ -78,3 +78,5 @@
     gcc test.cc -Wall
     # -Wall 表示让GCC输出所有警告信息
     ```
+
+![kawaiigcc](./kawaiigcc/kawaiigcc.png)
