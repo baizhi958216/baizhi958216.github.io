@@ -37,10 +37,6 @@ export const Vue3Notes = (): { text: string; link: string }[] => {
       link: 'popmessage'
     },
     {
-      text: '通过WebSocket搭建一个简易的即时聊天平台',
-      link: 'websocket'
-    },
-    {
       text: '图片资源翻页效果',
       link: 'flipbook'
     }

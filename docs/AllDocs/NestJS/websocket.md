@@ -4,7 +4,7 @@
 
 仓库: [websocket-nest-vue/nest-websocket](https://github.com/baizhi958216/websocket-nest-vue/tree/main/nest-websocket)
 
-[前端](/AllDocs/Vue3Notes/websocket)
+[前端](/AllDocs/Frontend/websocket)
 
 ## MySQL环境配置
 
