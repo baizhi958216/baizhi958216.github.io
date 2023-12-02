@@ -2,7 +2,7 @@
 
 使用Vue3 + socket.io + Pinia
 
-仓库: websocket-nest-vue/vue-websocket
+仓库: [websocket-nest-vue/vue-websocket](https://github.com/baizhi958216/websocket-nest-vue/vue-websocket)
 
 [后端](/AllDocs/NestJS/websocket)
 
@@ -128,8 +128,9 @@ export const useUserStore = defineStore(
 
 :::
 
+聊天信息会在聊天组件使用，所以将`Message`类型独立一份出来:
 
-聊天信息会在聊天组件使用，所以将类型独立一份出来:
+:::code-group
 
 ```ts [src/types/message.interface.ts]
 interface IMessage {
@@ -142,6 +143,8 @@ interface IMessage {
 
 export type { IMessage };
 ```
+
+:::
 
 ## 页面和组件的编写
 
