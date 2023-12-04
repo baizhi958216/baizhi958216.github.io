@@ -17,6 +17,10 @@ export const SpringBoot = (): { text: string; link: string }[] => {
       text: "SpringBoot配置MyBatis-Plus",
       link: "springbootmybatisplus",
     },
+    {
+      text: "SSE服务端推送",
+      link: "sse",
+    },
   ].map((obj) => {
     return {
       text: obj.text,

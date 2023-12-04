@@ -34,6 +34,10 @@ export const Frontend = (): { text: string; link: string }[] => {
     {
       text: '通过WebSocket搭建一个简易的即时聊天平台',
       link: 'websocket'
+    },
+    {
+      text: '通过 SSE 实现消息推送',
+      link: 'sse'
     }
   ].map((obj) => {
     return {
