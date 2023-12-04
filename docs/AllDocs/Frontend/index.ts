@@ -38,6 +38,10 @@ export const Frontend = (): { text: string; link: string }[] => {
     {
       text: '通过 SSE 实现消息推送',
       link: 'sse'
+    },
+    {
+      text: 'DNS解析优化',
+      link: 'dnsoptimize'
     }
   ].map((obj) => {
     return {
