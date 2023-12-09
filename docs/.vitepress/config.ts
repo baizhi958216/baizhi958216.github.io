@@ -20,6 +20,7 @@ import { React18 } from "../AllDocs/React18";
 import { kickme } from "../AllDocs/KickMe";
 import { Nuxt } from "../AllDocs/Nuxt";
 import { AndroidGeek } from "../AllDocs/AndroidGeek";
+import { DesignPatterns } from "../AllDocs/DesignPatterns";
 
 export default defineConfig({
   base: "/",
@@ -123,6 +124,11 @@ function sidebar() {
         text: "TypeScript",
         collapsed: true,
         items: TypeScript(),
+      },
+      {
+        text: "设计模式",
+        collapsed: true,
+        items: DesignPatterns(),
       },
       {
         text: "前端面试笔试",
