@@ -1,3 +1,5 @@
 # React 18
 
-https://github.com/myreact
+记录我在Youtube学习React
+
+https://github.com/myreacts
