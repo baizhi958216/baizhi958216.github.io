@@ -11,6 +11,7 @@ export const Frontend = (): { text: string; link: string }[] => {
     { text: "ES2021", link: "es2021" },
     { text: "ES2022", link: "es2022" },
     { text: "ES2023", link: "es2023" },
+    { text: "对象冒充", link: "ObjectImpersonation"},
     { text: "Lodash", link: "lodash" },
     {
       text: "Github Page部署VitePress",
