@@ -43,6 +43,9 @@ settings.json:
   "security.workspace.trust.banner": "never",
   "security.workspace.trust.emptyWindow": false,
   "security.workspace.trust.enabled": false,
-  "workbench.colorTheme": "Pink Fresh"
+  "workbench.colorTheme": "Pink Fresh",
+  "terminal.integrated.fontFamily": "'Fira Code', monospace",
+  "terminal.integrated.lineHeight": 1.1,
+  "terminal.integrated.letterSpacing": 0
 }
 ```
