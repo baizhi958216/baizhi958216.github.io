@@ -6,6 +6,7 @@ export const DesignPatterns = (): { text: string; link: string }[] => {
       { text: "工厂方法模式", link: 'FactoryMethodPattern'},
       { text: "抽象工厂模式", link: 'AbstractFactoryPattern'},
       { text: "建造者模式", link: 'BuilderPattern'},
+      { text: "原型模式", link: 'PrototypePattern'},
     ].map((obj) => {
       return {
         text: obj.text,
