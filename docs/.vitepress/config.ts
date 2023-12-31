@@ -21,6 +21,7 @@ import { kickme } from "../AllDocs/KickMe";
 import { Nuxt } from "../AllDocs/Nuxt";
 import { AndroidGeek } from "../AllDocs/AndroidGeek";
 import { DesignPatterns } from "../AllDocs/DesignPatterns";
+import { C } from "../AllDocs/C";
 
 export default defineConfig({
   base: "/",
@@ -179,6 +180,11 @@ function sidebar() {
         text: "Python",
         collapsed: true,
         items: Python(),
+      },
+      {
+        text: "C语言习题",
+        collapsed: true,
+        items: C()
       },
       {
         text: "Windows",
