@@ -5,6 +5,10 @@ export const kickme = (): { text: string; link: string }[] => {
         {
           text: "毕业设计",
           link: "graduation_design",
+        },
+        {
+          text: "这辈子第一张to签",
+          link: "firsttosticket"
         }
     ].map((obj) => {
       return {
