@@ -11,7 +11,7 @@ export const Frontend = (): { text: string; link: string }[] => {
     { text: "ES2021", link: "es2021" },
     { text: "ES2022", link: "es2022" },
     { text: "ES2023", link: "es2023" },
-    { text: "对象冒充", link: "ObjectImpersonation"},
+    { text: "对象冒充", link: "ObjectImpersonation" },
     { text: "Lodash", link: "lodash" },
     {
       text: "Github Page部署VitePress",
@@ -26,24 +26,28 @@ export const Frontend = (): { text: string; link: string }[] => {
     },
     {
       text: "使用和配置ESLint",
-      link: "eslintinit"
+      link: "eslintinit",
     },
     { text: "AJAX", link: "AJAX" },
-    { text: "监听AJAX请求进度", link:"AJAXprogress" },
-    { text: "Promise", link: 'Promise' },
-    { text: "Vue开发必须知道的36个技巧", link: 'somethingvue'},
+    { text: "监听AJAX请求进度", link: "AJAXprogress" },
+    { text: "Promise", link: "Promise" },
+    { text: "Vue开发必须知道的36个技巧", link: "somethingvue" },
     {
-      text: '通过WebSocket搭建一个简易的即时聊天平台',
-      link: 'websocket'
+      text: "通过WebSocket搭建一个简易的即时聊天平台",
+      link: "websocket",
     },
     {
-      text: '通过 SSE 实现消息推送',
-      link: 'sse'
+      text: "通过 SSE 实现消息推送",
+      link: "sse",
     },
     {
-      text: 'DNS解析优化',
-      link: 'dnsoptimize'
-    }
+      text: "DNS解析优化",
+      link: "dnsoptimize",
+    },
+    {
+      text: "3D旋转木马",
+      link: "carouselable",
+    },
   ].map((obj) => {
     return {
       text: obj.text,
