@@ -2,6 +2,7 @@
   "type": "module",
   "devDependencies": {
     "less": "^4.2.0",
+    "vite-plugin-vue-devtools": "^7.0.5",
     "vitepress": "1.0.0-rc.32"
   },
   "scripts": {
