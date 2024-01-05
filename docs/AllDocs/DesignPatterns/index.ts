@@ -8,7 +8,8 @@ export const DesignPatterns = (): { text: string; link: string }[] => {
       { text: "建造者模式", link: "BuilderPattern" },
       { text: "原型模式", link: "PrototypePattern" },
       { text: "单例模式", link: "SingletonPattern" },
-      { text: "适配器模式", link: "AdapterPattern"}
+      { text: "适配器模式", link: "AdapterPattern" },
+      { text: "桥接模式", link: "BridgePattern" },
     ].map((obj) => {
       return {
         text: obj.text,
