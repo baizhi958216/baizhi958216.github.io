@@ -15,7 +15,12 @@
   --vp-c-brand-dark: #535bf2;
   --vp-c-brand-darker: #454ce1;
   --vp-c-brand-dimm: rgba(100, 108, 255, 0.08);
-  --vp-z-index-nav: 999
+
+  /* fix: 3D旋转木马层级过高 */
+  --vp-z-index-nav: 101;
+  --vp-z-index-sidebar: 102;
+  --vp-z-index-backdrop: 102;
+  --vp-z-index-local-nav: 101
 }
 
 /**
