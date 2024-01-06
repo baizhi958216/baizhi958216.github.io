@@ -10,6 +10,7 @@ export const DesignPatterns = (): { text: string; link: string }[] => {
       { text: "单例模式", link: "SingletonPattern" },
       { text: "适配器模式", link: "AdapterPattern" },
       { text: "桥接模式", link: "BridgePattern" },
+      { text: "组合模式", link: "CompositePattern" },
     ].map((obj) => {
       return {
         text: obj.text,
