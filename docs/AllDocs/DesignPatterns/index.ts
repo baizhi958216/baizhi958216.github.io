@@ -19,6 +19,7 @@ export const DesignPatterns = (): { text: string; link: string }[] => {
       { text: "命令模式", link: "CommandPattern" },
       { text: "解释器模式", link: "InterpreterPattern" },
       { text: "迭代器模式", link: "IteratorPattern" },
+      { text: "中介者模式", link: "MediatorPattern" },
     ].map((obj) => {
       return {
         text: obj.text,
