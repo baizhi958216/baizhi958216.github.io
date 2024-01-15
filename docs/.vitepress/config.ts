@@ -22,6 +22,7 @@ import { Nuxt } from "../AllDocs/Nuxt";
 import { AndroidGeek } from "../AllDocs/AndroidGeek";
 import { DesignPatterns } from "../AllDocs/DesignPatterns";
 import { C } from "../AllDocs/C";
+import { Flutter } from "../AllDocs/Flutter";
 
 export default defineConfig({
   base: "/",
@@ -125,6 +126,11 @@ function sidebar() {
         text: "TypeScript",
         collapsed: true,
         items: TypeScript(),
+      },
+      {
+        text: "Flutter",
+        collapsed: true,
+        items: Flutter()
       },
       {
         text: "设计模式",
