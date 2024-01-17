@@ -17,6 +17,10 @@ export const Git = (): { text: string; link: string }[] => {
       text: "大小写敏感问题",
       link: "casesensitive",
     },
+    {
+      text: "ssh服务端验证错误",
+      link: "networkerror",
+    }
   ].map((obj) => {
     return {
       text: obj.text,
