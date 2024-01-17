@@ -13,6 +13,10 @@ export const Git = (): { text: string; link: string }[] => {
       text: "处理仓库远端与本地提交时间冲突",
       link: "fixunrelated",
     },
+    {
+      text: "大小写敏感问题",
+      link: "casesensitive",
+    },
   ].map((obj) => {
     return {
       text: obj.text,
