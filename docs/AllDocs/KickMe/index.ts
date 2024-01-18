@@ -7,11 +7,11 @@ export const kickme = (): { text: string; link: string }[] => {
         link: "graduation_design",
       },
       {
-        text: "这辈子第一张to签",
+        text: "小染to签",
         link: "firsttosticket",
       },
       {
-        text: "这辈子第二张to签",
+        text: "时姐to签",
         link: "ninesticket",
       },
     ].map((obj) => {

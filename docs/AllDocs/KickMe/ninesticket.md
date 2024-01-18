@@ -1,4 +1,4 @@
-# 这辈子第二张to签 时姐
+# 时姐to签
 
 <div style="display:flex;flex-direction: column;gap:1rem;justify-content: center;align-items:center">
   <el-image style="width: 180px;" :src="url" />
