@@ -11,5 +11,5 @@ import { ElImage, ElTag } from 'element-plus'
 import 'element-plus/es/components/image/style/css'
 import 'element-plus/es/components/tag/style/css'
 
-const url = ref('https://raw.githubusercontent.com/baizhi958216/baizhi958216.github.io/main/docs/AllDocs/KickMe/nine.jpg')
+const url = ref('https://raw.githubusercontent.com/baizhi958216/baizhi958216.github.io/main/docs/AllDocs/KickMe/nine.png')
 </script>

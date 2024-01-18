@@ -12,7 +12,7 @@ export const kickme = (): { text: string; link: string }[] => {
       },
       {
         text: "这辈子第二张to签",
-        link: "nine"
+        link: "ninesticket",
       },
     ].map((obj) => {
       return {
