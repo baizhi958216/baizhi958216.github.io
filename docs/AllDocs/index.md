@@ -34,7 +34,7 @@ fetch('http://localhost:3001/bangumi_list')
 
  <div style="display:flex;justify-content:center;align-items:center;margin:3rem">
  <span style="text-warp:no-warp">Hi 👋, My</span>
- <img src="https://profile-counter.glitch.me/baizhi958216/count.svg" alt="android" width="300" height="40"/>
+ <!-- <img src="https://profile-counter.glitch.me/baizhi958216/count.svg" alt="android" width="300" height="40"/> -->
  <span>visitor</span>
  </div>
 

@@ -22,6 +22,7 @@ export const DesignPatterns = (): { text: string; link: string }[] => {
       { text: "中介者模式", link: "MediatorPattern" },
       { text: "备忘录模式", link: "MementoPattern" },
       { text: "观察者模式", link: "ObserverPattern" },
+      { text: "状态模式", link: "StatePattern"}
     ].map((obj) => {
       return {
         text: obj.text,
