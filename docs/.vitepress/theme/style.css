@@ -67,6 +67,9 @@
 
 @media (min-width: 960px) {
   :root {
+    /* fix: 菜单层级 */
+    --vp-z-index-sidebar: 100;
+    --vp-z-index-local-nav: 100;
     --vp-home-hero-image-filter: blur(72px);
   }
 }
