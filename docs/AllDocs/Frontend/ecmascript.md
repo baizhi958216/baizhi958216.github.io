@@ -98,3 +98,4 @@ ESNext 是一个动态名称，指的是撰写本文时的下一个版本。ESNe
 - [es12(ES2021)](https://262.ecma-international.org/12.0/): 2021
 - [es13(ES2022)](https://262.ecma-international.org/13.0/): 2022
 - [es14(ES2023)](https://262.ecma-international.org/14.0/): 2023
+- [es15(ES2024)](https://tc39.es/ecma262/): 2024

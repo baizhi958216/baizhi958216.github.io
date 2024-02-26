@@ -11,6 +11,7 @@ export const Frontend = (): { text: string; link: string }[] => {
     { text: "ES2021", link: "es2021" },
     { text: "ES2022", link: "es2022" },
     { text: "ES2023", link: "es2023" },
+    { text: "ES2024", link: "es2024" },
     { text: "对象冒充", link: "ObjectImpersonation" },
     { text: "Lodash", link: "lodash" },
     {
@@ -50,7 +51,7 @@ export const Frontend = (): { text: string; link: string }[] => {
     },
     {
       text: "使用shadcn-ui进行开发",
-      link: "shadcnui"
+      link: "shadcnui",
     },
   ].map((obj) => {
     return {
