@@ -103,6 +103,8 @@ https://github.com/hanamizuki-ai/stable-diffusion-webui-localization-zh_Hans.git
 
 除以上需要下载的资源，剩余的字段(提示词、采样方法、迭代步数...)可以根据需要进行填入，点击生成
 
+![result](./sd/result.png)
+
 生成的效果图：
 
-![result](./sd/result.png)
+![00157-1530484368](./sd/00157-1530484368.png)
