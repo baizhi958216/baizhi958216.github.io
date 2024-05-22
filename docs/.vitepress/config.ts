@@ -24,6 +24,8 @@ import { DesignPatterns } from "../AllDocs/DesignPatterns";
 import { C } from "../AllDocs/C";
 import { Flutter } from "../AllDocs/Flutter";
 import { Jvav } from "../AllDocs/Jvav";
+import { LineChart } from "../ECharts/LineChart";
+import { BarChart } from "../ECharts/BarChart";
 
 export default defineConfig({
   base: "/",
@@ -67,6 +69,11 @@ function nav() {
       text: "全部文档",
       link: "/AllDocs/",
       activeMatch: "/AllDocs/",
+    },
+    {
+      text: "ECharts简易手册",
+      link: "/ECharts/",
+      activeMatch: "/ECharts/",
     } /* 
     {
       text: "Yun振兴前端组件文档",
@@ -215,6 +222,18 @@ function sidebar() {
       },
     ],
     "/Chat/": [],
+    "/ECharts/":[
+      {
+        text: "线图",
+        collapsed: true,
+        items: LineChart()
+      },
+      {
+        text: "饼图",
+        collapsed: true,
+        items: BarChart()
+      }
+    ]
     /* "/YunBase/": [
       {
         text: "顶部菜单 Header",
