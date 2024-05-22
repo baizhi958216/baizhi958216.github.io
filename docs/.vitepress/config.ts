@@ -23,7 +23,7 @@ import { AndroidGeek } from "../AllDocs/AndroidGeek";
 import { DesignPatterns } from "../AllDocs/DesignPatterns";
 import { C } from "../AllDocs/C";
 import { Flutter } from "../AllDocs/Flutter";
-import { JAVA } from "../AllDocs/JAVA";
+import { Jvav } from "../AllDocs/Jvav";
 
 export default defineConfig({
   base: "/",
@@ -156,7 +156,7 @@ function sidebar() {
       {
         text: "Java",
         collapsed: true,
-        item: JAVA(),
+        items: Jvav(),
       },
       {
         text: "SpringBoot",
