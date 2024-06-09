@@ -53,6 +53,10 @@ export const Frontend = (): { text: string; link: string }[] => {
       text: "使用shadcn-ui进行开发",
       link: "shadcnui",
     },
+    {
+      text: "手写顶部导航栏",
+      link: "nav",
+    },
   ].map((obj) => {
     return {
       text: obj.text,
