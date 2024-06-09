@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import Flipbook from "flipbook-vue";
 import { ref } from "vue";
-const pages = ["images/1.jpg", "images/2.png", "images/3.jpg"];
+const pages = ["https://raw.githubusercontent.com/baizhi958216/baizhi958216.github.io/main/docs/AllDocs/Vue3Notes/images/1.jpg", "https://raw.githubusercontent.com/baizhi958216/baizhi958216.github.io/main/docs/AllDocs/Vue3Notes/images/2.png", "https://raw.githubusercontent.com/baizhi958216/baizhi958216.github.io/main/docs/AllDocs/Vue3Notes/images/3.jpg"];
 const pageNum = ref(1);
 const pageClick = (currentpageNum) => {
   pageNum.value = currentpageNum; // 更新当前页数
