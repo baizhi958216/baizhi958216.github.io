@@ -26,6 +26,9 @@ import { Flutter } from "../AllDocs/Flutter";
 import { Jvav } from "../AllDocs/Jvav";
 import { LineChart } from "../ECharts/LineChart";
 import { BarChart } from "../ECharts/BarChart";
+import Unocss from "unocss/vite";
+import { visualizer } from "rollup-plugin-visualizer";
+import VueDevTools from "vite-plugin-vue-devtools";
 
 export default defineConfig({
   base: "/",
@@ -53,8 +56,22 @@ export default defineConfig({
     },
     socialLinks: [{ icon: "github", link: "https://github.com/baizhi958216" }],
     search: {
-      provider: 'local'
-    }
+      provider: "local",
+    },
+  },
+  vite: {
+    ssr: {
+      noExternal: ["element-plus"],
+    },
+    plugins: [
+      VueDevTools(),
+      Unocss(),
+      visualizer({
+        open: true,
+        gzipSize: true,
+        brotliSize: true,
+      }),
+    ],
   },
 });
 
