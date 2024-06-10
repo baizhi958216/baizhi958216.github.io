@@ -20,6 +20,10 @@ export const Git = (): { text: string; link: string }[] => {
     {
       text: "ssh服务端验证错误",
       link: "networkerror",
+    },
+    {
+      text: "修改历史作者",
+      link: "mailmap"
     }
   ].map((obj) => {
     return {
