@@ -17,6 +17,7 @@ import { SVN } from "../AllDocs/SVN";
 import { TypeScript } from "../AllDocs/TypeScript";
 import { MyIdeas } from "../AllDocs/MyIdeas";
 import { React18 } from "../AllDocs/React18";
+import { NextJS } from '../AllDocs/NextJS'
 import { kickme } from "../AllDocs/KickMe";
 import { Nuxt } from "../AllDocs/Nuxt";
 import { AndroidGeek } from "../AllDocs/AndroidGeek";
@@ -141,6 +142,11 @@ function sidebar() {
         text: "React 18",
         collapsed: true,
         items: React18(),
+      },
+      {
+        text: "NextJS",
+        collapsed: true,
+        items: NextJS(),
       },
       {
         text: "前端",
