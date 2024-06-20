@@ -164,6 +164,8 @@ export default function InvoiceStatus({ status }: { status: string }) {
 
 使用 `next/font` 模块时，NextJS会在构建的时候下载字体文件，然后放到静态资源里面，当用户访问页面时，不会有额外的第三方网站字体资源请求。
 
+使用 `next/image` 模块可以避免图片在加载前后导致的页面布局变动，可以响应式调整图片大小，默认情况下是懒加载(视口出现才加载)，通过WebP和AVIF加载图片。
+
 ### 添加自定义 Google 字体
 
 在`/app/ui`下新建一个`fonts.ts`文件：
@@ -199,4 +201,175 @@ export default function RootLayout({
 }
 ```
 
+:::
+
+再添加其它字体：
+
+::: code-group
+
+```ts:line-numbers{1,5,6,7,8} [/app/ui/fonts.ts]
+import { Inter, Lusitana } from 'next/font/google';
+ 
+export const inter = Inter({ subsets: ['latin'] });
+
+export const lusitana = Lusitana({
+    weight: ['400','700'],
+    subsets: ['latin']
+});
+```
+
+:::
+
+应用字体到`/app/page.tsx`的 `<p>`标签，取消掉`<AcmeLogo />`的注释：
+
+::: code-group
+
+```tsx:line-numbers{5,11,16,17,18} [/app/page.tsx]
+import AcmeLogo from '@/app/ui/acme-logo';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+import styles from '@/app/ui/home.module.css';
+import { lusitana } from '@/app/ui/fonts';
+
+export default function Page() {
+  return (
+    <main className="flex min-h-screen flex-col p-6">
+      <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
+        <AcmeLogo />
+      </div>
+      <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
+        <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
+          <div className={styles.shape} />
+          <p
+            className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
+          >
+            <strong>Welcome to Acme.</strong> This is the example for the{' '}
+            <a href="https://nextjs.org/learn/" className="text-blue-500">
+              Next.js Learn Course
+            </a>
+            , brought to you by Vercel.
+          </p>
+          <Link
+            href="/login"
+            className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+          >
+            <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
+          </Link>
+        </div>
+        <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
+          {/* Add Hero Images Here */}
+        </div>
+      </div>
+    </main>
+  );
+}
+```
+
+:::
+
+### 添加图片
+
+NextJS可以直接引用在顶级 `/public` 文件夹下静态资产：
+
+```html
+<img
+  src="/hero.png"
+  alt="Screenshots of the dashboard project showing desktop version"
+/>
+```
+
+但是需要额外去考虑以下问题：
+
+- 确保您的图像在不同的屏幕尺寸上具有响应性。
+
+- 为不同设备指定图像大小。
+
+- 防止在图像加载时出现布局偏移。
+
+- 懒加载用户视口之外的图像。
+
+NextJS提供了`<Image/>`组件来解决以上问题，同时默认会将图片编码成WebP。
+
+如果需要使用`avif`格式，在 `/next.config.js` 配置图片编码：
+
+::: code-group
+
+```js:line-numbers{2-6} [/next.config.js]
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    formats: ['image/avif'],
+  },
+};
+
+module.exports = nextConfig;
+```
+
+:::
+
+:::tip
+AVIF 跟 WebP 相比会多用 20% 的时间来编码，但文件小了20%。第一次请求图片可能会较慢，然后缓存的后续请求会更快。
+
+如果NextJS自行部署在代理/CDN，必须将代理转发 Accept 标头。
+:::
+
+在`/app/page.tsx`导入`next/image`然后添加桌面端和移动端首页图片：
+
+::: code-group
+
+```tsx:line-numbers{6,35-48} [/app/page.tsx]
+import AcmeLogo from '@/app/ui/acme-logo';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+import styles from '@/app/ui/home.module.css';
+import { lusitana } from '@/app/ui/fonts';
+import Image from 'next/image';
+
+export default function Page() {
+  return (
+    <main className="flex min-h-screen flex-col p-6">
+      <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
+        <AcmeLogo />
+      </div>
+      <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
+        <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
+          <div className={styles.shape} />
+          <p
+            className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
+          >
+            <strong>Welcome to Acme.</strong> This is the example for the{' '}
+            <a href="https://nextjs.org/learn/" className="text-blue-500">
+              Next.js Learn Course
+            </a>
+            , brought to you by Vercel.
+          </p>
+          <Link
+            href="/login"
+            className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+          >
+            <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
+          </Link>
+        </div>
+        <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
+          {/* Add Hero Images Here */}
+          <Image
+            src="/hero-desktop.png"
+            width={1000}
+            height={760}
+            className="hidden md:block"
+            alt="Screenshots of the dashboard project showing desktop version"
+          />
+          <Image
+            src="/hero-mobile.png"
+            width={560}
+            height={620}
+            className="block md:hidden"
+            alt="Screenshots of the dashboard project showing mobile version"
+          />
+        </div>
+      </div>
+    </main>
+  );
+}
+```
 :::
