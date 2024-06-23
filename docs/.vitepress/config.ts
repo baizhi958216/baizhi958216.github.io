@@ -30,6 +30,7 @@ import { BarChart } from "../ECharts/BarChart";
 import Unocss from "unocss/vite";
 import { visualizer } from "rollup-plugin-visualizer";
 import VueDevTools from "vite-plugin-vue-devtools";
+import { FFmpeg } from "../AllDocs/FFmpeg";
 
 export default defineConfig({
   base: "/",
@@ -161,7 +162,7 @@ function sidebar() {
       {
         text: "Flutter",
         collapsed: true,
-        items: Flutter()
+        items: Flutter(),
       },
       {
         text: "设计模式",
@@ -204,6 +205,11 @@ function sidebar() {
         items: Linux(),
       },
       {
+        text: "FFmpeg",
+        collapsed: true,
+        items: FFmpeg(),
+      },
+      {
         text: "计算机网络",
         collapsed: true,
         items: Network(),
@@ -226,7 +232,7 @@ function sidebar() {
       {
         text: "C语言习题",
         collapsed: true,
-        items: C()
+        items: C(),
       },
       {
         text: "Windows",
@@ -236,7 +242,7 @@ function sidebar() {
       {
         text: "安卓玩机",
         collapsed: true,
-        items: AndroidGeek()
+        items: AndroidGeek(),
       },
       {
         text: "一些思考",
@@ -245,18 +251,18 @@ function sidebar() {
       },
     ],
     "/Chat/": [],
-    "/ECharts/":[
+    "/ECharts/": [
       {
         text: "线图",
         collapsed: true,
-        items: LineChart()
+        items: LineChart(),
       },
       {
         text: "饼图",
         collapsed: true,
-        items: BarChart()
-      }
-    ]
+        items: BarChart(),
+      },
+    ],
     /* "/YunBase/": [
       {
         text: "顶部菜单 Header",

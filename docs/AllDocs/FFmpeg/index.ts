@@ -1,6 +1,6 @@
 export const FFmpeg = (): { text: string; link: string }[] => {
   return [
-    { text: "FFmpeg", link: "togif" },
+    { text: "FFmpeg将MP4转GIF", link: "togif" },
   ].map((obj) => {
     return {
       text: obj.text,
