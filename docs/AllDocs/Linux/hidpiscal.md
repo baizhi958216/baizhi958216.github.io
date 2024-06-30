@@ -18,4 +18,20 @@
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 ```
 
-然后重新登陆，在桌面设置会多出一堆缩放选项。
+:::tip 对于X11
+
+在Wayland上使用X管理的应用可能会出现问题，于是又不得不用回X11。
+
+首先安装一个aur包：`mutter-x11-scaling`
+
+这是ubuntu提供的对X11非整数缩放的一个补丁，装上后终端执行：
+
+```bash
+gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
+```
+
+:::
+
+然后重新登陆，在显示设置会多出一堆缩放选项。
+
+参见：[ArchWiki: HiDPI](https://wiki.archlinux.org/title/HiDPI)
