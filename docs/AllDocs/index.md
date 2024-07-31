@@ -30,14 +30,13 @@ fetch('http://localhost:3001/bangumi_list')
 </el-tabs>
  -->
 
- ### 👋 欢迎指指点点
-
  <div style="display:flex;justify-content:center;align-items:center;margin:3rem">
- <span style="text-warp:no-warp">Hi 👋, My</span>
- <!-- <img src="https://profile-counter.glitch.me/baizhi958216/count.svg" alt="android" width="300" height="40"/> -->
+ <span style="text-warp:no-warp">Hi 👋, My </span>
+ <img src="https://profile-counter.glitch.me/baizhi958216/count.svg" alt="android" width="300" height="40"/>
  <span>visitor</span>
  </div>
 
+ 
 ![Snake animation](https://raw.githubusercontent.com/baizhi958216/baizhi958216/output/github-contribution-grid-snake.svg)
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=baizhi958216&rank=SSS,SS,S,AAA,AA,A,B,C,SECRET)](https://github.com/ryo-ma/github-profile-trophy)
@@ -47,3 +46,20 @@ fetch('http://localhost:3001/bangumi_list')
 <div style="display:flex;justify-content:center;align-items:center">
 <img src="https://api.jun.la/60s.php?format=image" alt="" />
 </div>
+
+
+### 硬件信息：
+- **硬件型号：**                                        ASUSTeK COMPUTER INC. ASUS TUF Gaming F16 FX607JV_FX607JV
+- **内存：**                                          32.0 GiB
+- **处理器：**                                         13th Gen Intel® Core™ i7-13650HX × 20
+- **显卡：**                                          NVIDIA GeForce RTX™ 4060 Laptop GPU
+- **磁盘容量：**                                        3.1 TB
+
+### 软件信息：
+- **固件版本：**                                        FX607JV.309
+- **操作系统名称：**                                      Arch Linux
+- **操作系统内部版本：**                                    rolling
+- **操作系统类型：**                                      64 位
+- **GNOME 版本：**                                    46
+- **窗口系统：**                                        X11
+- **内核版本：**                                        Linux 6.10.2-arch1-1
