@@ -23,6 +23,24 @@
 | 窗口系统     |                                                       X11 |
 | 内核版本     |                                       Linux 6.3.9-arch1-1 |
 
+换新电脑力:)
+
+|              |                                                           |
+| ------------ | --------------------------------------------------------: |
+| 硬件型号     | ASUSTeK COMPUTER INC. ASUS TUF Gaming F16 FX607JV_FX607JV |
+| 固件版本     |                                               FX607JV.309 |
+| 内存         |                                                  32.0 GiB |
+| 处理器       |             13th Gen Intel® Core™ i7-13650HX × 20 |
+| 显卡         |                       NVIDIA GeForce RTX™ 4060 Laptop GPU |
+| 磁盘容量     |                                                     3.1 TB |
+| 操作系统名称 |                                                Arch Linux |
+| 系统构建标识 |                                                   rolling |
+| 操作系统类型 |                                                     64 位 |
+| GNOME 版本   |                                                      46 |
+| 窗口系统     |                                                       X11 |
+| 内核版本     |                                       Linux 6.10.2-arch1-1 |
+
+
 :::
 
 ## 配置要求
