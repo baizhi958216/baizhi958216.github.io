@@ -7,6 +7,7 @@ export const Linux = (): { text: string; link: string }[] => {
     { text: "Linux与Windows时间不一致研究", link: "rtctime" },
     { text: "让GCC变得可爱", link: "kawaiigcc" },
     { text: "GNOME的屏幕非整数缩放", link: "hidpiscal" },
+    { text: "Wine的一些坑", link: "winecfg" }
   ].map((obj) => {
     return {
       text: obj.text,
