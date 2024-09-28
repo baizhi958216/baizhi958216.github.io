@@ -1,6 +1,6 @@
 # 关于在ArchLinux使用数位板
 
-是高漫的1060Pro，心血来潮想要学一下板绘(我要画涩图！)，可是高漫并没有发布Linux的驱动，借助Google找到了个叫[OpenTabletDriver](opentabletdriver.net)的开源数位板驱动，刚好适配有高漫。
+是高漫的1060Pro，心血来潮想要学一下板绘(我要画涩图！)，可是高漫并没有发布Linux的驱动，借助Google找到了个叫[OpenTabletDriver](https://opentabletdriver.net)的开源数位板驱动，刚好适配有高漫。
 
 
 ## 直接装了
