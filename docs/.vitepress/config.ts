@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import cert from 'vite-plugin-mkcert'
 import { SpringBoot } from "../AllDocs/SpringBoot";
 import { Vue3Notes } from "../AllDocs/Vue3Notes";
 import { NestJS } from "../AllDocs/NestJS";
@@ -73,6 +74,7 @@ export default defineConfig({
         gzipSize: true,
         brotliSize: true,
       }),
+      cert()
     ],
   },
 });

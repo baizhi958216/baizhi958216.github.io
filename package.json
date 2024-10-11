@@ -3,13 +3,14 @@
   "devDependencies": {
     "@unocss/preset-typography": "^0.61.0",
     "less": "^4.2.0",
+    "vite-plugin-mkcert": "^1.17.6",
     "vite-plugin-vue-devtools": "^7.3.5",
     "vitepress": "1.2.3"
   },
   "scripts": {
-    "dev": "vitepress dev docs",
+    "dev": "vitepress dev docs --host",
     "build": "vitepress build docs",
-    "preview": "vitepress preview docs"
+    "preview": "vitepress preview docs --host"
   },
   "dependencies": {
     "@iconify/json": "^2.2.223",
