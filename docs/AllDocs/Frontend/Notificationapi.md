@@ -204,7 +204,7 @@ eg:
 
 <script setup>
 import { ref, onMounted } from 'vue'
-const inputVal = ref('10块钱怎么活1个月？')
+const inputVal = ref('10块钱活不了1个月的啦！')
 
 const hasapi = () => 'Notification' in window
 
