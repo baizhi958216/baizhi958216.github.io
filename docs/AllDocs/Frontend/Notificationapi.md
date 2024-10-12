@@ -17,9 +17,9 @@ eg:
 通知内容：<input class="inputstyle" v-model="inputVal"/>
 </div>
 <div>
-<div class="buttonstyle" @click="getPermission">申请 Notification 权限</div> 
+<button class="buttonstyle" @click="getPermission">申请 Notification 权限</button> 
 <div>当前权限：{{ notificationPermission }}</div>
-<div class="buttonstyle" v-show="notificationPermission=='granted'" @click="sendNotification">发送通知</div> 
+<button class="buttonstyle" v-show="notificationPermission=='granted'" @click="sendNotification">发送通知</button> 
 </div>
 </div>
 <div v-else>浏览器不支持 Notification API</div>
@@ -67,14 +67,14 @@ eg:
 通知内容：<input class="inputstyle" v-model="inputVal2"/>
 </div>
 <div>
-<div class="buttonstyle" @click="getPermission">申请 Notification 权限</div> 
+<button class="buttonstyle" @click="getPermission">申请 Notification 权限</button> 
 <div>当前权限：{{ notificationPermission }}</div>
 
 <div>浏览器是否支持Service Worker: {{ Boolean(supportServiceWorker)?'支持':'不支持' }}</div> 
 
-<div v-show="Boolean(supportServiceWorker)"  class="buttonstyle" @click="activeWorker">激活 Service worker</div> 
+<button v-show="Boolean(supportServiceWorker)"  class="buttonstyle" @click="activeWorker">激活 Service worker</button> 
 <div v-show="Boolean(supportServiceWorker)" >Service Worker状态: {{ workerStatus }}</div>
-<div class="buttonstyle" v-show="notificationPermission=='granted'&&workerStatus=='Service worker已激活'" @click="sendNotification2">发送通知</div> 
+<button class="buttonstyle" v-show="notificationPermission=='granted'&&workerStatus=='Service worker已激活'" @click="sendNotification2">发送通知</button> 
 </div>
 </div>
 <div v-else>浏览器不支持 Notification API</div>
@@ -84,7 +84,7 @@ import { ref, onMounted } from 'vue'
 const inputVal = ref('Message')
 const inputVal2 = ref('Message')
 
-const hasapi = "Notification" in window
+const hasapi = ()=>"Notification" in window
 
 const getPermission=()=> {
     Notification.requestPermission().then(permission=>{
@@ -125,7 +125,7 @@ const sendNotification2= async ()=>{
 }
 
 const notificationPermission = ref('none')
-const supportServiceWorker = "serviceWorker" in navigator
+const supportServiceWorker = ()=>"serviceWorker" in navigator
 const workerStatus = ref('none')
 
 onMounted(()=>{
