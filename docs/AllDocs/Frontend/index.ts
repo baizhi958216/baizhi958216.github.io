@@ -57,6 +57,10 @@ export const Frontend = (): { text: string; link: string }[] => {
       text: "手写顶部导航栏",
       link: "nav",
     },
+    {
+      text: "发送桌面通知",
+      link: "Notificationapi"
+    }
   ].map((obj) => {
     return {
       text: obj.text,
