@@ -58,7 +58,7 @@ eg:
 
 <script setup>
 import { ref, onMounted } from 'vue'
-const inputVal = ref('Message')
+const inputVal = ref('10块钱怎么活一个月？')
 
 const hasapi = () => 'Notification' in window
 
@@ -144,7 +144,7 @@ export default defineConfig({
 
 eg: 
   <div v-if="hasapi">
-    <div style="margin: 0 0 10px 0">通知内容：<input class="inputstyle" v-model="inputVal" /></div>
+    <div style="margin: 0 0 10px 0">通知内容：<input class="inputstyle" v-model="inputVal2" /></div>
     <div>
       <button class="buttonstyle" @click="getPermission">申请 Notification 权限</button>
       <div>当前权限：{{ notificationPermission }}</div>
@@ -204,7 +204,7 @@ eg:
 
 <script setup>
 import { ref, onMounted } from 'vue'
-const inputVal = ref('Message')
+const inputVal = ref('10块钱怎么活1个月？')
 
 const hasapi = () => 'Notification' in window
 
@@ -276,8 +276,8 @@ onMounted(() => {
 
 <script setup>
 import { ref, onMounted } from 'vue'
-const inputVal = ref('Message')
-const inputVal2 = ref('Message')
+const inputVal = ref('10块钱怎么活1个月？')
+const inputVal2 = ref('10块钱活不了1个月的啦！')
 
 const hasapi = ()=>"Notification" in window
 
