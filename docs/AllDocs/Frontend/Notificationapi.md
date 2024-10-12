@@ -347,8 +347,6 @@ const getExplore = () => {
 
   for (const key in browserMap) {
     if (agent.indexOf(key) > -1) {
-      if (key === "opr" && !window.opr) continue;
-      if (key === "chrome" && !window.chrome) continue;
       browser = browserMap[key];
       break;
     }
