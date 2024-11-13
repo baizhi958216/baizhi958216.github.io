@@ -8,7 +8,8 @@ export const Linux = (): { text: string; link: string }[] => {
     { text: "让GCC变得可爱", link: "kawaiigcc" },
     { text: "GNOME的屏幕非整数缩放", link: "hidpiscal" },
     { text: "Wine的一些坑", link: "winecfg" },
-    { text: "关于在ArchLinux使用数位板", link:"tabledriver" }
+    { text: "关于在ArchLinux使用数位板", link:"tabledriver" },
+    { text: "Archlinux本地pgp签名", link:"localsignkey" }
   ].map((obj) => {
     return {
       text: obj.text,
