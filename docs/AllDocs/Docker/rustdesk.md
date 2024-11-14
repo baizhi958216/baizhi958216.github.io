@@ -29,12 +29,12 @@ RustDesk 是一款可以平替 TeamViewer 的开源软件，旨在提供安全�
 
 https://activity.huaweicloud.com/free_test/index.html
 
-服务器实例配置好之后记得去安全组放行入站规则`tcp: 21115 21116 21117 21118`，`udp: 21116`，以及常用的端口`20 21 22 80...`
+服务器实例配置好之后记得去安全组放行入站规则`tcp: 21115 21116 21117 21118 21119`，`udp: 21116`，以及常用的端口`20 21 22 80...`
 :::
 
 笔者使用 Ubuntu + Docker 进行搭建，其它教程请移步[自建服务器](https://rustdesk.com/docs/zh-cn/self-host/)
 
-- 安全组放行入站规则`tcp: 21115 21116 21117 21118`，`udp: 21116`。
+- 安全组放行入站规则`tcp: 21115 21116 21117 21118 21119`，`udp: 21116`。
 
 ## 安装 Docker
 
@@ -107,7 +107,7 @@ total 88
 root@hcss-ecs-4e91:~/rustdesk#
 ```
 
-继续`cat data/id_ed25519.pub`拿到公钥，记下要用到。
+执行`cat data/id_ed25519.pub`拿到公钥，记下要用到。
 
 ## 防火墙放行端口
 
@@ -135,6 +135,8 @@ ufw allow 21116/udp
 ```bash
 ufw reload
 ```
+
+以上，服务器搭建结束
 
 ## 客户端连接
 
