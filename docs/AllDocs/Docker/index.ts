@@ -17,6 +17,10 @@ export const Docker = (): { text: string; link: string }[] => {
       text: "制作Docker镜像然后推送到Docker Hub",
       link: "dockerpushhub",
     },
+    {
+      text: "自行搭建RustDesk远程控制",
+      link: "rustdesk"
+    }
   ].map((obj) => {
     return {
       text: obj.text,
