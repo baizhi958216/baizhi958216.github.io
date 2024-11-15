@@ -73,8 +73,7 @@ export default defineConfig({
         open: true,
         gzipSize: true,
         brotliSize: true,
-      }),
-      cert()
+      })
     ],
   },
 });
@@ -92,10 +91,16 @@ function nav() {
       activeMatch: "/AllDocs/",
     },
     {
+      text: "表情包",
+      link: "/Kimoji/",
+      activeMatch: "/Kimoji/",
+    }
+    /* 
+    {
       text: "ECharts简易手册",
       link: "/ECharts/",
       activeMatch: "/ECharts/",
-    } /* 
+    } 
     {
       text: "Yun振兴前端组件文档",
       link: "/YunBase/",
@@ -252,19 +257,20 @@ function sidebar() {
         items: MyIdeas(),
       },
     ],
-    "/Chat/": [],
-    "/ECharts/": [
-      {
-        text: "线图",
-        collapsed: true,
-        items: LineChart(),
-      },
-      {
-        text: "饼图",
-        collapsed: true,
-        items: BarChart(),
-      },
-    ],
+    "/Kimoji/":[]
+    // "/Chat/": [],
+    // "/ECharts/": [
+    //   {
+    //     text: "线图",
+    //     collapsed: true,
+    //     items: LineChart(),
+    //   },
+    //   {
+    //     text: "饼图",
+    //     collapsed: true,
+    //     items: BarChart(),
+    //   },
+    // ],
     /* "/YunBase/": [
       {
         text: "顶部菜单 Header",

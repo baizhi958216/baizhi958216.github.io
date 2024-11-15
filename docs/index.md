@@ -7,7 +7,7 @@ titleTemplate: 互联网开发文档
 hero:
   name: baizhi958216
   text: 互联网开发文档
-  tagline: 24届，找工作ING :)
+  tagline: prprprprprprprprprpr :)
   # tagline: 永远不要熄灭心中的火，哪怕别人只看见烟。
   image:
     src: /baizhi958216.png
