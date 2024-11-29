@@ -94,7 +94,7 @@ function nav() {
       text: "表情包",
       link: "/Kimoji/",
       activeMatch: "/Kimoji/",
-    }
+    },
     /* 
     {
       text: "ECharts简易手册",
@@ -110,8 +110,8 @@ function nav() {
       text: "Yun振兴前端开发文档",
       link: "/YunDoc/",
       activeMatch: "/YunDoc/",
-    }, */,
-    // { text: "Chat", link: "/Chat/", activeMatch: "/Chat/" },
+    }, */
+    { text: "Chat", link: "/Chat/", activeMatch: "/Chat/" },
   ];
 }
 
@@ -257,8 +257,8 @@ function sidebar() {
         items: MyIdeas(),
       },
     ],
-    "/Kimoji/":[]
-    // "/Chat/": [],
+    "/Kimoji/":[],
+    "/Chat/": []
     // "/ECharts/": [
     //   {
     //     text: "线图",

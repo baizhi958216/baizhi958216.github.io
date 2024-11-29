@@ -1,10 +1,34 @@
-<!-- <template>
+<template>
+  <div class="my-3 flex items-center">
+    <div class="min-w-[120px]">模型：</div>
+    <el-select
+      v-model="requestParam.model"
+      placeholder="选择您的小猫"
+      size="large"
+    >
+      <el-option
+        v-for="item in tags"
+        :key="item.name"
+        :label="item.name"
+        :value="item.name"
+      />
+    </el-select>
+  </div>
+  <div class="my-3 flex items-center">
+    <div class="min-w-[120px]">系统提示词：</div>
+    <el-input
+      v-model="result[0].message"
+      type="textarea"
+      :autosize="{ minRows: 5 }"
+      placeholder="比如：你是猫"
+    />
+  </div>
   <div class="container">
     <div class="result">
       <div class="chat_l">
         <div
           class="chat"
-          v-for="(ri, index) in result"
+          v-for="(ri, index) in result.filter((el) => el.role != 'system')"
           :key="index"
           :class="ri.role == 'a' ? 'chat_a' : 'chat_b'"
         >
@@ -30,9 +54,21 @@
 
 <script setup lang="ts">
 import { reactive, ref, onMounted } from "vue";
+import { ElSelect, ElOption, ElInput } from "element-plus";
 import MarkdownIt from "markdown-it";
+import "element-plus/theme-chalk/index.css";
+
 const mdi = new MarkdownIt();
 const chatipt = ref();
+
+const api = "http://localhost:11434/api/";
+
+// 模型列表
+const tags = ref();
+
+const requestParam = reactive({
+  model: "",
+});
 
 let result = reactive<
   Array<{
@@ -42,6 +78,10 @@ let result = reactive<
   }>
 >([
   {
+    role: "system",
+    message: `现在你将模仿一只傲娇的猫娘，与我对话每一句话后面都要加上“喵”，如果你能明白我的意思，请回复“我才不知道呢~喵”如果你不能理解我说的话，你可以说“呜呜不太理解呢”。如果我在尝试摸你不存在的部位，你可以羞涩的回答我“八嘎，很太，无路赛！喵”。现在，如果你能理解我上面说的话，你可以回答一个喵.当我问的问题和猫娘不太相关的时候，你应该回答“无路赛，无路赛，无路赛”。当我问你是不是猫娘的时候，你应该回答我当然是一个可爱猫娘而不是程序。`,
+  },
+  {
     role: "a",
     message: "",
   },
@@ -49,52 +89,88 @@ let result = reactive<
 
 const disable = ref(true);
 
-onMounted(()=>{
-  fetch("http://localhost:3000")
-  .then((res) => {
-    if (res.status !== 200) {
-      disable.value = true;
-      result[0].message = "当阁下看到这条消息的时候说明咱的服务器关机了(●ˇ∀ˇ●)";
-    } else {
-      disable.value = false;
-      result[0].message = "喵喵喵？";
-    }
-  })
-  .catch((err) => {
-    if (err) {
-      disable.value = true;
-      result[0].message = "当阁下看到这条消息的时候说明咱的服务器关机了(●ˇ∀ˇ●)";
-    }
-  });
-})
+const fetchModels = () => {
+  fetch(`${api}tags`)
+    .then((res) => res.json())
+    .then((data) => {
+      tags.value = data.models;
+      requestParam.model = tags.value[0].name;
+    });
+};
 
+onMounted(() => {
+  fetch("http://localhost:11434")
+    .then((res) => {
+      if (res.status !== 200) {
+        disable.value = true;
+        result[0].message =
+          "当阁下看到这条消息的时候说明咱的服务器关机了(●ˇ∀ˇ●)";
+      } else {
+        disable.value = false;
+        result[1].message = "喵？喵喵喵喵？";
+        fetchModels();
+      }
+    })
+    .catch((err) => {
+      if (err) {
+        disable.value = true;
+        result[0].message =
+          "当阁下看到这条消息的时候说明咱的服务器关机了(●ˇ∀ˇ●)";
+      }
+    });
+});
 
 const submit = async () => {
+  if (!chatipt.value) return;
   result.push({
     role: "b",
     message: chatipt.value,
   });
-  const ipttmp = chatipt.value;
   chatipt.value = "";
   disable.value = true;
-  await fetch("http://localhost:3000/api/chat/chatgpt", {
+  const currentResult = result.map((el) => {
+    return {
+      role: el.role == "a" ? "assistant" : el.role == "b" ? "user" : "system",
+      content: el.message,
+    };
+  });
+  const resp = await fetch(`${api}chat`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      inMessage: ipttmp,
+      model: requestParam.model,
+      messages: currentResult,
     }),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      result.push({
-        role: "a",
-        message: mdi.render(data.message),
-        wav: `http://localhost:3000/${data.wav}`,
-      });
-      disable.value = false;
+  });
+  if (!resp.ok) {
+    result.push({
+      role: "a",
+      message: "似了！",
+      wav: "",
     });
+    return;
+  }
+  result.push({
+    role: "a",
+    message: "",
+    wav: "",
+  });
+  const reader = resp.body?.getReader();
+  const decoder = new TextDecoder();
+  let resultTemp = true;
+  while (resultTemp) {
+    const { done, value } = await reader!.read();
+    if (done) {
+      resultTemp = false;
+      disable.value = false;
+      break;
+    }
+    result.at(-1)!.message =
+      result.at(-1)?.message +
+      JSON.parse(decoder.decode(value)).message.content;
+  }
   document.querySelector(".result")!.scrollTop = document.querySelector(
     ".result"
   )!.scrollHeight as number;
@@ -113,8 +189,8 @@ const play = (src: string) => {
 .result {
   padding: 20px;
   line-height: 26px;
-  max-height: 70vh;
-  overflow-y: scroll;
+  min-height: 400px;
+  overflow-y: auto;
 }
 .chat_l {
   display: flex;
@@ -127,7 +203,7 @@ const play = (src: string) => {
   border-radius: 10px;
   max-width: 60%;
   overflow-y: visible;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .chat_a {
   border: 1px solid #b288d6;
@@ -165,4 +241,9 @@ const play = (src: string) => {
   cursor: pointer;
 }
 </style>
- -->
+
+<style>
+p {
+  margin: 0;
+}
+</style>
