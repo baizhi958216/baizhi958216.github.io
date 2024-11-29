@@ -1,5 +1,14 @@
 <template>
   <div class="my-3 flex items-center">
+    <div class="min-w-[120px]">Ollama API：</div>
+    <el-input
+      class="mr-2"
+      v-model="api"
+      placeholder="比如：http://localhost:11434"
+    />
+    <el-button :icon="Search" circle @click="refreshAPI" />
+  </div>
+  <div class="my-3 flex items-center">
     <div class="min-w-[120px]">模型：</div>
     <el-select
       v-model="requestParam.model"
@@ -54,14 +63,15 @@
 
 <script setup lang="ts">
 import { reactive, ref, onMounted } from "vue";
-import { ElSelect, ElOption, ElInput } from "element-plus";
+import { ElButton, ElSelect, ElOption, ElInput } from "element-plus";
+import { Search } from "@element-plus/icons-vue";
 import MarkdownIt from "markdown-it";
 import "element-plus/theme-chalk/index.css";
 
 const mdi = new MarkdownIt();
 const chatipt = ref();
 
-const api = "http://localhost:11434/api/";
+const api = ref("http://192.168.1.12:11434");
 
 // 模型列表
 const tags = ref();
@@ -90,21 +100,27 @@ let result = reactive<
 const disable = ref(true);
 
 const fetchModels = () => {
-  fetch(`${api}tags`)
+  fetch(`${api.value}/api/tags`)
     .then((res) => res.json())
     .then((data) => {
       tags.value = data.models;
       requestParam.model = tags.value[0].name;
+    })
+    .catch((err) => {
+      tags.value = [];
+      requestParam.model = "";
     });
 };
 
-onMounted(() => {
-  fetch("http://localhost:11434")
+const refreshAPI = () => {
+  fetch(api.value)
     .then((res) => {
       if (res.status !== 200) {
         disable.value = true;
-        result[0].message =
+        result[1].message =
           "当阁下看到这条消息的时候说明咱的服务器关机了(●ˇ∀ˇ●)";
+        tags.value = [];
+        requestParam.model = "";
       } else {
         disable.value = false;
         result[1].message = "喵？喵喵喵喵？";
@@ -114,10 +130,16 @@ onMounted(() => {
     .catch((err) => {
       if (err) {
         disable.value = true;
-        result[0].message =
+        result[1].message =
           "当阁下看到这条消息的时候说明咱的服务器关机了(●ˇ∀ˇ●)";
+        tags.value = [];
+        requestParam.model = "";
       }
     });
+};
+
+onMounted(() => {
+  refreshAPI();
 });
 
 const submit = async () => {
@@ -134,7 +156,7 @@ const submit = async () => {
       content: el.message,
     };
   });
-  const resp = await fetch(`${api}chat`, {
+  const resp = await fetch(`${api.value}/api/chat`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
