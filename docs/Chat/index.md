@@ -1,7 +1,9 @@
 # 你可以在此处体验 ~~ChatGPT~~ Ollama
 
-<ChatExperience />
+<ClientOnly>
+    <ChatExperience />
+</ClientOnly>
 
 <script setup>
-import ChatExperience from './components/ChatExperience.vue'
+import ChatExperience from './ChatExperience.vue'
 </script>
