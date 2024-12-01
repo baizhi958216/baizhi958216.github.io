@@ -7,9 +7,9 @@
           <div>
             {{ item.name }}
           </div>
-          <el-tooltip content="删掉这个模型" placement="top" effect="light" >
+          <el-tooltip content="删掉这个模型" placement="top" effect="light">
             <el-icon @click.left=" $emit('removeModel', item.name)">
-            <Remove />
+              <Remove />
             </el-icon>
           </el-tooltip>
         </div>

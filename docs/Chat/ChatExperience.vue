@@ -4,21 +4,17 @@
       <Setting />
     </ElIcon>
     <el-dropdown>
-      <ElIcon class="tabicon hover:rotate-10" size="24" @click="history = !history">
+      <ElIcon class="tabicon hover:rotate-10" size="24">
         <Collection />
       </ElIcon>
       <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item v-for="i in historyList" @click="currentChatID = i.chatId">
-            {{ i.chatTitle ? i.chatTitle : '新对话' }}
-          </el-dropdown-item>
-        </el-dropdown-menu>
+        <HistoryList v-model:historyList="historyList" v-model:currentChatID="currentChatID"
+          @removeChat="historyStore.removeChat" />
       </template>
     </el-dropdown>
   </div>
   <PromptSettings v-model:settings="settings" v-model:settingsForm="settingsForm" @refreshAPI="settingsStore.refreshAPI"
     @removeModel="settingsStore.removeModel" />
-  <HistoryList v-model:history="history" v-model:historyList="historyList" />
   <ElScrollbar view-class="flex flex-col">
     <AnswerLab v-for="i in historyList[currentChatIndex]?.chatList.filter((e) => e.role != 'system')"
       v-model:message="i.content" v-model:role="i.role" />
@@ -32,7 +28,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from "vue";
 import { storeToRefs } from "pinia";
-import { ElScrollbar, ElButton, ElInput, ElIcon, ElDropdown, ElDropdownItem, ElDropdownMenu } from "element-plus";
+import { ElScrollbar, ElButton, ElInput, ElIcon, ElDropdown } from "element-plus";
 import { Position, Setting, Collection } from "@element-plus/icons-vue";
 import { useSettingsStore } from "./store/SettingsStore";
 
@@ -49,22 +45,17 @@ const { settingsForm, inputDisabled } = storeToRefs(settingsStore);
 const { historyList } = storeToRefs(historyStore);
 
 const settings = ref(false);
-const history = ref(false);
 const messageInput = ref("");
 const currentChatID = ref("");
 
 const currentChatIndex = computed(() => historyList.value.findIndex((e) => e.chatId === currentChatID.value))
 
 const submit = async () => {
-  // 无输入直接返回
-  if (!messageInput.value) return
+  // 当前聊天记录id不对 或者 无输入直接返回
+  if (!messageInput.value || currentChatIndex.value == -1) return
   // 当前聊天记录没有title
   if (!historyList.value[currentChatIndex.value].chatTitle) {
     historyList.value[currentChatIndex.value].chatTitle = messageInput.value
-  }
-  // 当前聊天记录id不对
-  if (currentChatIndex.value == -1) {
-    return
   }
   historyList.value[currentChatIndex.value].chatList.push({
     role: "user",
@@ -126,6 +117,6 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .tabicon {
-  @apply my-5 cursor-pointer hover:color-blue hover:scale-130 transition-all outline-none!;
+  @apply my-5 cursor-pointer hover:color-blue hover:scale-130 transition-all outline-none !;
 }
 </style>
