@@ -1,4 +1,4 @@
-# 你可以在此处体验 ~~ChatGPT~~ Ollama
+# 你可以在此处体验 ~~ChatGPT~~ ~~魅魔~~ Ollama
 
 <ClientOnly>
     <ChatExperience />
