@@ -32,6 +32,7 @@ import Unocss from "unocss/vite";
 import { visualizer } from "rollup-plugin-visualizer";
 import VueDevTools from "vite-plugin-vue-devtools";
 import { FFmpeg } from "../AllDocs/FFmpeg";
+import {Emotion} from '../AllDocs/Emotion'
 
 export default defineConfig({
   base: "/",
@@ -263,6 +264,11 @@ function sidebar() {
         collapsed: true,
         items: MyIdeas(),
       },
+      {
+        text:"情感",
+        collapsed: true,
+        items: Emotion()
+      }
     ],
     "/Kimoji/":[],
     "/Chat/": []
