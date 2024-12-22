@@ -30,6 +30,9 @@ fetch('http://localhost:3001/bangumi_list')
 </el-tabs>
  -->
 
+适应一个人的离开，只需要87天，所以从现在起就下定决心断联，只要你的心够狠，崩溃的那个人，就不会是你，一瞬间的心如刀绞，转念间的如释重负，绷住了，把牙咬紧了，你值得，但你要不听，去回头纠缠，你都该死！
+<!--
+
  <div style="display:flex;justify-content:center;align-items:center;margin:3rem">
  <span style="text-warp:no-warp">Hi 👋, My </span>
  <img src="https://profile-counter.glitch.me/baizhi958216/count.svg" alt="android" width="300" height="40"/>
@@ -40,8 +43,18 @@ fetch('http://localhost:3001/bangumi_list')
 ![Snake animation](https://raw.githubusercontent.com/baizhi958216/baizhi958216/output/github-contribution-grid-snake.svg)
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=baizhi958216&rank=SSS,SS,S,AAA,AA,A,B,C,SECRET)](https://github.com/ryo-ma/github-profile-trophy)
-
 ![Top Lang](https://github-readme-stats.vercel.app/api/top-langs/?username=baizhi958216&layout=compact&bg_color=30,FF3F80,FF8CB3&title_color=fff&text_color=fff&hide_border=true&hide=Less,HTML,CSS)
+
+-->
+
+
+:::warning 倒计时 重联将会重置
+
+<br/>
+<div class="text-[60px]">{{ daysLeft }}</div>
+<br/>
+
+:::
 
 <div style="display:flex;justify-content:center;align-items:center">
 <img src="https://api.jun.la/60s.php?format=image" alt="" />
@@ -63,3 +76,25 @@ fetch('http://localhost:3001/bangumi_list')
 - **GNOME 版本：**                                    46
 - **窗口系统：**                                        X11
 - **内核版本：**                                        Linux 6.10.2-arch1-1
+
+
+<script lang="ts" setup>
+import { computed } from 'vue'
+const countdownToDays = (targetDate) => {
+  const currentDate = new Date();
+  const target = new Date(targetDate);
+
+  const timeDifference = target.getTime() - currentDate.getTime();
+
+  const days = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+  return days;
+}
+
+const targetDate = '2025-03-19';
+
+const daysLeft = computed(()=>{
+  return countdownToDays(targetDate)
+});  
+  
+</script>
