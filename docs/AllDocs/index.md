@@ -1,3 +1,4 @@
+# 小情绪
 <!-- <script setup>
 import { ref } from 'vue'
 import { ElTabs,ElTabPane,ElSkeleton,ElTag } from 'element-plus'
@@ -61,6 +62,8 @@ fetch('http://localhost:3001/bangumi_list')
 </div>
 
 
+![nyarch](/nyarch.png)
+
 ### 硬件信息：
 - **硬件型号：**                                        ASUSTeK COMPUTER INC. ASUS TUF Gaming F16 FX607JV_FX607JV
 - **内存：**                                          32.0 GiB
@@ -70,12 +73,12 @@ fetch('http://localhost:3001/bangumi_list')
 
 ### 软件信息：
 - **固件版本：**                                        FX607JV.309
-- **操作系统名称：**                                      Arch Linux
+- **操作系统名称：**                                      Nyarch Linux
 - **操作系统内部版本：**                                    rolling
 - **操作系统类型：**                                      64 位
-- **GNOME 版本：**                                    46
+- **GNOME 版本：**                                    47
 - **窗口系统：**                                        X11
-- **内核版本：**                                        Linux 6.10.2-arch1-1
+- **内核版本：**                                        Linux 6.12.4-arch1-1
 
 
 <script lang="ts" setup>
