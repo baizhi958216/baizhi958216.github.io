@@ -94,7 +94,7 @@ const countdownToDays = (targetDate) => {
   return days;
 }
 
-const targetDate = '2025-03-19';
+const targetDate = '2025-03-20';
 
 const daysLeft = computed(()=>{
   return countdownToDays(targetDate)
