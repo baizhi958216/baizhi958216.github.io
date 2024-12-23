@@ -14,6 +14,10 @@ export const kickme = (): { text: string; link: string }[] => {
         text: "时姐to签",
         link: "ninesticket",
       },
+      {
+        text: "2024年总结",
+        link: "2024report"
+      }
     ].map((obj) => {
       return {
         text: obj.text,
