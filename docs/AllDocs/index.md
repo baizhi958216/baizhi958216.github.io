@@ -52,7 +52,7 @@ fetch('http://localhost:3001/bangumi_list')
 :::warning 倒计时 重联将会重置 重置计数: 1
 
 <br/>
-<div class="text-[60px]">{{ timeLeft }}</div>
+<div class="text-[60px]">{{ dayRef }} {{ hourRef }}:{{ minutesRef }}:{{ secondsRef }}</div>
 <br/>
 
 :::
@@ -82,7 +82,11 @@ fetch('http://localhost:3001/bangumi_list')
 
 
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
+const dayRef = ref()
+const hourRef = ref()
+const minutesRef = ref()
+const secondsRef = ref()
 const countdownToTime = (targetDate) => {
   const currentDate = new Date();
   const target = new Date(targetDate);
@@ -96,11 +100,19 @@ const countdownToTime = (targetDate) => {
 
   return { days, hours, minutes, seconds };
 }
+
+const formatTime = (time) => {
+  return time.toString().padStart(2, '0');
+}
+
 const targetDate = '2025-03-20';
 
-const timeLeft = computed(() => {
+setInterval(()=>{
   const time = countdownToTime(targetDate);
-  return `${time.days}天，${time.hours}:${time.minutes}:${time.seconds}`;
-});  
+  dayRef.value = formatTime(time.days)
+  hourRef.value = formatTime(time.hours)
+  minutesRef.value = formatTime(time.minutes)
+  secondsRef.value = formatTime(time.seconds)
+),1000)
   
 </script>
