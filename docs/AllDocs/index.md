@@ -49,10 +49,10 @@ fetch('http://localhost:3001/bangumi_list')
 -->
 
 
-:::warning 倒计时 重联将会重置
+:::warning 倒计时 重联将会重置 重置计数: 1
 
 <br/>
-<div class="text-[60px]">{{ daysLeft }}</div>
+<div class="text-[60px]">{{ timeLeft }}</div>
 <br/>
 
 :::
@@ -83,21 +83,24 @@ fetch('http://localhost:3001/bangumi_list')
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-const countdownToDays = (targetDate) => {
+const countdownToTime = (targetDate) => {
   const currentDate = new Date();
   const target = new Date(targetDate);
 
   const timeDifference = target.getTime() - currentDate.getTime();
 
-  const days = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+  const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-  return days;
+  return { days, hours, minutes, seconds };
 }
-
 const targetDate = '2025-03-20';
 
-const daysLeft = computed(()=>{
-  return countdownToDays(targetDate)
+const timeLeft = computed(() => {
+  const time = countdownToTime(targetDate);
+  return `${time.days}天，${time.hours}:${time.minutes}:${time.seconds}`;
 });  
   
 </script>
