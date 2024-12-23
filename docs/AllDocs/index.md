@@ -113,6 +113,6 @@ setInterval(()=>{
   hourRef.value = formatTime(time.hours)
   minutesRef.value = formatTime(time.minutes)
   secondsRef.value = formatTime(time.seconds)
-),1000)
+},1000)
   
 </script>
