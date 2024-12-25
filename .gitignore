@@ -6,3 +6,6 @@ docs/.vitepress/dist
 docs/.vitepress/cache
 
 简历.md
+
+# rollup build analysis
+stats.html
