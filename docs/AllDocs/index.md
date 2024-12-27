@@ -50,7 +50,7 @@ fetch('http://localhost:3001/bangumi_list')
 
 -->
 
-:::warning 倒计时⏱️ 重联将会重置 重置计数: 3
+:::warning 倒计时⏱️ 重联将会重置 重置计数: 4
 <ClientOnly>
   <br/>
     <CountDownTime/>

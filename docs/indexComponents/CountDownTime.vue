@@ -32,7 +32,7 @@ const formatTime = (time) => {
   return time.toString().padStart(2, "0");
 };
 
-const targetDate = "2025-03-22";
+const targetDate = "2025-03-24";
 
 setInterval(() => {
   const time = countdownToTime(targetDate);
